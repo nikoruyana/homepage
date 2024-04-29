@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            background: black;
+           
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -10;
+           
+        }
+
+        .text {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            color: white;
+            font-size: 100px;
+        }
+
+        .text-span {
+            text-align: center;
+            font-weight: 800;
+            font-size: 900px;
+            color: #7777;
+            transition: 1s;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            animation: reveal 2.5s linear forwards;
+            opacity: 0;
+            filter: blur(13px);
+            padding: 50px;
+        }
+
+        @keyframes reveal {
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        /* Fixed animation delays */
+        span:nth-child(1) {
+            animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+        }
+
+        span:nth-child(2) {
+            animation-delay: 1.4s; /* Corrected typo in delay value */
+            -webkit-animation-delay: 1.4s;
+            -moz-animation-delay: 1.4s;
+        }
+
+        span:nth-child(3) {
+            animation-delay: 2.1s;
+            -webkit-animation-delay: 2.1s;
+            -moz-animation-delay: 2.1s;
+        }
+
+        span:nth-child(4) {
+            animation-delay: 2.8s;
+            -webkit-animation-delay: 2.8s;
+            -moz-animation-delay: 2.8s;
+        }
+
+        span:nth-child(5) {
+            animation-delay: 3.5s;
+            -webkit-animation-delay: 3.5s;
+            -moz-animation-delay: 3.5s;
+        }
+
+        span:nth-child(6) {
+            animation-delay: 4.2s;
+            -webkit-animation-delay: 4.2s;
+            -moz-animation-delay: 4.2s;
+        }
+
+         /* Fixed animation delays */
+        span:nth-child(7) {
+            animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+        }
+
+        span:nth-child(8) {
+            animation-delay: 1.4s; /* Corrected typo in delay value */
+            -webkit-animation-delay: 1.4s;
+            -moz-animation-delay: 1.4s;
+        }
+
+        span:nth-child(9) {
+            animation-delay: 2.1s;
+            -webkit-animation-delay: 2.1s;
+            -moz-animation-delay: 2.1s;
+        }
+
+        span:nth-child(10) {
+            animation-delay: 2.8s;
+            -webkit-animation-delay: 2.8s;
+            -moz-animation-delay: 2.8s;
+        }
+
+        span:nth-child(11) {
+            animation-delay: 3.5s;
+            -webkit-animation-delay: 3.5s;
+            -moz-animation-delay: 3.5s;
+        }
+
+        span:nth-child(12) {
+            animation-delay: 4.2s;
+            -webkit-animation-delay: 4.2s;
+            -moz-animation-delay: 4.2s;
+        } /* Fixed animation delays */
+        span:nth-child(13) {
+            animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+        }
+
+        span:nth-child(14) {
+            animation-delay: 1.4s; /* Corrected typo in delay value */
+            -webkit-animation-delay: 1.4s;
+            -moz-animation-delay: 1.4s;
+        }
+
+        span:nth-child(15) {
+            animation-delay: 2.1s;
+            -webkit-animation-delay: 2.1s;
+            -moz-animation-delay: 2.1s;
+        }
+
+        span:nth-child(16) {
+            animation-delay: 2.8s;
+            -webkit-animation-delay: 2.8s;
+            -moz-animation-delay: 2.8s;
+        }
+
+       .buttons {
+    position: absolute;
+    margin-top: 500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; /* para magpakita  yung mga buttons */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+margin-top: 550px;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+   
+}
+
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+        .btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <video src="firee (1).mp4" autoplay muted></video>
+        <div class="text">
+            <span>E</span>
+            <span>L</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span>F</span>
+            <span>I</span>
+            <span>L</span>
+            <span>I</span>
+            <span>B</span>
+            <span>U</span>
+            <span>S</span>
+            <span>T</span>
+            <span>E</span>
+            <span>R</span>
+            <span>I</span>
+            <span>S</span>
+            <span>M</span>
+            <span>O</span>
+        </div>
+    </div>
+<center>
+     <div>
+   <a href="desserts.html"> <button class="btn-hover color-1">KABANATA 34</button></a>
+    <a href="drinksmenu.html"> <button class="btn-hover color-2">KABANATA 35</button></a>
+
+         </div>
+    
+    </center>
+</body>
+</html>

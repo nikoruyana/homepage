@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEARCHBAR</title>
+    <style>
+        meta[name="viewport"] {
+            content: width=device-width, initial-scale=1.0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #262a2f;
+            color: #333;
+        }
+
+        .search-box {
+            width: 600px;
+            background: #fff;
+            margin: 100px auto 0;
+            border-radius: 5px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        input {
+            flex: 1;
+            height: 30px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-box">
+    <div class="row">
+        <input type="text" id="input-box" placeholder="Search" autocomplete="off">
+        <button class="delete-btn">Delete</button>
+    </div>
+    <div class="result-box">
+        <ul></ul>
+    </div>
+</div>
+
+<script>
+    let availableKeywords = [
+        'html',
+        'sinigang',
+        'angilla',
+        'steph',
+        'ariana',
+        'kris',
+        'cynthia',
+    ];
+
+    const resultsBox = document.querySelector(".result-box ul");
+    const inputBox = document.getElementById("input-box");
+    const deleteBtn = document.querySelector(".delete-btn");
+
+    inputBox.onkeyup = function () {
+        let input = inputBox.value.toLowerCase();
+        let result = availableKeywords.filter((keyword) => {
+            return keyword.toLowerCase().includes(input);
+        });
+        if (!result.length) {
+            resultsBox.innerHTML = '';
+        }
+        display(result);
+    };
+
+    deleteBtn.onclick = function () {
+        inputBox.value = '';
+        resultsBox.innerHTML = '';
+    };
+
+    function display(result) {
+        const content = result.map((list) => {
+            return `<li>${list}</li>`;
+        });
+        resultsBox.innerHTML = content.join('');
+    }
+</script>
+
+</body>
+</html>

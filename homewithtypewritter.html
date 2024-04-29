@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <title>SEARCHBAR</title>
+    <style>
+       
+
+        
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: century;
+}
+
+        body{
+    width: 100%;
+    height: 100vh;
+   
+    justify-content: center;
+}
+            header.{
+       
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+                                                         
+}
+
+    ul{
+        float: right;
+        list-style-type: none;
+        margin-top: -50px;
+        min-height: 100px;
+        margin-right: 60px;
+        font-size: 27px;
+        margin-right: 1200px;
+
+}
+
+    ul li{
+        display: inline-block;
+}
+    
+    ul li a{
+        text-decoration: none;
+        color: white;
+        padding: 3px 5px;
+        border: 1px solid transparent;
+        transition: 0.5 ease;
+}
+
+    ul li a:hover{
+        background-color: pink;
+        color: black;
+        
+}
+    ul li.active a{
+         background-color: white;
+         color: black;
+
+}
+
+    .ror img{
+        align: left;
+        width: 600px;
+        height: auto;
+        
+}
+
+    .main{
+        max-width: 2000px;
+        margin: auto;
+}
+
+        .content{
+            text-align: center;
+}
+        .content h1{
+            font-size: 150px;
+            color: white;
+            font-weight: 150;
+            text-align: center;
+            justify-content: center;
+            margin-top: -550px;
+            
+}
+      
+.buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* para magpakita  yung mga buttons */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+margin-top: -500px;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+.btn-hover.color-3 {
+    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+.btn-hover.color-4 {
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.btn-hover.color-5 {
+    background-image: linear-gradient(to LEFT, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+      /*para sa search bar itoo guyss tapos yung nasa taas para sa home and main course*/
+
+        .search-box {
+            width: 0;
+            background: #fff;
+            margin: -600px auto 0;
+            border-radius: 5px;
+            position: relative; 
+           
+            
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        input {
+            flex: 1;
+            height: 30px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        
+       .fa-solid.fa-magnifying-glass {
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  margin-top: 350px; /*margin sa taas */
+  right: -650px; /* adjustment sa may right*/
+}
+
+
+
+                        
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 15px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* other */
+.info {
+  margin: 20px 0;
+  text-align: center;
+    m
+}
+
+p {
+  color: #2e2e2e;
+  margin-bottom: 20px;
+}
+
+
+/* block-$ */
+.block-effect {
+  font-size: calc(9px + 7vw);
+    margin-top: 300px;
+    
+}
+
+.block-reveal {
+  --t: calc(var(--td) + var(--d));
+
+  color: transparent;
+  padding: 2px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.block-reveal::after {
+  content: '';
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+}
+
+
+/* animations */
+@keyframes revealBlock {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes revealingIn {
+
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .6);
+  font-size: 16px;
+}
+
+
+
+
+
+        /* video background */
+
+     #webvideo { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+         z-index: -1;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="main">  
+    <dir class="ror">
+   
+    </div>
+
+<video id="webvideo" autoplay loop muted>
+  <source src="webvd.mp4" type="video/mp4">
+</video>
+        <div>
+    <ul>
+        <li class=><a href="#">Home</a></li>
+        <li><a href="ABOUT-US-BOOK.html">About</a></li> 
+        <li><a href="contacts.html">Contacts</a></li>
+    </ul>
+    </div>
+    </header>
+<div class="search-box">
+    <div class="row">
+        <input type="text" id="input-box" autocomplete="off"><button><a href="searchbar(done).html"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+        
+       
+    </div>
+    <div class="result-box">
+        <ul></ul>
+    </div>
+</div>
+
+<h1 class="block-effect" style="--td: 1.2s">
+  
+
+    <div class="block-reveal" style="--bc: pink; --d: .1s">T10 FILIPINO</div>
+  <div class="block-reveal" style="--bc: #bf4060; --d: .5s">CUISINE</div>
+</h1>
+
+        <div>
+   <a href="desserts.html"> <button class="btn-hover color-1" >DESSERTS</button></a>
+    <a href="drinksmenu.html"> <button class="btn-hover color-2">DRINKS</button></a>
+    <a href="slider5.html"> <button class="btn-hover color-3">MAIN COURSE</button></a>
+    <a href="streetfood-menu.html"> <button class="btn-hover color-4">STREETFOOD</button></a>
+    <a href="junkfoods2.html"> <button class="btn-hover color-5">JUNKFOODS</button></a>
+    
+</div>
+
+<script>
+    /*tapos ito is yung sa java para sa search bar*/
+
+
+    let availableKeywords = [
+        'html',
+        'sinigang',
+        'angilla',
+        'steph',
+        'ariana',
+        'kris',
+        'cynthia',
+    ];
+
+    const resultsBox = document.querySelector(".result-box ul");
+    const inputBox = document.getElementById("input-box");
+    const deleteBtn = document.querySelector(".delete-btn");
+
+    inputBox.onkeyup = function () {
+        let input = inputBox.value.toLowerCase();
+        let result = availableKeywords.filter((keyword) => {
+            return keyword.toLowerCase().includes(input);
+        });
+        if (!result.length) {
+            resultsBox.innerHTML = '';
+        }
+        display(result);
+    };
+
+    deleteBtn.onclick = function () {
+        inputBox.value = '';
+        resultsBox.innerHTML = '';
+    };
+
+    function display(result) {
+        const content = result.map((list) => {
+            return "<li onclick='selectInput(this)'>" + list + "</li>";
+        });
+        resultsBox.innerHTML = content.join('');
+    }
+
+    function selectInput(list) {
+        inputBox.value = list.innerHTML;
+        resultsBox.innerHTML = '';
+    }
+</script>
+
+</body>
+</html>
