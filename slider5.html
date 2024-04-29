@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Slider</title>
+    <style>
+      
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+                body{
+    width: 100%;
+    height: 100vh;
+    background: url('bgweb.png')no-repeat center center/cover;
+    justify-content: center;
+}
+            header.{
+        background-image:url('bgweb.png');
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+                                                         
+}
+
+        .service {
+            width: 100%;
+            height: 100vh;
+            padding: 50px 0;
+            background-color: var(--bg-color--);
+        }
+
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--primary-color--);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .border {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 4px;
+            background-image: linear-gradient(25deg, #F4511E, #F57C00 50%);
+        }
+
+        .container {
+            width: 100%;
+            overflow: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            padding: 0 20px;
+        }
+
+        .item {
+            width: 250px;
+            flex-direction: column;
+            margin: 0px 20px;
+            background-color: var(--item-color--);
+            box-shadow: 0 20px 40px #ccc;
+            border-radius: 15px;
+        }
+
+        .img-outside {
+            width: 100px;
+            height: 100px;
+            background: var(--secondary-color--);
+            position: relative;
+            margin: 20px 0;
+            border-radius: 50%;
+            overflow: hidden; /* Added overflow to hide image overflow */
+        }
+
+        .img-inside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            overflow: hidden; /* Added overflow to hide image overflow */
+        }
+
+        .img-inside img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Added object-fit for image scaling */
+        }
+
+        .content {
+            text-align: center;
+            color: var(--item-color--);
+            padding-bottom: 20px;
+            background-image: linear-gradient(25deg, #F4511E, #F57C00 50%);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 40px 20px;
+            border-top-right-radius: 40px 20px;
+        }
+
+        .content h3 {
+            text-transform: uppercase;
+            font-size: 25px; /* Adjust the font size as needed */
+            margin-top: 20px;
+            font-weight: 400;
+            color: var(--item-color--); /* Add this line to ensure text color */
+        }
+
+        .content {
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .owl-carousel .owl-nav button.owl-next,
+        .owl-carousel .owl-nav button.owl-prev {
+            font-size: 60px;
+            color: var(--primary-color--);
+            position: absolute;
+            top: 30%;
+        }
+
+        .owl-carousel .owl-nav button.owl-next:hover,
+        .owl-carousel .owl-nav button.owl-prev:hover {
+            color: var(--primary-color--);
+            background: var(--item-color--);
+        }
+
+        .owl-nav button.owl-prev {
+            left: -50px;
+        }
+
+        .owl-nav button.owl-next {
+            right: -50px;
+        }
+
+        @media(max-width:992px) {
+            .wrapper {
+                width: 75%;
+                margin: auto;
+            }
+        }
+
+        @media(max-width:768px) {
+            .item {
+                width: 230px;
+            }
+
+            .owl-nav button.owl-prev {
+                left: -25px;
+            }
+
+            .owl-nav button.owl-next {
+                right: -25px;
+            }
+
+            .section-heading {
+                font-size: 25px;
+            }
+        }
+
+        @media(max-width:500px) {
+            .wrapper {
+                width: 60%;
+            }
+        }
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+                                      #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   top: 40px;
+    margin-right: 1500px;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+    </style>
+</head>
+<body>
+<a href="homewithtypewritter.html" class="button explore">back</a>
+    <section class="service">
+        <div class="container">
+            <div class="wrapper">
+                <div class="owl-carousel owl-theme">
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="chicken2.png">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="chickengal(done).html"><h3>CHICKEN</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="pig.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="beef.html"><h3>PORK</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="rice.png">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="rice.html"><h3>RICE</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="cutefish.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="ariana.html"><h3>SEAFOODS</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="tom.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="gulay-menu.html"><h3>VEGETABLES</h3></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            autoplay: false,
+            smartSpeed: 1200,
+            autoHeight: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+</body>
+</html>

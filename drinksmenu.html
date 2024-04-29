@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable Responsive Lightbox Gallery Tutorial</title>
+
+    <!-- Bootstrap CSS CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            transition: all .2s cubic-bezier(.34, 1.12, .68, 1.31);
+        }
+
+        .gallery {
+            min-height: 100vh;
+          background: url('bgweb.png')no-repeat center center/cover;
+            padding-bottom: 100px;
+            z-index: -1;
+        }
+
+        .gallery .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            list-style: none;
+        }
+
+        .gallery .controls .buttons {
+            height: 40px;
+            width: 140px;
+            background: #fff;
+            color: #666;
+            font-size: 20px;
+            line-height: 40px;
+            cursor: pointer;
+            margin: 20px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+            text-align: center;
+        }
+
+        .gallery .controls .buttons.active {
+            background: coral;
+            color: #fff;
+        }
+
+        .gallery .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery .image-container .image {
+            height: 250px;
+            width: 230px; /* Adjust niyo here if hindi 5 yung images sa baba and taas*/
+            overflow: hidden;
+            border: 15px solid #fff;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+            margin: 20px;
+        }
+
+        .gallery .image-container .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .gallery .image-container .image:hover img {
+            transform: scale(1.4);
+        }
+
+        /*  i adjust here yung modal content width para sa maliit na screens*/
+        @media (max-width: 768px) {
+            .modal-dialog-centered {
+                max-width: 90% !important;
+            }
+        }
+      
+
+        .modal-body-scroll {
+    max-height: 400px; /* Adjust this value as needed */
+    overflow-y: auto;
+}
+ .ingredients {
+margin-left: -500px;
+            }
+        .ingredientsg {
+margin-left: -500px;
+            }
+         .ingredientsw {
+margin-left: -500px;
+            }
+
+        .ingredientsc {
+margin-left: -500px;
+            margin-top: 140px;
+            }
+        .ingredientsg h3{
+margin-left: 420px;
+            }
+        .ingredients h3{
+margin-left: 420px;
+            }
+.ingredientsm {
+margin-left: -500px;
+            margin-top: 100px;
+            }
+        
+
+       .procedures h3{
+margin-left: 420px;
+           }
+
+         .procedures {
+margin-left: -500px;
+           }
+
+        .des {
+margin-left: -150px;
+            margin-top: -50px;
+            width: 100%;
+            }
+
+        .ingd {
+margin-left: 20px;
+            margin-top: -60px;
+            }
+   
+                                      #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+   top: 40px;
+    margin-right: 1500px;
+    z-index: 1;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+    </style>
+</head>
+<body>
+<a href="homewithtypewritter.html" class="button explore">back</a>
+
+<div class="gallery">
+
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="Shakes">Shakes</li>
+        <li class="buttons" data-filter="Non-Alcoholic">Non-Alcoholic</li>
+        <li class="buttons" data-filter="Alcoholic">Alcoholic</li>
+    </ul>
+
+    <div class="image-container">
+        <!-- Image 1 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal1">
+            <img src="sago.png" alt="">
+        </div>
+        <!-- Image 2 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal2">
+            <img src="water(2).png" alt="">
+        </div>
+        <!-- Image 3 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal3">
+            <img src="calamansi.png" alt="">
+        </div>
+        <!-- Image 4 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal4">
+            <img src="mango.png" alt="">
+        </div>
+        <!-- Image 5 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal5">
+            <img src="melon.png" alt="">
+        </div>
+        <!-- Image 6 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal6">
+            <img src="bukopandan.png" alt="">
+        </div>
+        <!-- Image 7 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal7">
+            <img src="fruitsalad.png" alt="">
+        </div>
+        <!-- Image 8 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal8">
+            <img src="guyabano.png" alt="">
+        </div>
+        <!-- Image 9 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal9">
+            <img src="buko.png" alt="">
+        </div>
+        <!-- Image 10 -->
+        <div class="image Non-Alcoholic" data-bs-toggle="modal" data-bs-target="#Non-AlcoholicModal10">
+            <img src="dragon.png" alt="">
+        </div>
+
+        
+<!-- SSSSSSSSSHHHHHHHHHHHHAAAAAAAAAAAAAKKKKKKKKKKKKKKEEEEEEEEEEEEE         IIIIIIIIITTTTTTTTTTTTTT-->
+        
+          <!-- Image 1 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal1">
+            <img src="mangos.png" alt="">
+        </div>
+        <!-- Image 2 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal2">
+            <img src="bukos.png" alt="">
+        </div>
+        <!-- Image 3 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal3">
+            <img src="avocado.png" alt="">
+        </div>
+        <!-- Image 4 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal4">
+            <img src="papaya.png" alt="">
+        </div>
+        <!-- Image 5 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal5">
+            <img src="banana.png" alt="">
+        </div>
+        <!-- Image 6 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal6">
+            <img src="orange.png" alt="">
+        </div>
+        <!-- Image 7 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal7">
+            <img src="strawberry.png" alt="">
+        </div>
+        <!-- Image 8 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal8">
+            <img src="pineapple.png" alt="">
+        </div>
+        <!-- Image 9 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal9">
+            <img src="waters.png" alt="">
+        </div>
+        <!-- Image 10 -->
+        <div class="image Shakes" data-bs-toggle="modal" data-bs-target="#ShakesModal10">
+            <img src="guyabano.png" alt="">
+        </div>
+
+
+
+   <!-- AAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAKKKKKKKKKKKKKKKKKKKKKK -->
+
+           <!-- Image 1 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal1">
+            <img src="empe (1).png" alt="">
+        </div>
+        <!-- Image 2 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal2">
+            <img src="red (1).png" alt="">
+        </div>
+        <!-- Image 3 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal3">
+            <img src="san (1).png" alt="">
+        </div>
+        <!-- Image 4 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal4">
+            <img src="tuba (1).png" alt="">
+        </div>
+        <!-- Image 5 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal5">
+            <img src="tapuey (1).png" alt="">
+        </div>
+        <!-- Image 6 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal6">
+            <img src="tanduay (1).png" alt="">
+        </div>
+        <!-- Image 7 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal7">
+            <img src="labanog (1).png" alt="">
+        </div>
+        <!-- Image 8 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal8">
+            <img src="basi (1).png" alt="">
+        </div>
+        <!-- Image 9 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal9">
+            <img src="laksoy (1).png" alt="">
+        </div>
+        <!-- Image 10 -->
+        <div class="image Alcoholic" data-bs-toggle="modal" data-bs-target="#AlcoholicModal10">
+            <img src="gin (1).png" alt="">
+        </div>
+    </div>
+
+</div>
+
+
+<!-- here is yung zoom effect niya the description  for example want niyo siya sa palitan ng sweeets 
+    change niyo yung id="Non-Alcoholic" ng sweets then sa data-bs-targets=change sa image 1-10 niyo rin yung non-alcoholic ng sweets pati na rin yung data filter sa before ng image 1, HUWAG NIYO PALA TANGGALIN YUNG MODAL1 SA LAST NG MGA NON-ALCOHOLIC -->
+<div class="modal fade" id="Non-AlcoholicModal1" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Sago at Gulaman</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+        <div class="modal-body-scroll">     <center> <h1>SAGO AT GULAMAN</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="sago.png" alt="" class="img-fluid">
+                    </div>
+                
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+                 <div class="des">       <h4>Sago Gulaman is a local Filipino beverage made of tapioca pearls, water, brown sugar, gulaman, and vanilla. It's a delicious and refreshing drink that is perfect to serve on a hot summer day!</h4></div>
+                   
+  <br><br><br><br> <br> <br>   
+                        <br><br>                          <div class="ingredientsg">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+            <h4><u>Gulaman</u></h4>
+          <h5><ul>
+                <li>3 cups water</li>
+                <li>¼ cup brown sugar</li>
+                <li>1 pack 25g red gulaman, unflavored</li>
+            </ul></h5>
+        </div>
+        <div class="col-lg-4">
+            <u><h4>Sago</h4></u>
+         <h5>   <ul>
+                <li>4-5 cups water</li>
+                <li>⅓ cup sago pearls</li>
+                <li>1 tsp vanilla (optional)</li>
+            </ul> </h5>
+        </div>
+        <div class="col-lg-4">
+           <u> <h4>Juice</h4></u>
+       <h5>   <ul>
+                <li>1 cup brown sugar</li>
+                <li>3 ⅓ cups water</li>
+            </ul></h5>
+        </div>
+    </div>
+</div>
+                    <div class="procedures">
+<div class="col-lg-6">
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+          <u>  <h4>For Gulaman</h4> </u><br>
+         <h5>   <ol>
+                <li>In a pan over low heat, add 3 cups of water and ¼ cup of brown sugar, and stir until the sugar is dissolved.</li>
+                <li>Add unflavored gulaman and stir for 3-5 mins or until frothy.</li>
+                <li>Turn off the heat and pour into a glass container, and cool for 20 minutes.</li>
+                <li>After gulaman solidified like jello, slice into small cubes.</li>
+            </ol></h5>
+        </div><br>
+        <div class="col-lg-6">
+         <u>   <h4>For Sago</h4> </u><br>
+           <h5> <ol>
+                <li>In a pot over medium heat, add 4-5 cups of water (add 1 more cup if needed), and bring to a boil.</li>
+                <li>Add ⅓ cup sago pearls and cook until sago pearls are tender and translucent.</li>
+                <li>Using a strainer, separate the sago and hot water. Then pour cold water on the sago to avoid sticking. Set aside.</li>
+            </ol></h5> <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><br>
+       <u>     <h4>For Juice</h4> </u><br>
+         <h5>  <ol>
+                <li>In a pan over low heat, add 1 cup of brown sugar and caramelized sugar, make sure to keep an eye and stir so the sugar does not stick to the pan.</li>
+                <li>Once it is caramelized, carefully pour in 3 ⅓ cups of water and stir until it is well combined.</li>
+                <li>Make sure that the caramelized sugar does not burn because it will give a bitter flavor. Allow it to cool for 20 minutes.</li>
+            </ol></h5>
+        </div>
+        <div class="col-lg-6">
+       <br>    <u> <h4>To Assemble the Sago't Gulaman</h4> </u><br>
+          <h5> <ol>
+                <li>In large glasses, add ice, gulaman, cooked sago, and juice mixture.</li>
+                <li>Best served cold and individual servings.</li>
+            </ol></h5>
+
+
+</div>
+            </div></div></div></div></div></div></div></div></div>
+
+
+
+    
+    
+   <div class="modal fade" id="Non-AlcoholicModal2" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">watermelon Sweet Tea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>WATERMELON SWEET TEA</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="water(2).png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Watermelon Sweet Tea – Cool off at your next barbecue with a cold glass of watermelon sweet tea! This recipe is a refreshing way to enjoy summer</h4>   </div>   
+                   
+  <br><br><br>  
+                        <br><br>                          <div class="ingredientsw">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>1 cup granulated sugar
+<li>2 quarts filtered water</li>
+<li>6 tea bags Luzianne preferred</li>
+<li>12 cups seeded watermelon chunks</li>
+<li>2 tablespoons fresh lime juice</li>
+<li>Fresh mint leaves optional</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a large saucepan, combine the sugar and water and bring to a boil over medium heat.</li>
+                <li>Boil until the sugar has completely dissolved and the liquid is clear. </li>
+                <li>Remove from the heat, add the tea bags to the sugar water, cover, and steep for 15 minutes.
+</li>
+                <li>Working in batches, puree the watermelon chunks and lime juice in a blender or food processor. </li>
+                <li>Strain and transfer to a gallon-sized pitcher. Remove the tea bags and add the tea to the pitcher. Do not add ice. </li>
+           
+            <li>
+                Stir and pour into ice-filled glasses. Garnish each glass with 2 fresh mint leaves, if desired, and serve.
+
+            </li></ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+                         
+     
+
+            
+
+
+
+
+
+
+        
+   <div class="modal fade" id="Non-AlcoholicModal3" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Calamansi Juice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>CALAMANSI JUICE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="calamansi.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Calamansi Juice is made of freshly squeezed calamondin juice and simple syrup. This Filipino-style limeade is tangy, refreshing, and a delicious way to keep cool all year long!</h4>   </div>   
+                   
+  <br><br><br>  
+                        <br><br>                          <div class="ingredientsc">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>¾ cup sugar</li>
+<li>4 cups water</li>
+<li>1 cup calamansi juice</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a saucepan, combine sugar and 1 cup of the water. </li>
+                <li>Then, cook, stirring regularly, until sugar is dissolved. Remove from heat and allow to cool completely</li>
+                <li>Halve the calamansi fruit and extract the juice by hand or a juicer.
+</li>
+                <li>Using a fine-mesh sieve, strain and discard seeds and skin.
+ </li>
+                <li>In a pitcher, combine calamansi juice, simple syrup, and the remaining 3 cups of water. Stir well to combine.</li>
+           
+            <li>
+               Chill in the refrigerator for a few hours or serve over ice.
+
+            </li></ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+                             
+     
+
+            
+
+
+
+
+
+
+        
+   <div class="modal fade" id="Non-AlcoholicModal4" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Mango Nectar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>MANGO NECTAR</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="mango.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Homemade mango nectar bursting with fresh mango flavor is the perfect thirst quencher! With only three natural ingredients, it's a cool and refreshing drink you'll love all Summer long.
+
+</h4>   </div>   
+                   
+  <br><br><br>  
+                                                 <div class="ingredientsm">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>4 large mangoes (about 2 cups pulp)</li>
+<li>1 cup of water</li>
+<li>1 cup of sugar</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a saucepan, combine sugar and water. Over medium heat, bring to a simmer, stirring regularly, until sugar is dissolved and syrup is clear and no longer cloudy. Remove from heat and allow to cool completely. </li>
+                <li>Slice mangoes and scoop flesh, discarding pit and skin.</li>
+                <li>In a blender or food processor, process mango until smooth and well-blended.
+</li>
+                <li>In a pitcher, combine mango pulp and simple syrup. Stir until combined and refrigerate to chill.
+ </li>
+                <li>Serve in glasses over ice.</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+               
+
+
+
+
+
+    
+
+        
+   <div class="modal fade" id="Non-AlcoholicModal5" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Melon Chiller </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>MELON CHILLER</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="melon.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Melon Chiller is a type of Filipino refreshment made with shredded cantaloupe, water, condensed milk, and ice. It is a popular street drink or samalamig usually sold alongside sago’t gulaman and buko juice, in plastic bags with straws.
+
+</h4>   </div>   
+                   
+  <br><br><br>  <br><br>
+                                                 <div class="ingredientsm">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>1 large cantaloupe</li>
+<li>4 cups cold water</li>
+<li>1 can (14 ounces) condensed milk</li>
+              <li>ice</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Cut melon into half. With a spoon, scrape seeds and pulp.
+</li>
+                <li>Place pulp and seeds in a bowl, add 1 cup of the water, and repeatedly press down with the back of a spoon to extract the juice. </li>
+                <li> In a fine-mesh sieve, strain. Discard seeds and reserve the juice.
+</li>
+                <li>Using a melon shredder, shred cantaloupe meat.
+ </li>
+                <li>In a pitcher, combine shredded cantaloupe, the reserved juice (from straining pulp), and the remaining 3 cups water.</li>
+            <li>Add condensed milk and stir to disperse. Serve in glasses over ice. Consume immediately.</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+            
+   <div class="modal fade" id="Non-AlcoholicModal6" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Buko Pandan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>BUKO PANDAN</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="bukopandan.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Buko pandan is a light, refreshing dessert from the Philippines that has become popular worldwide. It is deliciously creamy and subtly sweet, with a tantalizing combination of flavors derived from its two main ingredients, young coconut and pandan extract. 
+
+</h4>   </div>   
+                   
+  <br><br><br>  <br>
+                                                 <div class="ingredientsm">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>1 can coconut cream (14 oz.)
+<li>1/2 cup cornstarch</li>
+<li>1 cup sugar</li>
+<li>1/2 cup water</li>
+<li>2 cups shredded young coconut meat</li>
+<li>1/2 tsp pandan extract</li>
+<li>1/4 cup powdered sugar</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Combine the coconut cream, sugar, cornstarch, and water in a large pot. Cook over medium heat. Constantly stir until the mixture thickens and boils.
+</li>
+                <li>If you’re using pandan extract, add it to the mixture and stir. Otherwise, add the leaves to the mixture. Boil them, then lower the heat and simmer for about 10 minutes. Remove the pandan leaves from the mixture. </li>
+                <li> Remove the pot from the heat. Then, let it cool slightly. After this, stir in the young coconut meat and mix well.
+</li>
+                <li>Pour the mixture into a 9×9 inch square dish. Then, refrigerate it for at least 4 hours or until firm.
+ </li>
+                <li>Next, beat the heavy cream and powdered sugar until stiff peaks form. Spread the cream over the chilled buko pandan. Mix well. </li>
+            <li>Garnish with toasted coconut flakes or fresh fruits, if desired.glasses over ice. Consume immediately.</li>
+
+
+            <li>Feel free to adjust the sugar and experiment by adding condensed milk or different fruits.</li>
+            <li>Serve chilled, and enjoy your delicious buko pandan!
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+    
+
+   <div class="modal fade" id="Non-AlcoholicModal7" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Buko Salad Drink</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+        <div class="modal-body-scroll">     <center> <h1>BUKO SALAD DRINK</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="fruitsalad.png" alt="" class="img-fluid">
+                    </div>
+                
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+                 <div class="des">       <h4>Mouth-watering coconut juice mixed with milk, gulaman, tapioca, and coconut meat- Buko Salad Drink is so refreshing and invigorating! A pitcher of this sweet and milky drink is a perfect way to quench your thirst on a hot and humid day!</h4></div>
+                   
+  <br><br><br><br> <br> <br>   
+                        <br><br> <br>
+<div class="ingredients">
+  <h3>Ingredients</h3>
+  <div class="row">
+    <div class="col-lg-4">
+        <br>
+      <h4>Juice</h4>
+      <h5><ul>
+        <li>2 cups coconut juice</li>
+        <li>370 ml evaporated milk</li>
+        <li>300 ml condensed milk</li>
+        <li>1 cup coconut meat strips</li>
+        <li>¼ teaspoon red food color</li>
+      </ul></h5>
+    </div>
+    <div class="col-lg-4"><br>
+      <h4>Gulaman</h4>
+    <h5>  <ul>
+        <li>1 tablespoon red unflavored jelly powder</li>
+        <li>1 tablespoon green unflavored jelly powder</li>
+        <li>1 tablespoon yellow unflavored jelly powder</li>
+        <li>6 cups water</li>
+        <li>6 tablespoons white sugar</li>
+      </ul></h5>
+    </div>
+    <div class="col-lg-4"><br>
+      <h4>Tapioca Pearl</h4>
+    <h5>  <ul>
+        <li>½ cup uncooked Tapioca pearls</li>
+        <li>4 cups water</li>
+      </ul></h5>
+    </div>
+  </div>
+</div>
+
+     
+                    <div class="procedures">
+<div class="col-lg-6">
+  <br> <u> <h3>Procedures</h3> </u><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+       <br>  <u>  <h4>For Gulaman</h4> </u><br>
+         <h5>   <ol>
+                <li>Prepare each color. Remember to follow the jelly powder to the liquid ratio on the package as they vary depending on the brand.
+<li>Per color, sprinkle the jelly powder over 2 cups of water. Add 2 tablespoons of sugar. Stir until dissolve.
+<li>Bring the mixture to a boil over low heat. Turn off the heat once it starts boiling and pour the gelatin mixture into seperate molds and refrigerate to set.
+<li>Once they have set, cut into small cubes and set aside.</li>
+            </ol></h5>
+        </div><br>
+        <div class="col-lg-6">
+     <br>    <u>   <h4>For Tapioco Pearl</h4> </u><br>
+           <h5> <ol>
+                <li>Boil 4 cups of water then add the tapioca pearls. Let it cook for 10 minutes or until the pearls are completely translucent. Drain and set aside
+</li>
+            </ol></h5> <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><br>
+    <br>   <u>     <h4>To Assemble Buko Salad Drink</h4> </u><br>
+         <h5>  <ol>
+                <li>Pour the evaporated milk and condensed milk in a bowl and mix. Stir in the coconut juice until well blended.
+Add the coconut strips, tapioca pearls and gulaman cubes. Mix well.</li>
+<li>Drop ¼ teaspoon of red food color in the mixture and stir until it turns into an even pink color.</li>
+<li>Transfer in a pitcher and add ice cubes or refrigerate. it will give a bitter flavor. Allow it to cool for 20 minutes.</li>
+            </ol></h5>
+        </div>
+        
+
+
+</div>
+            </div></div></div></div></div></div></div></div>
+
+
+
+  
+            
+   <div class="modal fade" id="Non-AlcoholicModal8" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Guyabano Juice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>GUYABANO JUICE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="guyabano.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Guyabano juice is a popular and refreshing drink in the Philippines, known for its tropical flavor and health benefits. Made from the creamy, white flesh of the guyabano fruit (also known as soursop), this juice is often enjoyed chilled on hot days or served as a nutritious beverage year-round. 
+
+</h4>   </div>   
+                   
+  <br><br><br>  <br>
+                                                 <div class="ingredientsm"><br>
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>1 large about 1 pound soft yet firm guyabano fruit</li>
+  <li>3 cups water</li>
+  <li>2 tablespoons sugar</li>
+  <li>juice of 1 lime</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Wash guyabano under cold running water. With a small knife, peel skin. </li>
+                   <li> Cut into half and remove middle rind. Remove seeds from flesh and discard.</li>
+         <li>           
+In a blender, combine the seeded flesh and 2 cups of the water. Process until pureed. In a fine mesh strainer, strain blended fruit and the remaining 1 cup water to remove fruit fibers.</li>
+         <li>           
+Add sugar and lime juice and stir until blended.
+Refrigerate to chill or serve cold over ice.
+
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+    
+
+    
+            
+   <div class="modal fade" id="Non-AlcoholicModal9" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Buko Juice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>BUKO JUICE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="buko.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                       <br><br><br> <br> <br> 
+   <div class="des">          <h4>Another refreshing drink popular in the Philippines where you can see sold almost everywhere from hawker stalls to posh restaurants, it is a simple mixture of young coconut water, young coconut meat and milk, it’s very refreshing and very healthy. 
+
+</h4>   </div>   
+                   
+  <br><br><br>  <br>
+                                                 <div class="ingredientsm">
+  <u>  <h3>Ingredients</h3></u><br>
+    <div class="row">
+        <div class="col-lg-4">
+          <h5> <ul>
+                <li>3 Pieces young coconuts juice extracted & meat shredded</li>
+<li>3 tbsp condensed milk</li>
+<li>ice cubes to taste</li>
+            </ul></h5>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a big pitcher, add coconut juice and condensed milk.
+</li>
+                <li>Mix until condensed milk is well-combined with the coconut juice.</li>
+
+ <li>Add coconut milk into the juice.</li>
+
+ <li>Serve in glasses with tons of ice cubes.
+
+
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+             
+   <div class="modal fade" id="Non-AlcoholicModal10" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Dragon Fruit Juice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>DRAGON FRUIT JUICE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="dragon.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                      <br><br><br>
+   <div class="des">          <h4>Get a taste of the vibrant pink fruit that’s taking Quiapo by storm! 🌵🌸 This all-natural and refreshing beverage is perfect for beating the heat and satisfying your sweet tooth. Try our recipe see what all the fuss is about! 🥤💕 Dragon Fruit Juice: All-natural, refreshing, and unique. Made from the nutrient-rich superfood. Enjoy the sweet taste and health benefits today.
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+  <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>2 pcs large dragon fruit, peeled and diced</li>
+<li>6 cups water</li>
+<li>400 ml evaporated milk</li>
+           <li>     sugar, to suit your preference</li>
+<li>ice cubes</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Combine all ingredients in a large container apart from the ice cubes.</li>
+                  <li>   Let it sit for at least 6 hours to have a more vibrant colour and have a better dragon fruit taste on the juice. </li>
+ <li>Add lots of ice cubes before serving
+
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+    <!-- SHAAAAAAAAAAAAKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKEEEEEEEEEEEEEEEEEEE IIIIIIIIITTTTTTTTTT -->
+             
+   <div class="modal fade" id="ShakesModal1" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Mango Shake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>MANGO SHAKE </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="mangos.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    <br><br><br>
+   <div class="des">          <h4>Get a Mango shake is a blended fruit drink made with Philippine mangoes and evaporated milk. It's creamy, refreshing, and the perfect cold treat to beat the heat!
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br> <br> <br>
+  <br> <br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>2 large Philippine mangoes</li>
+<li>1 cup evaporated milk</li>
+<li>½ cup sugar</li>
+<li>2 cups ice</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Peel mangoes and slice edible flesh from pit. Cut flesh into chunks.</li>
+<li>In a blender. combine mangoes, milk, cold water, and ice. Process until smooth.</li>
+<li>To serve, pour into serving glasses and garnish with diced fresh mangoes if desired.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+                 
+   <div class="modal fade" id="ShakesModal2" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Buko Shake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>BUKO SHAKE </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="bukos.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                    <br><br><br>   <br><br><br><br>
+   <div class="des">          <h4>Buko Shake is made with young coconut, milk, and simple syrup. It's creamy, refreshing, and the perfect hot weather treat!
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                              <br><br><br> <br><br><br><br>  <div class="ingredientsm"><br>
+  <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>½ cup water</li>
+ <li>½ cup sugar</li>
+ <li>2 cups young coconut meat</li>
+ <li>1 cup coconut juice</li>
+ <li>½ cup evaporated milk</li>
+<li>ice</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a saucepot, combine sugar and water. Over medium heat, bring to a simmer, stirring regularly, until sugar is dissolved and syrup is clear and no longer cloudy.</li>
+ <li>Remove the simple syrup from heat and allow to cool completely.</li>
+ <li>In a blender, combine coconut meat, coconut juice, evaporated milk, simple syrup, and ice. Blend until smooth.</li>
+ <li>Transfer into tall glasses and serve immediately.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+                    
+   <div class="modal fade" id="ShakesModal3" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Avocado Shake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>AVOCADO SHAKE </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="avocado.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                  <br><br><br>     <br><br><br>
+   <div class="des">          <h4>Avocado Shake is a popular Filipino dessert made out of Avocadoes, Milk, Sugar and Ice blended to create a creamy cold shake perfect for any hot and humid weather.
+
+
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm">
+  <br><br><br> <br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>3 medium sized avocadoes</li>
+<li>24 ice cubes</li>
+<li>1 cup condensed milk</li>
+<li>1 1/2 cup full cream milk</li>
+<li>ice</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Place all ingredients in a blender, blend until completely smooth.</li>
+<li>Place in glass, serve and consume immediately.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+                    
+   <div class="modal fade" id="ShakesModal4" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Papaya Smoothie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>PAPAYA SMOOTHIE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="papaya.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                  <br><br> <br>   <br><br><br>
+   <div class="des">          <h4>A healthy drink that’s perfect for the weight-watching crowd! This sweet fruit, known as a super food, is rich in vitamins A, C, and E, plus potassium, lycopene, and fiber.
+
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                            <br><br><br> <br><br>  <br><br><br> <br> <div class="ingredientsm"><br>
+  <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 papaya sliced</li>
+ <li>6 tablespoons milk</li>
+ <li>1 tablespoon simple syrup</li>
+ <li>1 1/2 cups ice crushed</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Peel the papaya and slice it.</li>
+            <li>Then, put it in a blender, place all ingredients.
+                <li>Blend until smooth.
+</li>
+            <li>Serve then Enjoy!</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+                       
+   <div class="modal fade" id="ShakesModal5" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Banana Smoothie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>BANANA SMOOTHIE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="banana.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                      <br><br><br> <br><br><br>
+   <div class="des">          <h4>Bananas taste great alone, but they taste even better in a banana smoothie. Banana smoothies make delicious beverages, snacks and even meal replacements for weight loss. You can make them using exclusively bananas or add fresh fruit, dairy, nuts and seeds. 
+
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+   <br><br><br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 large ripe banana</li>
+ <li>1/2 cup low-fat milk</li>
+ <li>1 cup ice cubes</li>
+ <li>1 cup plain yoghurt</li>
+ <li>1 tablespoon sugar or natural honey</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Peel the banana, making sure you remove the strands as well. 
+                     <li>Add it to a food processor or blender in bite-sized chunks.</li>
+ <li>Add the milk, ice cubes, yogurt, and sweetener.</li>
+ <li>Blend and serve.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+                        
+   <div class="modal fade" id="ShakesModal6" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Orange Milkshake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>ORANGE MILKSHAKE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="orange.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br>   <br><br><br>
+   <div class="des">          <h4>"Blend together fresh orange juice, vanilla ice cream, milk, and sugar until smooth and creamy. Pour into a glass and serve for a refreshing and delicious treat, perfect for hot days."It's a refreshing and flavorful drink often enjoyed during hot weather in the Philippines.
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+ <br><br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 ½ cups orange juice</li>
+
+  <li>2 scoops vanilla ice cream</li>
+
+  <li>½ cup milk</li>
+
+  <li>2 teaspoons white sugar</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>
+                    Peel the all the orange </li>
+                   <li> Combine orange juice, ice cream, milk, and sugar in a blender; blend until smooth. </li>
+                   <li> Pour milkshake into a glass and serve
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+       <div class="modal fade" id="ShakesModal7" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Strawberry Greek Yogurt Smoothie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>STRAWBERRY GREEK YOGURT SMOOTHIE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="strawberry.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                  <br><br>    <br><br><br>
+   <div class="des">          <h4>Panlasang Pinoy's Strawberry Greek Yogurt Smoothie is a delightful blend of fresh strawberries, creamy Greek yogurt, and milk. It's a healthy and satisfying drink that's perfect for breakfast or a refreshing snack.
+
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+ <br><br><br><br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>10 medium strawberries hulled</li>
+<li>1 1/4 cup plain greek yogurt</li>
+<li>1 teaspoon vanilla extract</li>
+<li>2 1/2 cups ice cubes</li>
+<li>2 tablespoons granulated white sugar</li>
+<li>1/2 cup whole milk liquid fresh milk</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Combine all the ingredients in a blender. Start with the ice then you can add the rest of the ingredients.</li>
+<li>Blend until the texture of the mixture becomes smooth.</li>
+<li>Pour the Strawberry Greek Yogurt in a glass.</li>
+<li>Serve. Share and enjoy!
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+    
+
+
+
+       <div class="modal fade" id="ShakesModal8" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Pineapple Mango Smoothie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>PINEAPPLE MANGO SMOOTHIE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="pineapple.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                     <br>   <br><br>   <br><br><br>
+   <div class="des">          <h4>Pineapple mango smoothie made with six simple ingredients for a creamy texture that tastes like your favorite piña colada.
+
+
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+ <br>    <br><br><br><br>  <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 cup ice</li>
+<li>½ cup pineapple chunks</li>
+<li>1 mango</li>
+<li>½ cup water</li>
+<li>½ evaporated milk</li>
+<li>⅛ cup sugar</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>In a blender add ice, pineapple chunks, mango, evaporated milk, sugar and blend 2-3 minutes.
+Serve.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+      <div class="modal fade" id="ShakesModal9" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Watermelon Milkshake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>WATERMELON MILKSHAKE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="waters.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                     <br> <br><br><br>
+   <div class="des">          <h4> A Filipino watermelon milkshake is a cool and refreshing treat made by blending fresh watermelon chunks with creamy milk, sugar, and ice until smooth and frothy. It's a popular beverage in the Philippines, especially during hot summer days, offering a delightful combination of fruity sweetness and creamy goodness.
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br>
+  <br><br><br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 ½ cups diced watermelon</li>
+
+<li>2 ¼ cups milk</li>
+
+<li>2 teaspoons white sugar</li>
+             <li>ice</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Process the watermelon and milk together in a blender until smooth.</li>
+            <li> Add the sugar and blend another 10 seconds to incorporate. Serve immediately.
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+
+
+       <div class="modal fade" id="ShakesModal10" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Guyabano Shake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>GUYABANO SHAKE</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="guyabano.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                      <br><br> <br><br><br>
+   <div class="des">          <h4> Try this refreshing Guyabano Smoothie (also known as Soursop Smoothie) that is packed with nutrients to power you through the day! It's sour yet sweet, creamy, and a great energy booster smoothie that is loaded with fiber for good gut health!
+</h4>   </div>   
+                   
+  <br>
+                    <div class="ingd">                               <div class="ingredientsm"><br><br>
+ <br><br><br>  <br><br> <u>  <h3>Ingredients</h3></u>
+    <div class="row">
+        <div class="col-lg-4">
+         <h5> <ul>
+                <li>1 cup frozen banana cuts</li>
+<li>¾ cup ice cubes</li>
+<li>1 ½ cup guyabano soursap meat</li>
+<li>1 ½ cup soy milk</li>
+<li>1 teaspoon chia seeds garnish</li>
+            </ul></h5></div>
+    
+        
+   <u> <h3>Procedures</h3> </u><br>
+    </div>
+   
+        <h5>    <ol>
+                <li>Peel guyabano and remove the “meat” of the fruit, de-seed, and add it to the blender.</li> 
+<li>Add the rest of the ingredients except the chia and blend until creamy and smooth.</li>
+<li>Pour into a cup and garnish with chia seeds, best serve immediately. 
+</li>
+           </ol></h5>
+        </div><br>
+       </div></div></div></div></div>
+        </div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+   <div class="modal fade" id="AlcoholicModal1" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Emperador</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>EMPERADOR </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="empe.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>  
+   <div class="des">          <h4>Emperador Brandy Light is a variant of the popular Filipino brandy, Emperador. It is known for its lighter and smoother profile compared to traditional brandies, making it a favorite among those who prefer milder alcoholic beverages. Emperador Brandy Light retains the rich and aromatic flavors typical of brandy but with a more delicate taste, perfect for casual drinking or as a base for cocktails.
+
+</h4>   </div>   
+                   
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+   <div class="modal fade" id="AlcoholicModal2" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Red Horse</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>RED HORSE </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="red.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>   
+   <div class="des">          <h4>Red Horse Beer is a well-known and widely consumed strong lager beer in the Philippines. It is recognized for its higher alcohol content compared to regular beers, offering a robust and intense flavor profile. Red Horse is popular among beer enthusiasts and is often enjoyed during social gatherings and celebrations. Its distinctive taste and higher potency make it a favorite choice for those looking for a stronger beer experience.
+
+</h4>   </div>   
+         
+
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+
+    <div class="modal fade" id="AlcoholicModal3" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">San Miguel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>SAN MIGUEL</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="san.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>  <br> 
+   <div class="des">          <h4>San Miguel Pale Pilsen is a pale, golden lager with a rich, full-bodied flavor. Its smooth, full-flavored taste complements its pleasant aroma, making it a perfectly balanced beer. It has a unique heritage of bringing people together, nourishing true friendships for over a hundred years.sabexperience.
+
+</h4>   </div>   
+                               
+                        
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+  
+
+    <div class="modal fade" id="AlcoholicModal4" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Tuba</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>TUBA</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="tuba.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    <br>
+   <div class="des">          <h4>Tubâ is a Filipino fermented – and lightly alcoholic – beverage obtained from the sap of different species of palm trees such as nipa and coconut palm. Tubâ has existed in the Philippines since pre-colonial times and is one of the few remaining authentic items of the Filipino culture.
+years.sabexperience.
+
+</h4>   </div> 
+
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+    <div class="modal fade" id="AlcoholicModal5" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Tapuy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>TAPUY </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="tapuey.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    <br>
+   <div class="des">          <h4> Tapuy is an indigenous rice wine produced in the northern provinces of the Philippines, particularly in the Cordillera regions. The native tribes produce this alcoholic beverage during special occasions such as weddings, fiestas, harvesting ceremonies, baptism, and as an offering to their deities or anitos.
+
+
+</h4>   </div> 
+
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+    <div class="modal fade" id="AlcoholicModal6" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Tanduay Rum</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>TANDUAY RUM</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="tanduay.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>   
+   <div class="des">          <h4> 
+Tanduay Rum is a Filipino brand with more than 160 years of history. Today, it maintains its status as the Rum Brand Champion since Drinks International declared it as the world’s number #1 rum by volume of 2020 for three consecutive years.
+From the 1930s, the rum it produced began to be branded as “Tanduay Rhum”. The original distillery adopted its name from its first location on Isla de Tanduay, an area bordering the Quiapo and San Miguel districts in Manila.
+
+The aging, compounding, and bottling facilities are distributed in four plants located in elevated regions of the country.
+
+</h4>   </div>
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+    <div class="modal fade" id="AlcoholicModal7" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Lambanog</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>LAMBANOG </h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="labanog.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>   <br>
+   <div class="des">          <h4> 
+
+Coconut wine or Lambanog, dubbed as the Philippine Vodka, is natural and chemical-free alcoholic liquor obtained from distillation of naturally fermented coconut sap. It is known for its high alcohol content and potency. It contains a minimum of 30% alcohol and can be used as base liquor to other flavored spirits and cocktail concoctions. It is an indigenous product to the Philippines and an integral part of the Filipinos’ festive heritage.
+
+</h4>   </div>
+
+
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+                            <div class="modal fade" id="AlcoholicModal8" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Basi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>BASI</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="basi.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    
+   <div class="des">          <h4> 
+Basi(Philippine Sugarcane Wine) had been enjoyed in the country even before the Spanish regime. This drink was so well loved that the Basi Revolt resulted as the Spanish banned the private manufacture of this drink. We commemorate the Ilokano's love for basi with Vigan Basi, a premium cane wine made with sugarcane juice pressed from the best of Philippine Cane. 
+
+</h4>   </div>
+
+
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        
+
+                            <div class="modal fade" id="AlcoholicModal9" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Laksoy </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>LAKSOY</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="laksoy.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    <br>
+   <div class="des">          <h4> 
+Laksoy (also spelled lacsoy), is a traditional Filipino distilled nipa palm liquor. It is derived from tubâ (palm toddy) made from nipa palm sap that has been aged for at least 48 hours. It originates from Eastern Mindanao, the Visayas Islands (where it is known as dalisay or dalisay de nipa), and the Bicol Region (where it is known as barik).
+
+</h4>   </div>
+
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+
+
+                            <div class="modal fade" id="AlcoholicModal10" tabindex="-1" aria-labelledby="iceCreamModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="iceCreamModal1Label">Ginebra San Miguel </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+               
+            </div>
+         <div class="modal-body-scroll">      <center> <h1>GINEBRA SAN MIGUEL</h1> </center>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="gin.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                   <br><br><br>    <br>
+   <div class="des">          <h4> 
+Ginebra San Miguel is the Philippines leading gin. First produced in 1834, it is now acknowledged as the world’s largest selling gin. It is an 80 proof Dutch type gin made from selected spirits and botanical extracts. Its predominant flavor comes from juniper berries.
+The ingredients compossed of distilled spirits from sugarcane molasses, botanical essences and demineralized water.
+
+​</h4> 
+</div><div></div><div></div><div></div><div></div></div></div></div></div></div>
+</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                   
+  </div>
+<!-- Bootstrap JS CDN links -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>
