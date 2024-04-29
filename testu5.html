@@ -1,0 +1,492 @@
+<html>
+    <head>
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: black;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 20px;
+    color: black;
+    width: 350px;
+    
+    
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.button{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover{
+    background: #ababab;
+    color: #fff;
+}
+
+    .neon-button {
+            background-color: transparent;
+            border: 2px solid black; /* color and kapal ng border */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: -2px; /* Adjust top yung sa may button */
+            left: -2px; 
+            width: calc(100% + 4px); 
+            height: calc(100% + 4px); 
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);/* color ng loob ng button */
+            background-size: 400% 400%;
+            border-radius: 10px;
+            z-index: -1;
+            animation: neon-chaser 6s linear infinite;
+        }
+
+        @keyframes neon-chaser { /*animation ng bg color ng button*/
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .neon-button:hover::before {
+            opacity: 0;
+        }
+
+        .neon-button:hover {
+            color: black;
+            border: 2px solid pink;/*gradient color ng border*/
+            border-image-slice: 3;
+        }
+
+            .highlighted-paragraph {
+  background-color: white; /* Choose the color you want */
+                opacity: 0.6;
+}
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.buttonns:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+
+.buttonns {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttonns:hover {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+    background-color: pink; /* Change to the color you prefer */
+}
+
+
+.buttonns:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.buttonns::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.buttonns::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+        </style>
+    </head>
+
+    <body>
+
+<!--Font Awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <div>
+        <a href="tulingan-gal.html" class="buttonns explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div> 
+   <div class="container">
+    
+    <div class="slide">
+       
+     <div class="item" style="background-image: url('inihaw-na-tulingan.jpg');">
+<div class="content">
+    <div class="name">Inihaw na Tulingan</div>
+    <div class="des"><p class="highlighted-paragraph">This Inihaw na isda uses “tulingan,” a local tuna variety. There are numerous ways to prepare inihaw na isda tulingan, or grilled fish; however, following this recipe will show you how to do it simply.</p></div>
+
+   <a href="inihaw-na-tulingan.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+        
+      
+
+         <div class="item" style="background-image: url('paksiw-na-tulingan.jpg');">
+        <div class="content">
+            <div class="name">Paksiw na Tulingan</div>
+            <div class="des"><p class="highlighted-paragraph">Paksiw na Tulingan is a must-try Filipino dish, boasting the flavor of the sea. It’s a traditional Filipino dish made of Tulingan, which translates to the English word “mackerel tuna.”However, Tulingan or mackerel tuna is an oily fish with a strong flavor. Thus, cooking it in vinegar, ginger, and garlic is ideal to reduce its oily and fishy taste.</p></div>
+
+        
+           <a href="paksiw-na-tulingan.html"> <button class="neon-button">See more</button></a>
+        </div>
+    </div>
+
+        
+
+     <div class="item" style="background-image: url('sinaing-na-tulingan.jpg');">
+<div class="content">
+    <div class="name">Sinaing na Tulingan</div>
+    <div class="des"> <p class="highlighted-paragraph">Sinaing na Tulingan is a Filipino Fish Recipe that translates to braised fish. The recipe makes use of bullet tuna. It is a type of saltwater fish locally known in the Philippines as “tulingan”. This dish is famous in the coastal towns of Batangas.</p></div>
+
+  <a href="sinaing-na-tulingan.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+     <div class="item" style="background-image: url('sinigang-na-tulingan.avif');">
+<div class="content">
+    <div class="name">Sinigang na Tulingan</div>
+    <div class="des"><p class="highlighted-paragraph">This sinigang is a healthy and delicious soup that’s full of good-for-you vegetables like mustasa. The tulingan also boosts a healthy dose of Omega 3 acids that make this dish not only delicious but also good for you.</p></div>
+
+ <a href="sinigang-na-tulingan.html">   <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+    <div class="item" style="background-image: url('tinolang-tulingan.png');">
+<div class="content">
+    <div class="name">Tinolang Tulingan</div>
+    <div class="des"><p class="highlighted-paragraph">
+
+        Tinolang Tulingan is an easy, one-pot soup from the Philippines. However, instead of chicken, you can use tulingan as the main ingredient with moringa leaves and bell pepper, simmered with fresh ginger in a savory broth.</p></div>
+
+ <a href="tinolang-tulingan.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+    <div class="item" style="background-image: url('tortang-tulingan.jpg');">
+<div class="content">
+    <div class="name">Tortang Tulingan</div>
+    <div class="des"><p class="highlighted-paragraph">Tortang Tuna with Spinach is a type of omelet wherein sautéed tuna and spinach are added to the beaten egg mixture before cooking.</p></div>
+
+  <a href="tortang-tulingan.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+<div class="item" style="background-image: url('tuna-sarciado.jpg');">
+    <div class="content">
+        <div class="name">Tuna Sarciado</div>
+        <div class="des"><p class="highlighted-paragraph">Tuna In Can Sarciado is done by simmering canned tuna in a sauce that is usually composed of tomatoes and onions.</p></div>
+    
+       <a href="tuna-sarciado.html">  <button class="neon-button">See more</button></a>
+        </div>
+            
+    </div>
+    <div class="item" style="background-image: url('adobong-tulingan.jpg');">
+        <div class="content">
+            <div class="name">Adobong Tulingan</div>
+            <div class="des"> <p class="highlighted-paragraph">Adobong Tulingan is a Filipino dish that made use of tulingan stewed in a marinade of vinegar, soy sauce, garlic, herbs, and spices.</p></div>
+        
+            
+        <a href="adobong-tulingan.html">    <button class="neon-button">See more</button></a>
+            </div>
+                
+        </div>
+        <div class="item" style="background-image: url('ginataang-tulingan.jpg');">
+            <div class="content">
+                <div class="name">Ginataang Tulingan</div>
+                <div class="des"> <p class="highlighted-paragraph">Ginataang Tulingan is a Filipino dish wherein fish is cooked in coconut milk along with eggplant and other ingredients. The fish used in this recipe is locally referred to as tulingan. It is also known as bullet tuna or bonito.</p></div>
+            
+             <a href="ginataang-tulingan.html">    <button class="neon-button">See more</button></a>
+                </div>
+                    
+            </div>
+            <div class="item" style="background-image: url('ginisang-tulingan.jpg');">
+                <div class="content">
+                    <div class="name">Ginisang Tulingan</div>
+                    <div class="des"><p class="highlighted-paragraph">This is a simple Ginisang Tuna Recipe that will give you a delicious fresh tasting dish that can be topped with mixed greens and eaten as a salad; it can also be mixed with mayonnaise and enjoyed like a tuna salad sandwich.</p></div>
+                
+                   <a href="ginisang-tulingan.html">  <button class="neon-button">See more</button></a>
+                    </div>
+                        
+                </div>
+
+
+    
+
+     
+
+</div>
+    </div>
+    
+    
+            
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    
+        <script>
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+            
+        </script>
+    </body>
+</html>

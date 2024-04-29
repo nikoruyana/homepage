@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Food Menu</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #f1e0e0;
+    font-family: 'Poppins', sans-serif;
+}
+.menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 20px 40px;
+}
+.heading{
+    background: #da0a0a;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+.heading>h1{
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.heading>h3{
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+.food-items{
+    display: grid;
+    position: relative;
+    grid-template-rows: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    transition: .2s ease-in-out;
+}
+.food-items img{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px 15px 0 0;
+}
+h1{
+    grid-column: 1/-1;
+    text-align: center;
+}
+.details-sub>h5{
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    margin-left: 125px;
+    background: #ce0a0a;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    width: 180px;
+    cursor: pointer;
+}
+button:hover{
+    background: #ff1c0c;
+}
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(255, 192, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <a href="homewithtypewritter.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="menu">
+        <div class="heading">
+            <h1>Street Food</h1>
+            <h3>&mdash;List&mdash;</h3>
+        </div>
+        <div class="food-items">
+            <img src="kwekkwek.jpg">
+            <div class="details-sub">
+                <h5>Kwek Kwek </h5>
+                <a href="kwekkwek.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="fishballs.webp">
+            <div class="details-sub">
+                <h5>Fish Balls</h5>
+                <a href="fishballs.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="squidballs.jpg">
+            <div class="details-sub">
+                <h5>Squid Balls </h5>
+                <a href="squidballs.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="kikiam.jpg">
+            <div class="details-sub">
+                <h5>Kikiam </h5>
+                <a href="kikiam.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="empanada.jpg">
+            <div class="details-sub">
+                <h5>Empanada</h5>
+                <a href="empanada.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="bitsu-bitsu.JPG">
+            <div class="details-sub">
+                <h5>Cascaron/Bitsu-Bitsu</h5>
+                <a href="bitsu-bitsu.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="Ukoy.webp">
+            <div class="details-sub">
+                <h5>Ukoy</h5>
+                <a href="Ukoy.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="banana-cue.jpg">
+            <div class="details-sub">
+                <h5>Banana Cue</h5>
+                <a href="banana-cue.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="turon.webp">
+            <div class="details-sub">
+                <h5>Turon</h5>
+                <a href="turon.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="isaw.jpeg">
+            <div class="details-sub">
+                <h5>Isaw</h5>
+                <a href="isaw.html"><button>Learn more</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

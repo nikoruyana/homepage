@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Slider</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+        :root {
+            --bg-color--: #fefbe9;
+            --primary-color--: #F4511E;
+            --secondary-color--: #F57C00;
+            --item-color--: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: url('bgweb.png') no-repeat center center/cover;
+            justify-content: center;
+        }
+
+        .service {
+            width: 100%;
+            height: 100vh;
+            padding: 50px 0;
+            background-color: var(--bg-color--);
+        }
+
+        .section-heading {
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--primary-color--);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .border {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 4px;
+            background-image: linear-gradient(25deg, #F4511E, #F57C00 50%);
+        }
+
+        .container {
+            width: 100%;
+            overflow: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            padding: 0 20px;
+        }
+
+        .item {
+            width: 250px;
+            flex-direction: column;
+            margin: 0px 20px;
+            background-color: var(--item-color--);
+            box-shadow: 0 20px 40px #ccc;
+            border-radius: 15px;
+        }
+
+        .img-outside {
+            width: 100px;
+            height: 100px;
+            background: var(--secondary-color--);
+            position: relative;
+            margin: 20px 0;
+            border-radius: 50%;
+            overflow: hidden; /* Added overflow to hide image overflow */
+        }
+
+        .img-inside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            overflow: hidden; /* Added overflow to hide image overflow */
+        }
+
+        .img-inside img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Added object-fit for image scaling */
+        }
+
+        .content {
+            text-align: center;
+            color: var(--item-color--);
+            padding-bottom: 20px;
+            background-image: linear-gradient(25deg, #F4511E, #F57C00 50%);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 40px 20px;
+            border-top-right-radius: 40px 20px;
+        }
+
+        .content h3 {
+            text-transform: uppercase;
+            font-size: 25px; /* Adjust the font size as needed */
+            margin-top: 20px;
+            font-weight: 400;
+            color: var(--item-color--); /* Add this line to ensure text color */
+        }
+
+        .content {
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .owl-carousel .owl-nav button.owl-next,
+        .owl-carousel .owl-nav button.owl-prev {
+            font-size: 60px;
+            color: var(--primary-color--);
+            position: absolute;
+            top: 30%;
+        }
+
+        .owl-carousel .owl-nav button.owl-next:hover,
+        .owl-carousel .owl-nav button.owl-prev:hover {
+            color: var(--primary-color--);
+            background: var(--item-color--);
+        }
+
+        .owl-nav button.owl-prev {
+            left: -50px;
+        }
+
+        .owl-nav button.owl-next {
+            right: -50px;
+        }
+
+        @media(max-width:992px) {
+            .wrapper {
+                width: 75%;
+                margin: auto;
+            }
+        }
+
+        @media(max-width:768px) {
+            .item {
+                width: 230px;
+            }
+
+            .owl-nav button.owl-prev {
+                left: -25px;
+            }
+
+            .owl-nav button.owl-next {
+                right: -25px;
+            }
+
+            .section-heading {
+                font-size: 25px;
+            }
+        }
+
+        @media(max-width:500px) {
+            .wrapper {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="service">
+        <div class="container">
+            <div class="wrapper">
+                <div class="owl-carousel owl-theme">
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="chicken2.png">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="chicken.html"><h3>CHICKEN</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="pig.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="sample.html"><h3>PORK</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="cow.png">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="sample.html"><h3>BEEF</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="cutefish.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="ariana.html"><h3>SEAFOODS</h3></a>
+                        </div>
+                    </div>
+                    <div class="item center">
+                        <div class="img-outside">
+                            <div class="img-inside">
+                                <img src="tom.jpeg">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="vegetables.html"><h3>VEGETABLES</h3></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            smartSpeed: 1200,
+            autoHeight: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+</body>
+</html>

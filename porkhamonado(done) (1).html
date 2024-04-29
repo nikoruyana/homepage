@@ -1,0 +1,431 @@
+<BODY>
+    <head>
+        <style>
+            
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box;
+    position:relative;
+    }
+    
+    body {
+    background-color: #2e3641; 
+    margin:0;
+    color:#fff; 
+    font-family: 'Open Sans', sans-serif;
+    }
+
+   
+    
+    
+    .recipe {
+    width:100%;
+    display:block;
+    
+        .quote {
+        text-align:center;
+        width:100%;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        margin: 0;
+        padding: 2em 0;
+    
+            .cite {
+            width:100%;
+            float:left;
+            font-style:italic;
+            font-size:14px;
+            text-align:center;
+            }
+        }
+        
+        li {
+        list-style:none; 
+        padding:0;
+        margin:0;
+        width:100%;
+            i {
+            margin:0;
+            padding:0.5em;
+            float:left;
+            }
+        }
+        
+        .ingredient-image {
+        width:100%;
+            img {
+            width:100%;
+            }
+        }
+    
+        i {
+        font-size:15px; 
+        float:right;
+        padding-top:0.5em;
+        cursor:pointer;
+        }
+    
+    
+        .rate {
+        float: left;
+        padding: 0;
+        margin: 0.2em 1em 0 0; 
+        }
+        
+        ul {
+        padding:0;  
+            li {
+            list-style:none; 
+            padding:0;
+            margin:0;
+            width:100%;
+            padding:0.5em;
+            cursor:pointer;
+                i {
+                margin:0;
+                padding:0.3em 0.5em 0 0;
+                float:left;
+                }
+            }
+        }
+    
+        h1 {
+        width:100%;
+        padding:1em 1em 0.5em;
+        margin:0;
+        display:block;
+        font-weight:bold;
+        background: #e9513a;
+        text-transform:uppercase;  
+        }
+    
+        .stars {
+        float:left;
+        width:100%;
+        padding:0 1.5em 1.5em;
+        background: #e9513a;
+            .fa-star-half-o,.fa-star {
+            float:left;
+            }      
+        }
+    
+        .time {
+        float:left;
+        width:auto;
+        padding:0.5em 1.5em;
+        background: #e9513a;
+        position:absolute;
+        top:0;
+        right:0;
+            .fa-clock-o {
+            padding: 2px 10px 0 0;
+            font-size:18px;
+            float:left;
+            }      
+        }
+    
+        .recipe-image img{
+        width:100%;
+        height:auto;
+        float:left;
+        }
+    
+        .recipe-image {
+        width:33.3%; 
+        float:left;
+        display:inline-block;
+        }
+    
+        .recipe-text, .recipe-directions, .comments {  
+        width:33.3%;
+        padding:0 2em;
+        float:left;
+        display:inline-block;
+            h2 {
+            font-weight:600; 
+            }
+        }
+    
+        .got li {
+        text-decoration:line-through;
+        }
+    
+        ol  {
+        padding:0 0 0 1.5em;
+            li {
+            list-style: inherit;
+            cursor:pointer;
+            padding: 0.5em 0;
+            }
+        }
+    
+        .linethrough {
+        text-decoration:line-through; 
+        }
+    
+        form {
+        width:100%;
+        padding:0;
+        margin:0;
+        float:left;
+    
+            input[type="text"], textarea {
+            width: 100%;
+            border: none;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            margin: 20px 0;
+            padding: 10px 10px;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
+            font-family: 'Open Sans', sans-serif;
+            }
+    
+            textarea {
+            height:10em;
+            }
+    
+            button {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 13px;
+            width: auto;
+            border: 0;
+            margin-left: 0;
+            -webkit-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: #e9513a;
+            color: #fff;
+            cursor: pointer;  
+            }
+        }
+    }
+    
+    @media screen and (max-width:1000px) {
+        .recipe {
+            .recipe-image, .recipe-text {
+            width:50%;
+            }
+    
+            .comments, .recipe-directions {
+            width:100%;
+            }
+        }
+    }
+    
+    @media screen and (max-width:630px) {
+        .recipe .time {
+        float: left;
+        width: 100%;
+        position: relative;
+        }
+    }
+    
+    
+    @media screen and (max-width:600px) {
+        .recipe {
+            .recipe-image, .recipe-text {
+            width:100%;
+            }
+        }
+    }
+        </style>
+        <link rel="stylesheet" type="text/css" href="pork.css">
+    </head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<article class="recipe">
+
+<h1>
+Pork Hamonado
+</h1>
+
+<div class="stars">
+	<p class="rate">Filipino Cuisine</p>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star-half-o"></i>
+</div>
+
+<div class="time">
+	<p><i class="fa fa-clock-o"></i> Prep Time : 30mins</p>
+	<p><i class="fa fa-clock-o"></i> Cooking Time : 1hour 30mins</p>
+</div>
+
+<div class="recipe-image">
+	<div class="ingredient-image">
+		
+	</div>
+	<img src="pork hamonado.jpg">
+
+	<p class="quote" style="font-size: small;">Have you ever experimented with braising pork belly in abundant pineapple juice? If not, consider adding this Pork Hamonado recipe to your weekly meal plan. It's a must-try Filipino dish that combines the savory flavors of crushed garlic and soy sauce with the delightful sweetness of pineapple. The addition of pineapple chunks elevates the flavor profile of the pork stew, making it even more enticing. While this dish is suitable for any time of day, it's particularly satisfying for lunch, especially when served with plenty of rice on the side.  </p>
+</div>
+
+<div class="recipe-text">
+	<h2>Ingredients <i class="slidetoggle fa fa-arrow-up right"></i></h2>
+	<div class="inner-text">
+		<h3></h3>
+		<ul class="need">
+			<li data-image="porkbelly.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>2lbs</strong>
+				Pork belly
+			</li>
+			<li data-image="pineapple-juice.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>2 cups</strong>
+                Pineapple Juice 
+			</li>
+			<li data-image="pineapple-chunks.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>20 ounces</strong>
+				Pineapple chunks
+			</li>
+			<li data-image="garlic.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>6 cloves</strong>
+				Garlic
+			</li>
+			<li data-image="soy sauce.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>6 tablespoons</strong>
+		Soysauce
+			</li>
+			<li data-image="organic-whole-black-peppercorn-200-grams.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>2 teaspoon</strong>
+				whole peppercorn
+			</li>
+			<li data-image="brownsugar.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>3 tablespoons</strong>
+				brownsugar
+			</li>
+			<li data-image="cooking oil.jpeg">
+				<i class="fa fa-square-o"></i>
+				<strong>3 tablespoons</strong>
+				oil
+			</li>
+			<li data-image="salt.webp">
+				<i class="fa fa-square-o"></i>
+				<strong>as much as preferred</strong>
+				salt
+			</li>
+
+		</ul>
+		<div class="ingredients-have">
+			<h2>You currently have in your basket</h2>
+			<ul class="got">
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="recipe-directions">
+	<h2>Instructions <i class="slidetoggle fa fa-arrow-up right"></i></h2>
+	<div class="inner-directions">
+		<ol>
+			<li>First, we need our cooking oil to be hot. Pour this all over your cooking pot, and then apply heat. Once the oil is hot, you can place your pork belly inside. Fry this for 2 minutes, and then turn the meat over. Cook the other side for the same amount of time.</li>
+			<li>We will now utilize our soy sauce, pineapple juice, half of the pineapple chunks, and water.
+                Put these ingredients in the pot. Then add your garlic, as well as the whole peppercorn to make our dish flavorful. Place the cover on top of the pot, and just wait for the mixture to start boiling.
+                </li>
+			<li>Once the liquid boils, you can reduce the heat to a simmer. Cook the mixture for about 60 minutes, or until the pork gets nice and tender.
+                As you are cooking, you may pour more water inside if needed so the stew does not dry up. 
+                </li>
+			<li>We may now add the pineapple chunks we have left behind. Also sprinkle in your brown sugar. Then integrate the salt (only if needed). For this seasoning, it’s important that we also don’t go overboard so that the dish does not end up too salty.</li>
+			<li>We’re down to our final step! All that’s left for us to do is to keep the hamonado cooking for 2 minutes more.</li>
+			<li>Your tasty Pork Hamonado is all ready! Simply transfer this to a bowl or container of choice. And as I said earlier, this dish works great with some rice. You can mix in your rice with the hamonado, or pour some of the stew over your side dish. And another thing we can’t forget is that temperature matters when it comes to serving the Pork Hamonado. It is best to have this while it is hot and fresh out of the pot! I would recommend reheating the hamonado if you have left it out for a bit, and has cooled.
+
+            </li>
+		</ol>
+	</div>
+</div>
+
+
+
+
+</article>
+<script>
+$(document).ready(function(){
+
+    $('li').on('mouseover',function(){
+        $('.ingredient-image').append("<img src='" + $(this).attr('data-image') + "'>");
+    });
+    
+    $('li').on('mouseout',function(){
+        $('.ingredient-image').empty();
+    });
+    
+    var count = $("ul").children().length;
+        if(count == 0) {
+            $('.recipe-text h3').text("You are ready to start cooking!");
+        } else {
+            $('.recipe-text h3').text("You have " + count + " items left to get!");    
+        }
+    
+    $('.recipe-text .slidetoggle').on('click', function(){
+        $(this).toggleClass("fa-arrow-up fa-arrow-down");
+        $(this).parent().siblings('.inner-text').slideToggle();
+    });
+    
+    $('.recipe-directions .slidetoggle').on('click',function(){
+        $(this).toggleClass("fa-arrow-up fa-arrow-down");
+        $(this).parent().siblings('.inner-directions').slideToggle();
+    });
+    
+    $('.comments .slidetoggle').on('click',function(){
+        $(this).toggleClass("fa-arrow-up fa-arrow-down");
+        $(this).parent().siblings('.inner-comments').slideToggle();
+    });
+    
+    $('.recipe-text ul.need').on('click','li i',function(){
+        $(this).parent().appendTo(".ingredients-have .got");
+        $(this).removeClass("fa-square-o");
+        $(this).addClass("fa-check-square-o");
+        var count = $(".recipe-text .need").children().length;
+        if(count == 0) {
+            $('.recipe-text h3').text("You are ready to start cooking!");
+        } else {
+            $('.recipe-text h3').text("You have " + count + " items left to get!");  
+        }
+    });
+    
+    $('.ingredients-have ul.got').on('click','li i',function(){
+        $(this).parent().appendTo(".recipe-text .need");
+        $(this).removeClass("fa-check-square-o");
+        $(this).addClass("fa-square-o");
+        var count = $(".recipe-text .need").children().length;
+        if(count == 0) {
+            $('.recipe-text h3').text("You are ready to start cooking!");
+        } else {
+            $('.recipe-text h3').text("You have " + count + " items left to get!");  
+        }
+    });
+    
+    $('.inner-directions').on('click', 'ol li', function(){
+        $(this).toggleClass('linethrough');
+    });
+    
+    });
+</script>
+</BODY>

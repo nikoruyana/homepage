@@ -1,0 +1,507 @@
+<html>
+    <head>
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: black;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 20px;
+    color: black;
+    width: 350px;
+    
+    
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.buttonns{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.buttonns button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.buttonns button:hover{
+    background: #ababab;
+    color: #fff;
+}
+
+    .neon-button {
+            background-color: transparent;
+            border: 2px solid black; /* color and kapal ng border */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: -2px; /* Adjust top yung sa may button */
+            left: -2px; 
+            width: calc(100% + 4px); 
+            height: calc(100% + 4px); 
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);/* color ng loob ng button */
+            background-size: 400% 400%;
+            border-radius: 10px;
+            z-index: -1;
+            animation: neon-chaser 6s linear infinite;
+        }
+
+        @keyframes neon-chaser { /*animation ng bg color ng button*/
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .neon-button:hover::before {
+            opacity: 0;
+        }
+
+        .neon-button:hover {
+            color: black;
+            border: 2px solid pink;/*gradient color ng border*/
+            border-image-slice: 3;
+        }
+
+            .highlighted-paragraph {
+  background-color: white; /* Choose the color you want */
+                opacity: 0.6;
+}
+
+              #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+        </style>
+    </head>
+
+    <body>
+<a href="bangusgal.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+<!--Font Awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+   <div class="container">
+    
+    <div class="slide">
+    
+      
+
+          <div class="item" style="background-image: url('bspaksiw.png');">
+<div class="content">
+    <div class="name">Paksiw na Bangus</div>
+    <div class="des"> <p class="highlighted-paragraph">Paksiw na Bangus is one of the easiest and tastiest ways to cook milkfish! The fish is stewed in vinegar and spices and turns out super moist and flavorful. Pair it with steamed rice for a healthy, delicious, and budget-friendly meal to serve the whole family. </p></div>
+
+    
+<a href="bspaksiw.html">    <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+          <div class="item" style="background-image: url('bssteak.png');">
+<div class="content">
+    <div class="name">Filipino Bangus Steak</div>
+    <div class="des"><p class="highlighted-paragraph">
+
+Filipino Fish Steak makes use of boneless bangus belly. Bangus or milkfish is the national fish of the Philippines. I get my bangus belly from the Filipino store; it is already prepared this way – bones and scales are removed and all that I need to do is to slice the fish into serving pieces; this saves me a lot of time.</p></div>
+
+ <a href="bssteak.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+          <div class="item" style="background-image: url('bsinihaw.png');">
+<div class="content">
+    <div class="name">Inihaw na Bangus</div>
+    <div class="des"> <p class="highlighted-paragraph">Milkfish stuffed with tomato and onions and grilled to perfection. This dish is best when served with a dipping sauce composed of soy sauce and lemon or calamansi. Enjoy it with warm white rice. </p></div>
+
+ <a href="bsinihaw.html">    <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+        <div class="item" style="background-image: url('bssisig.png');">
+<div class="content">
+    <div class="name">Bangus Sisig</div>
+    <div class="des"><p class="highlighted-paragraph">Sisig has been one of the best creations in Filipino cuisine. It is delicious in many ways. There is also more than one way to make this dish. Bangus sisig is a good version that can be considered as an alternative to pork. It is healthier, yummy, and easy to prepare.</p></div>
+
+   <a href="bssisig.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+            
+     <div class="item" style="background-image: url('bsrelyenong.png');">
+<div class="content">
+    <div class="name">Relyenong Bangus </div>
+    <div class="des"><p class="highlighted-paragraph">Relyenong bangus is more a special occasion dish than an everyday family dinner. Making this stuffed fish entails a very involved process and a tedious amount of work that is usually reserved for parties and celebrations. </p></div>
+
+   <a href="bsrelyenong.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+        
+      
+
+         <div class="item" style="background-image: url('bsginataan.png');">
+        <div class="content">
+            <div class="name">Ginataang Bangus</div>
+            <div class="des"><p class="highlighted-paragraph"> Ginataang Bangus is a Filipino dish of fish and vegetables cooked in coconut milk. Filipinos are familiar with the bangus (milkfish) variety, common in the Philippines, which has a thick, meaty texture.The addition of coconut milk at the end makes for a flavorful, and fragrant entree.</p></div>
+
+        
+           <a href="bsginataan.html"> <button class="neon-button">See more</button></a>
+        </div>
+    </div>
+
+        
+
+     <div class="item" style="background-image: url('bsfried.png');">
+<div class="content">
+    <div class="name">Fried Bangus</div>
+    <div class="des"> <p class="highlighted-paragraph">Fried Bangus or Fried milkfish is a simple dish that is packed with flavors. The milkfish alone has its deliciously rich taste (especially the belly) while the marinade gives it a sour spicy flavor. </p></div>
+
+  <a href="bsfried.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+     <div class="item" style="background-image: url('bsescabeche.png');">
+<div class="content">
+    <div class="name">Escabecheng Bangus</div>
+    <div class="des"><p class="highlighted-paragraph"> Escabecheng Bangus is a popular dish in the Philippines. This dish is not only easy to make but very delicious. Simply fry the fish and top it with the sweet and sour sauce like and serve.</p></div>
+
+ <a href="bsescabeche.html">   <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+  
+    <div class="item" style="background-image: url('bssinigang.png');">
+<div class="content">
+    <div class="name">Sinigang na Bangus</div>
+    <div class="des"><p class="highlighted-paragraph">In this Filipino fish recipe, bangus (milkfish) is stewed in a flavorful, slightly sour tamarind broth with lots of vegetables, an all-time favorite. </p></div>
+
+  <a href="bssinigang.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+
+      <div class="item" style="background-image: url('bsadobo.png');">
+<div class="content">
+    <div class="name">Adobong Bangus</div>
+    <div class="des"><p class="highlighted-paragraph"> Adobong Bangus is a delightful variation of the beloved Filipino adobo, where succulent milkfish takes center stage. This recipe infuses the mild, tender flesh of bangus with the classic adobo flavors of soy sauce and vinegar, resulting in a dish that’s both comforting and satisfying. </p></div>
+
+   <a href="Bsadobo.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+    
+
+     
+
+</div>
+    </div>
+    
+    
+            
+
+        <div class="buttonns">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    
+        <script>
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+            
+        </script>
+    </body>
+</html>

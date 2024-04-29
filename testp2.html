@@ -1,0 +1,502 @@
+<html>
+    <head>
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: black;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 20px;
+    color: black;
+    width: 350px;
+    
+    
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.buttonns{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.buttonns button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.buttonns button:hover{
+    background: #ababab;
+    color: #fff;
+}
+
+    .neon-button {
+            background-color: transparent;
+            border: 2px solid black; /* color and kapal ng border */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: -2px; /* Adjust top yung sa may button */
+            left: -2px; 
+            width: calc(100% + 4px); 
+            height: calc(100% + 4px); 
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);/* color ng loob ng button */
+            background-size: 400% 400%;
+            border-radius: 10px;
+            z-index: -1;
+            animation: neon-chaser 6s linear infinite;
+        }
+
+        @keyframes neon-chaser { /*animation ng bg color ng button*/
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .neon-button:hover::before {
+            opacity: 0;
+        }
+
+        .neon-button:hover {
+            color: black;
+            border: 2px solid pink;/*gradient color ng border*/
+            border-image-slice: 3;
+        }
+
+            .highlighted-paragraph {
+  background-color: white; /* Choose the color you want */
+                opacity: 0.6;
+}
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+        </style>
+    </head>
+
+    <body>
+<a href="pusitgal.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+
+<!--Font Awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+   <div class="container">
+    
+    <div class="slide">
+    
+      
+
+          
+             <div class="item" style="background-image: url('tomatosquidstirfry.png');">
+<div class="content">
+    <div class="name">Tomato squid stir fry</div>
+    <div class="des"> <p class="highlighted-paragraph">Filipino tomato squid stir-fry is a vibrant and savory dish where tender squid is quickly cooked with tomatoes, onions, garlic, and spices. The combination of ripe tomatoes adds a tangy sweetness to the dish, enhancing the flavor of the tender squid. </p></div>
+
+   <a href="TOMATOP.html"> <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+   
+        
+        <div class="item" style="background-image: url('adobongpusit.png');">
+<div class="content">
+    <div class="name">Adobong Pusit</div>
+    <div class="des"> <p class="highlighted-paragraph">Squid cooked adobo-style with vinegar, soy sauce, garlic, and spices.</p></div>
+
+    
+   <a href="ADOBOP.html"> <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+      
+        <div class="item" style="background-image: url('inihawnapusit (1).png');">
+<div class="content">
+    <div class="name">Inihaw na Pusit</div>
+    <div class="des"><p class="highlighted-paragraph"> Grilled squid marinated in a mixture of vinegar, soy sauce, and spices.</p></div>
+
+   <a href="INIHAW P.html"><button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+         <div class="item" style="background-image: url('ginisangpusit.png');">
+        <div class="content">
+            <div class="name">Ginisang Pusit</div>
+            <div class="des"><p class="highlighted-paragraph"> Stir-fried squid with garlic, onions, tomatoes, and bell peppers.</p></div>
+
+        
+           <a href="GINISANGP.html"> <button class="neon-button">See more</button></a>
+        </div>
+    </div>
+
+        
+
+     <div class="item" style="background-image: url('sasspuid.png');">
+<div class="content">
+    <div class="name">Sweet and Spicy</div>
+    <div class="des"> <p class="highlighted-paragraph">Sweet and spicy squid is a flavorful Filipino dish where tender squid is stir-fried with a combination of sweet and spicy ingredients.</p></div>
+
+  <a href="SWEETANDSPICYP.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+     <div class="item" style="background-image: url('squidsisig.png');">
+<div class="content">
+    <div class="name">Filipino Squid Sisig</div>
+    <div class="des"><p class="highlighted-paragraph">Filipino squid sisig is a popular dish made with chopped squid that's typically grilled or sautéed until crispy and Served hot on a sizzling plate.</p></div>
+
+  <a href="SISIGP.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+    <div class="item" style="background-image: url('ginataangpusit.png');">
+<div class="content">
+    <div class="name">Ginataang Pusit</div>
+    <div class="des"><p class="highlighted-paragraph">Ginataang Pusit is a Filipino dish consisting of squid cooked in a creamy coconut milk sauce with garlic, onions, ginger, and chili peppers.</p></div>
+
+ <a href="GINATAANP.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+    <div class="item" style="background-image: url('pinaputok.png');">
+<div class="content">
+    <div class="name">Pinaputok na Pusit</div>
+    <div class="des"><p class="highlighted-paragraph">Stuffed squid with a mixture of tomatoes, onions, and spices, then grilled or fried. </p></div>
+
+    <a href="PINAPUTOKP.html"><button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+
+      <div class="item" style="background-image: url(calamares.png);">
+<div class="content">
+    <div class="name">Calamares</div>
+    <div class="des"><p class="highlighted-paragraph">Filipino calamares is a delightful dish featuring tender squid rings coated in a light and crispy batter, then deep-fried to golden perfection. </p></div>
+
+  <a href="CALAMARESP.html">   <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+      <div class="item" style="background-image: url('squidcurry.png');">
+<div class="content">
+    <div class="name">Curry na Pusit</div>
+    <div class="des"><p class="highlighted-paragraph">Filipino squid curry is a flavorful dish featuring tender squid cooked in a creamy curry sauce made from coconut milk, curry powder, garlic, onions, and spices. The curry sauce is rich and aromatic, complementing the delicate flavor of the squid. </p></div>
+
+ <a href="CURRYP.html">    <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+    
+
+</div>
+    </div>
+    
+            
+
+        <div class="buttonns">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    
+        <script>
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+            
+        </script>
+    </body>
+</html>
