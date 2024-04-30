@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREET FOODS</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <style>
+       
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: #f3f3f3;
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading{
+            background: #da0a0a;
+            color: #fff;
+            margin-bottom: 30px;
+            padding: 30px 0;
+            grid-column: 1/-1;
+            text-align: center;
+        }
+        .heading>h1{
+            font-weight: 400;
+            font-size: 32px;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .heading>h3{
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        
+        .button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(255, 192, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+/*IMAGE HOVER INGPRO*/
+.ingpro{
+  float: right;
+  width: 50%;
+  margin-top: -300px;
+  font-size: 20px;
+  font-style: oblique;
+  margin-right: 20px;
+}
+.card{
+  width: 420px;
+  height: 250px;
+  border-style: inset;
+  border-radius: 20px;
+  border-width: 10px;
+  border-color: #b91111;
+  overflow: hidden;
+  
+  position: relative;
+  margin-left: 100px;
+  margin-top: 120px;
+}            
+.card-img{
+  width: 100%;
+  object-fit: cover; 
+  height: auto;
+}
+.card-body{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -420px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: #270000;
+  padding: 30px;
+  transition: 2s;
+  text-align: center;
+}
+.card:hover .card-body{
+  right: 0;
+}
+.card-title{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+}
+.card-sub{
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 300;                          
+}
+.card-info{
+  font-size: 17px;
+  line-height: 20px;
+  margin: 40px 0;
+  font-weight: 400;
+}
+/*WATCH BUTTON*/
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+    
+    text-align: center;
+    margin-left: 590px;
+    margin-top: 40px;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #e44040, #dd6f30, #b64b2b);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+</style>
+</head>
+<body>
+    <div>
+        <a href="streetfood-menu.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="heading">
+        <h1>Squid Balls</h1>
+        <h3>&mdash;Recipe&mdash;</h3>
+    </div>
+    
+        <!--WATCH BUTTON--> 
+    <a href="https://youtu.be/YYympeGuB_s?si=qQuX4GB39KjfJZPA"> <button class="btn-hover color-1" >Watch here!</button></a>
+    <!--IMAGE AND HOVER-->
+       <div class="card">
+         <img src="squidballs.jpg" alt="Squid Balls" class="card-img">
+         <div class="card-body">
+           <h1 class="card-title">Squid Balls</h1>
+           <p class="card-sub">description</p>
+           <p class="card-info">These are just like fish balls but instead of being just made with fish, these also have squid or pusit in them.</p>
+         </div>
+       </div>
+        
+ 
+
+    <div class="ingpro">
+    <h2>Ingredients</h2>
+    <ul>
+        <li>400 Grams squid cleaned
+        <li>250 Grams white fish fillets cream dory or tilapia</li>    
+        <li>1/4 Cup all-purpose flour</li>    
+        <li>2 tablespoons cornstarch</li>    
+        <li>2 cloves Garlic peeled</li>    
+        <li>1/2 inch ginger peeled</li>    
+        <li>1 teaspoon ground black pepper</li>    
+        <li>1 teaspoon Salt</li>    
+        <Li>2 teaspoons sugar</Li>    
+        <Li>2 teaspoons sesame oil</Li>    
+    </ul>
+<br>
+    <h2>Procedure</h2>
+    <ol type="1">
+        <li>Place squid, fish fillets, flour, cornstarch, garlic, ginger, pepper, salt, sugar, and sesame oil into the bowl of a food processor. Grind the ingredients until it reaches a paste consistency.</li>
+        <li>Chill in the refrigerator for 30 minutes. Form the mixture into balls using two spoons.</li>    
+        <li>Bring a pot of water to a boil. Drop each ball into the hot water, and cook until balls are firm. Drain, set aside, and chill in the refrigerator again.</li>    
+        <li>Once cooled down, store in the freezer or until needed.</li>    
+        <li>When ready to cook, fry the balls on medium heat until golden brown. Serve while hot with sweet chili sauce or a homemade fish ball sauce.</li>    
+    </ol>
+    </div>
+</body>
+</html>

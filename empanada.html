@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREET FOODS</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <style>
+       
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: #f3f3f3;
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading{
+            background: #da0a0a;
+            color: #fff;
+            margin-bottom: 30px;
+            padding: 30px 0;
+            grid-column: 1/-1;
+            text-align: center;
+        }
+        .heading>h1{
+            font-weight: 400;
+            font-size: 32px;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .heading>h3{
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        
+        .button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(255, 192, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(255, 192, 192) 0%,
+    rgb(199, 26, 26) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+/*IMAGE HOVER INGPRO*/
+.ingpro{
+  float: right;
+  width: 50%;
+  margin-top: -300px;
+  font-size: 20px;
+  font-style: oblique;
+  margin-right: 20px;
+  line-height: 1.6;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 30px;
+}
+.ingpro:after {
+  display: table;
+  clear: both;
+}
+.card{
+  width: 420px;
+  height: 250px;
+  border-style: inset;
+  border-radius: 20px;
+  border-width: 10px;
+  border-color: #b91111;
+  overflow: hidden;
+  
+  position: relative;
+  margin-left: 100px;
+  margin-top: 120px;
+}            
+.card-img{
+  width: 100%;
+  object-fit: cover; 
+  height: auto;
+}
+.card-body{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -420px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: #270000;
+  padding: 30px;
+  transition: 2s;
+  text-align: center;
+}
+.card:hover .card-body{
+  right: 0;
+}
+.card-title{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+}
+.card-sub{
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 300;                          
+}
+.card-info{
+  font-size: 17px;
+  line-height: 20px;
+  margin: 40px 0;
+  font-weight: 400;
+}
+/*WATCH BUTTON*/
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+    
+    text-align: center;
+    margin-left: 590px;
+    margin-top: 40px;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #e44040, #dd6f30, #b64b2b);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+</style>
+</head>
+<body>
+    <div>
+        <a href="streetfood-menu.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="heading">
+        <h1>empanada</h1>
+        <h3>&mdash;Recipe&mdash;</h3>
+    </div>
+    
+        <!--WATCH BUTTON--> 
+    <a href="https://youtu.be/EaARE77PhC8?si=51yp42c4jcvWg6PE"> <button class="btn-hover color-1" >Watch here!</button></a>
+    <!--IMAGE AND HOVER-->
+       <div class="card">
+         <img src="empanada.jpg" alt="Empanada" class="card-img">
+         <div class="card-body">
+           <h1 class="card-title">empanada</h1>
+           <p class="card-sub">description</p>
+           <p class="card-info">Empanada is a puff pastry filled with meat or chicken. It is a Filipino pie which was brought to the Philippines by Spanish colonizers.</p>
+         </div>
+       </div>
+        
+ 
+
+    <div class="ingpro">
+    <div class="column">    
+    <h2>Ingredients</h2>
+    <ul>
+        <br>
+        <b>Empanada Beef (Meat) Filling</b>
+        <li>2 tbsp oil optional if the meat you’re using has a good amount of fat content</li>
+        <li>3 cloves garlic chopped</li>    
+        <li>1 medium onion chopped</li>    
+        <li>2 plum tomatoes diced</li>    
+        <li>1/2 lb ground beef</li>    
+        <li>1/2 lb ground pork</li>    
+        <li>4 tbsp soy sauce</li>    
+        <li>Ground black pepper to taste (optional)</li>    
+        <li>2 red potatoes diced</li>    
+        <li>1/2 a piece of a large red bell pepper diced (optional)</li>    
+        <li>1 small carrot diced</li>    
+        <li>1/2 cup raisins</li>    
+        <li>1/2 cup peas</li>   
+        <br><br>
+        <b>Empanada Dough</b>
+        <li>3 cups all-purpose flour</li>    
+        <li>3 tbsp granulated sugar</li>        
+        <li>1 tsp salt</li>       
+        <li>1 cup (2 sticks) unsalted butter, chilled and cut into small cubes</li>          
+        <li>¾ cup water, divided</li>        
+    </ul>
+    </div>
+    <div class="column">
+    <h2>Procedure</h2>
+    <ol type="1">
+        <br>
+        <b>Empanada Beef (Meat) Filling</b>
+        <li>Heat the oil in a large frying pan or skillet. Sauté the garlic and onion for about a minute.</li>
+        <li>Add the diced tomatoes and cook until the onions and tomatoes have softened about 5 minutes. Stir in the ground beef and pork.</li>
+        <li>Crumble with a fork to prevent clumping. Season with soy sauce and black pepper and cook until the meat has turned brown.</li>
+        <li>Add the potatoes or red bell pepper and carrots and then simmer covered for about 5-8 minutes or until the veggies have softened.</li>
+        <li>Uncover then stir in the raisins, raise the heat and cook for a further 3-5 minutes or until most of the liquid has evaporated.</li>
+        <li>Add the peas and cook for another couple of minutes. Set aside to cool down.</li>
+    </ol>
+    <ol type="1">
+        <b>Empanada Dough</b>
+        <li>In a bowl of a stand mixer with the paddle attachment, mix together the flour, sugar, salt, and butter until it looks crumbly. Pour about 1/2 cup of the ice water into the dough while the mixer is running. Pour in the remaining ice water and continue to mix until the dough looks clumpy but soft (it should not be sticky).</li>
+        <li>Divide the dough into two and form into small disk then wrap in plastic and refrigerate for about an hour. Roll to about 1/8 inch in thickness. Use a round cookie or scone cutter to make the circles. You may make small rounds up to 28 pieces or large ones up to 12 pieces.</li>
+        <li>Don't wish to make the crust? Simply buy and use store-bought puff-pastry then follow instructions on making the rounds.</li>
+    </ol>
+    <ol type="1">
+        <b>Preparing the Empanada for Baking or Frying</b>
+        <li>To fill the cut-up dough, place a small amount of filling (about a rounded tablespoon if making small empanadas) in the middle. Do not overfill.</li>
+        <li>Fold the empanada so that you form a half-moon shape. Either crimp the edges to seal with your fingers or simply use a fork to seal it. Brush the empanada with a little egg wash (use one beaten egg) for color.</li>
+        <li>Fry the empanadas in a deep fryer until golden brown all over. For a healthier alternative, bake the empanadas in a preheated 400-degree Fahrenheit oven for 20-25 minutes or just until nicely browned all over. Serve warm or at room temperature.</li>
+    </ol>
+    </div>
+    </div>
+</body>
+</html>
