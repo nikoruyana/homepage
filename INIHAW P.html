@@ -22,7 +22,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: -10; 
+            z-index: -1; 
         }
 
         @keyframes animateGradient {
@@ -69,7 +69,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -10; 
+    z-index: -1; 
 }
 
 @keyframes animateGradient {
@@ -109,9 +109,9 @@
             padding: 20px;
             box-sizing: border-box;
             text-align: center; 
-            margin-top: 523px;
+            margin-top: 870px;
             font-size: 25px;
-            height: 180px;
+            height: 220px;
             width: 620px;
             margin-left: 25px;
             
@@ -195,147 +195,33 @@
   width: 38dvh;
 }
 
-             #intro {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  padding: 40px;
-  min-height: 100dvh;
-  overflow: hidden;
+         .previous {
+  
+  color: black;
+                width: 20px;
+
+    }
+
+
+
+            .previous:hover::before {
+            opacity: 0;
+        }
+.previous:hover {
+    background-color: pink; /* Change this to the color you want on hover */
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px 50px;
-}
-
-.info h1 {
-  font-family: "Young Serif", serif;
-  text-align: center;
-  font-size: 3rem;
-}
-
-.info p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.split-tsitsirya {
-  display: flex;
-  flex-direction: row;
-}
-
-.tsitsirya {
-  max-width: 100%;
-  width: 250px;
-  border-radius: 20px;
-  margin-left: 10px;
-  border: 2px solid orange;
-}
-
-.tsitsirya:nth-child(2) {
-  transform: translateY(-1.5rem);
-}
-
-.button:after,
-.close-btn:after {
-  background: #fff;
-}
-
-.explore,
-.explore:before,
-.close-btn,
-.close-btn:before {
-   background: rgba(255, 192, 203, 1); /* Light pink */
-  background: linear-gradient(
-    45deg,
-    rgba(255, 192, 203, 1) 0%,
-    rgba(255, 105, 180, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    45deg,
-    rgba(255, 192, 203, 1) 0%,
-    rgba(255, 105, 180, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    rgba(255, 192, 203, 1) 0%,
-    rgba(255, 105, 180, 1) 100%
-  );
-}
-
-.button {
-  display: inline-block;
-  position: relative;
-  border-radius: 10px;
-  text-decoration: none;
-  padding: 0.2rem .5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-    margin: 10px;
-   
-}
-            
-
-.button:hover {
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
-}
-
-.button:hover::after {
-  left: 100%;
-  top: 100%;
-  bottom: 100%;
-  right: 100%;
-}
-
-.button::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  border-radius: inherit;
-  transition: all 0.5s;
-}
-
-.button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 2.5px;
-  top: 2px;
-  bottom: 2.5px;
-  right: 2px;
-  z-index: -1;
-  border-radius: 8px;
-  transition: all 0.5s;
-}
-
-
-.fa-solid.fa-left-long {
-    z-index: 1;
-    font-size: 25px;
-}
-
+       
+            .fa-solid.fa-left-long{
+                font-size: 40px;
+                color:pink;
+                background-color: black;
+                }
         </style>
     </head>
 
     <body>
-<a href="testp1.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+<a href="shrimpgal.html" class="previous"> <button><i class="fa-solid fa-left-long"></i></button></a>
 <div class="animated-gradient-bg"></div>
 
 <div class="container">
@@ -343,7 +229,7 @@
     <div class="overlay">
         <p>There are several Summer foods that I want to feature and the first that crossed my mind is Inihaw na Pusit or “Grilled Squid” . This dish is very easy to prepare and does not take much of your time to complete.</p>
     </div>
-    <img src="inihawnapusit (1).png" alt="shrimp" class="image">
+    <img src="inihawnapusit.png" alt="shrimp" class="image">
 </div>
 <div>
    <a href="https://youtu.be/tKucxBqvXnk?si=7FBFscaKsbmo90Jm"> <button class="btn-hover color-1" >Watch here!</button></a>
