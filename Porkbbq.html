@@ -1,0 +1,362 @@
+<BODY>
+    <head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<article class="recipe">
+		<style>
+			
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box;
+    position:relative;
+    }
+    
+    body {
+    background-color: #2e3641; 
+    margin:0;
+    color:#fff; 
+    font-family: 'Open Sans', sans-serif;
+    }
+
+   
+    
+    
+    .recipe {
+    width:100%;
+    display:block;
+    
+        .quote {
+        text-align:center;
+        width:100%;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        margin: 0;
+        padding: 2em 0;
+    
+            .cite {
+            width:100%;
+            float:left;
+            font-style:italic;
+            font-size:14px;
+            text-align:center;
+            }
+        }
+        
+        li {
+        list-style:none; 
+        padding:0;
+        margin:0;
+        width:100%;
+            i {
+            margin:0;
+            padding:0.5em;
+            float:left;
+            }
+        }
+        
+        .ingredient-image {
+        width:100%;
+            img {
+            width:100%;
+            }
+        }
+    
+        i {
+        font-size:15px; 
+        float:right;
+        padding-top:0.5em;
+        cursor:pointer;
+        }
+    
+    
+        .rate {
+        float: left;
+        padding: 0;
+        margin: 0.2em 1em 0 0; 
+        }
+        
+        ul {
+        padding:0;  
+            li {
+            list-style:none; 
+            padding:0;
+            margin:0;
+            width:100%;
+            padding:0.5em;
+            cursor:pointer;
+                i {
+                margin:0;
+                padding:0.3em 0.5em 0 0;
+                float:left;
+                }
+            }
+        }
+    
+        h1 {
+        width:100%;
+        padding:1em 1em 0.5em;
+        margin:0;
+        display:block;
+        font-weight:bold;
+        background: #e9513a;
+        text-transform:uppercase;  
+        }
+    
+        .stars {
+        float:left;
+        width:100%;
+        padding:0 1.5em 1.5em;
+        background: #e9513a;
+            .fa-star-half-o,.fa-star {
+            float:left;
+            }      
+        }
+    
+        .time {
+        float:left;
+        width:auto;
+        padding:0.5em 1.5em;
+        background: #e9513a;
+        position:absolute;
+        top:0;
+        right:0;
+            .fa-clock-o {
+            padding: 2px 10px 0 0;
+            font-size:18px;
+            float:left;
+            }      
+        }
+    
+        .recipe-image img{
+        width:100%;
+        height:auto;
+        float:left;
+        }
+    
+        .recipe-image {
+        width:33.3%; 
+        float:left;
+        display:inline-block;
+        }
+    
+        .recipe-text, .recipe-directions, .comments {  
+        width:33.3%;
+        padding:0 2em;
+        float:left;
+        display:inline-block;
+            h2 {
+            font-weight:600; 
+            }
+        }
+    
+        .got li {
+        text-decoration:line-through;
+        }
+    
+        ol  {
+        padding:0 0 0 1.5em;
+            li {
+            list-style: inherit;
+            cursor:pointer;
+            padding: 0.5em 0;
+            }
+        }
+    
+        .linethrough {
+        text-decoration:line-through; 
+        }
+    
+        form {
+        width:100%;
+        padding:0;
+        margin:0;
+        float:left;
+    
+            input[type="text"], textarea {
+            width: 100%;
+            border: none;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            margin: 20px 0;
+            padding: 10px 10px;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
+            font-family: 'Open Sans', sans-serif;
+            }
+    
+            textarea {
+            height:10em;
+            }
+    
+            button {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 13px;
+            width: auto;
+            border: 0;
+            margin-left: 0;
+            -webkit-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: #e9513a;
+            color: #fff;
+            cursor: pointer;  
+            }
+        }
+    }
+    
+    @media screen and (max-width:1000px) {
+        .recipe {
+            .recipe-image, .recipe-text {
+            width:50%;
+            }
+    
+            .comments, .recipe-directions {
+            width:100%;
+            }
+        }
+    }
+    
+    @media screen and (max-width:630px) {
+        .recipe .time {
+        float: left;
+        width: 100%;
+        position: relative;
+        }
+    }
+    
+    
+    @media screen and (max-width:600px) {
+        .recipe {
+            .recipe-image, .recipe-text {
+            width:100%;
+            }
+        }
+    }
+		</style>
+		
+    </head>
+
+
+<h1>
+Pork BBQ
+</h1>
+
+<div class="stars">
+	<p class="rate">Filipino Cuisine</p>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star-half-o"></i>
+</div>
+
+<div class="time">
+	<p><i class="fa fa-clock-o"></i> Prep Time : 3 hours</p>
+	<p><i class="fa fa-clock-o"></i> Cooking Time :  15minutes</p>
+</div>
+
+<div class="recipe-image">
+	<div class="ingredient-image">
+	</div>
+	<img src="porkbbqpek.jpg">
+
+	<p class="quote" style="font-size: small;">Filipino Style Pork BBQ is characterized by pork barbecue cooked on bamboo skewers. This dish consists of thinly sliced pork marinated in a unique blend of seasonings and spices. In the Philippines, it's typically grilled over wood charcoal and served with a side of spicy vinegar for dipping.
+	</p>
+</div>
+
+<div class="recipe-text">
+	<h2>Marinade Ingredients <i class="slidetoggle fa fa-arrow-up right"></i></h2>
+	<div class="inner-text">
+		<h3></h3>
+		<ul class="need">
+			<li data-image="porkbelly.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>4 lbs.</strong>
+				 pork shoulder </li>
+			<li data-image="porkbelly.jpg">
+				<i class="fa fa-square-o"></i>
+				<strong>¾ cup </strong>
+				soy sauce </li>
+				<li data-image="porkbelly.jpg">
+					<i class="fa fa-square-o"></i>
+					<strong>½ cup </strong>
+					juice extracted from calamansi or lemon </li>
+					<li data-image="porkbelly.jpg">
+						<i class="fa fa-square-o"></i>
+						<strong>¾ cup  </strong>
+						banana ketchup </li>
+						<li data-image="porkbelly.jpg">
+							<i class="fa fa-square-o"></i>
+							<strong>4 tablespoons  </strong>
+							dark brown sugar </li>
+							<li data-image="porkbelly.jpg">
+								<i class="fa fa-square-o"></i>
+								<strong>2 tablespoons </strong>
+								garlic powder</li>
+								<li data-image="porkbelly.jpg">
+									<i class="fa fa-square-o"></i>
+									<strong>1 teaspoon</strong>
+									ground black pepper</li>
+									<li data-image="porkbelly.jpg">
+										<i class="fa fa-square-o"></i>
+										<strong>2 teaspoons </strong>
+										salt</li>
+										<li data-image="porkbelly.jpg">
+											<i class="fa fa-square-o"></i>
+											<strong>1 ½ cups </strong>
+											lemon or lime soda</li>
+		</ul>
+		<div class="ingredients-have">
+			<h2>You currently have in your basket</h2>
+			<ul class="got">
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="recipe-directions">
+	<h2>Instructions <i class="slidetoggle fa fa-arrow-up right"></i></h2>
+	<div class="inner-directions">
+		<ol>
+  
+			<li>  Arrange the pork slices in a large bowl.</li>
+			<li>Once the oil becomes hot, saute onion and garlic.
+                </li>
+			<li>Add pork belly. Continue to saute until it turns light brown.
+                
+                </li>
+			<li>Add Chorizo de Bilbao. Cook for 1 minute.</li>
+			<li>Add all the marinade ingredients. Mix well. Cover the bowl and marinate for at least 3 hours. </li>
+			<li>Fasten the marinated pork together using bamboo skewers.
+            </li>
+            <li>Heat-up the grill. Start to grill your Filipino Style pork BBQ for 3 to 5 minutes per side until the meat is thoroughly cooked.</li>
+            <li>Put the baby bok choy into the pot. Cover. Cook for 2 minutes.</li>
+            <li>Make sure to always baste the BBQ when flipping it over. Note: the basting sauce ingredients are the same as the marinade ingredients minus the lemon soda.</li>
+		</ol>
+	</div>
+</div>
+
+
+</div>
+
+</article>
+<script src="pork.js"> </script>
+</BODY>
