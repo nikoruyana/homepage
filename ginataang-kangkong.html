@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GULAY</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
     <style>
        
        *{
@@ -37,32 +38,212 @@
             letter-spacing: 5px;
             text-transform: uppercase;
         }
-        img{
-            border-radius: 50px;
-            width: 40%;
-            height: 40%;
-            object-fit: contain;
-            margin-left: 30px;
-            margin-top: 150px;
-        }
-        .ingpro{
-            float: right;
-            width: 50%;
-            margin-top: 50px;
-            font-size: 20px;
-            font-style: oblique;
-            margin-right: 20px;
-        }
+        
+        .button:after,
+.close-btn:after {
+  background: #fff;
+}
 
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(199, 255, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(203, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+/*IMAGE HOVER INGPRO*/
+.ingpro{
+  float: right;
+  width: 50%;
+  margin-top: -300px;
+  font-size: 20px;
+  font-style: oblique;
+  margin-right: 20px;
+}
+.card{
+  width: 420px;
+  height: 250px;
+  border-style: inset;
+  border-radius: 20px;
+  border-width: 10px;
+  border-color: #11b96b;
+  overflow: hidden;
+  
+  position: relative;
+  margin-left: 100px;
+  margin-top: 120px;
+}            
+.card-img{
+  width: 100%;
+  object-fit: cover; 
+  height: auto;
+}
+.card-body{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -420px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: #002708;
+  padding: 30px;
+  transition: 2s;
+  text-align: center;
+}
+.card:hover .card-body{
+  right: 0;
+}
+.card-title{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+}
+.card-sub{
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 300;                          
+}
+.card-info{
+  font-size: 17px;
+  line-height: 20px;
+  margin: 40px 0;
+  font-weight: 400;
+}
+/*WATCH BUTTON*/
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+    
+    text-align: center;
+    margin-left: 590px;
+    margin-top: 40px;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
 </style>
 </head>
 <body>
+    <div>
+        <a href="gulay-menu.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
     <div class="heading">
         <h1>Ginataang Kangkong</h1>
         <h3>&mdash;Recipe&mdash;</h3>
     </div>
     
-        <img src="Ginataang-Kangkong-Wide.webp" alt="Ginisang Kangkong" width="720px" height="500px">
+        <!--WATCH BUTTON--> 
+    <a href="https://youtu.be/N6-pTSaNvLo?si=vY22WncsVXe9ragm"> <button class="btn-hover color-1" >Watch here!</button></a>
+    <!--IMAGE AND HOVER-->
+       <div class="card">
+         <img src="Ginataang-Kangkong-Wide.webp" alt="Ginataang Kangkong" class="card-img">
+         <div class="card-body">
+           <h1 class="card-title">Ginataang Kangkong</h1>
+           <p class="card-sub">description</p>
+           <p class="card-info">Ginataang Kangkong is a dish of water spinach sautéed with prawns, garlic and onions and cooked with coconut milk.</p>
+         </div>
+       </div>
         
  
 

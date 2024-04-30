@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gulay Menu</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
     <style>
         *{
     padding: 0;
@@ -102,9 +103,95 @@ button:hover{
     width: 100%;
   }
 }
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(199, 255, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(203, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
     </style>
 </head>
 <body>
+    <div>
+        <a href="gulay-menu.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
     <div class="menu">
         <div class="heading">
             <h1>Gulay</h1>
