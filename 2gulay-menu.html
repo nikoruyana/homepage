@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulay Menu</title>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+}
+.menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 20px 40px;
+}
+.heading{
+    background: #0fb467;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+.heading>h1{
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.heading>h3{
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+.food-items{
+    display: grid;
+    position: relative;
+    grid-template-rows: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    transition: .2s ease-in-out;
+}
+.food-items img{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px 15px 0 0;
+}
+h1{
+    grid-column: 1/1;
+    text-align: center;
+}
+.details-sub>h5{
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    margin-left: 125px;
+    background: #0fb467;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    width: 180px;
+    cursor: pointer;
+}
+button:hover{
+    background: #16cf2f;
+}
+.column {
+  float: left;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(199, 255, 192); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(199, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(203, 255, 192) 0%,
+    rgb(26, 199, 41) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(230, 255, 224, 0.8);
+    background-color: rgb(199, 255, 192); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <a href="searchbar(done).html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="menu">
+        <div class="heading">
+            <h1>Gulay</h1>
+            <h3>&mdash;Menu&mdash;</h3>
+        </div>
+        <div class="food-items">
+            <img src="Gising-Gising.webp">
+            <div class="details-sub">
+                <h5>Gising-gising</h5>
+                <a href="gising-gising.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="adobong-sitaw.avif">
+            <div class="details-sub">
+                <h5>Adobong Sitaw</h5>
+                <a href="adobong-sitaw.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="laing.jpg">
+            <div class="details-sub">
+                <h5>Laing</h5>
+                <a href="laing.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="chopsuey.jpg">
+            <div class="details-sub">
+                <h5>Chopsuey</h5>
+                <a href="chopsuey.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="pinakbet.jpg">
+            <div class="details-sub">
+                <h5>Pinakbet</h5>
+                <a href="pinakbet.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="Ginataang-Kangkong-Wide.webp">
+            <div class="details-sub">
+                <h5>Ginataang Kangkong</h5>
+                <a href="ginataang-kangkong.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="ginataang-okra.jpg">
+            <div class="details-sub">
+                <h5>Ginataang Okra</h5>
+                <a href="ginataang-okra.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="ginisang-ampalaya.jpg">
+            <div class="details-sub">
+                <h5>Ginisang Ampalaya</h5>
+                <a href="ginisang-ampalaya.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="ginisang-repolyo.jpg">
+            <div class="details-sub">
+                <h5>Ginisang Repolyo</h5>
+                <a href="ginisang-repolyo.html"><button>Learn more</button></a>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="ginisang-sayote.jpg">
+            <div class="details-sub">
+                <h5>Ginisang Sayote</h5>
+                <a href="ginisang-sayote.html"><button>Learn more</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

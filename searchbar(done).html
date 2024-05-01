@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEARCHBAR</title>
+    <style>
+        meta[name="viewport"] {
+            content: width=device-width, initial-scale=1.0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            background: url('bgweb.png')no-repeat center center/cover;
+            justify-content: center;
+        }
+
+        .search-box {
+            width: 600px;
+            background: #fff;
+            margin: 50px auto 0;
+            border-radius: 5px;
+            position: relative; 
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        input {
+            flex: 1;
+            height: 30px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        ::placeholder {
+            color: #555;
+        }
+
+        .result-box ul {
+            border-top: 2px solid #999;
+            padding: -10px 10px 10px;
+            font-size: 20px;
+        }
+
+        .result-box ul li {
+            list-style: none;
+            border-radius: 3px;
+            padding: 15px 10px;
+            cursor: pointer;
+        }
+
+        .result-box ul li:hover {
+            background: #e9f3ff;
+        }
+
+        .result-box{
+            max-height: 300px;
+            overflow: scroll;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="search-box">
+    <div class="row">
+        <input type="text" id="input-box" placeholder="Search" autocomplete="off">
+        <button class="delete-btn" onclick="search()">Search</button>
+    </div>
+    <div class="result-box">
+        <ul></ul>
+    </div>
+</div>
+
+<script>
+ let availableKeywords = [
+    'Shrimp',
+    'Hipon',
+    'Crab',
+    'Alimango',
+    'Squid',
+    'Pusit',
+    'Bangus',
+    'Drinks',
+    'Alcoholic',
+    'Non-Alcoholic',
+     'Shakes',
+      'Vegetables',
+    'Gulay',
+    'Street foods',
+    'Streetfoods',
+    'Tilapia',
+    'Tulingan',
+    'Galunggong',
+    'Bisugo',
+     'Lapu-Lapu',
+     'Chicken',
+     'Manok',
+     
+];
+
+let linkUrls = [
+    'sbshrimpgal.html',
+    'sbshrimpgal.html',
+    'sbcrab.html',
+    'sbcrab.html',
+    'sbpusitgal.html',
+    'sbpusitgal.html',
+    'sbbangusgal.html',
+    'sbdrinks.html',
+    'sbdrinks.html',
+    'sbdrinks.html',
+    'sbdrinks.html',
+    '2gulay-menu.html',
+    '2gulay-menu.html',
+    '2streetfood-menu.html',
+    '2streetfood-menu.html',
+    '2tilapia-gal.html',
+    '2tulingan-gal.html',
+    '2galunggong-gal.html',
+    'Gallerybisugo.html',
+    'gallerylapu-lapu.html',
+    'chickengal(done).html',
+    'chickengal(done).html',
+];
+
+function search() {
+    let input = document.getElementById('input-box').value.trim();
+    let index = availableKeywords.indexOf(input);
+    if (index !== -1) {
+        window.location.href = linkUrls[index];
+    } else {
+        alert('Keyword not found!');
+    }
+}
+</script>
+
+</body>
+</html>

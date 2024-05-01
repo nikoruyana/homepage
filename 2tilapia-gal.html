@@ -1,0 +1,675 @@
+<html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TILAPIA</title>
+        <style>
+               body {
+  margin: 98px;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #6e2121;
+}
+            
+
+        .animated-gradient-bg {
+            background-image: linear-gradient(45deg, #FFC0CB, #FF69B4, #FF1493, #C71585);
+            background-size: 400% 400%;
+            animation: animateGradient 10s ease infinite;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; 
+        }
+
+        @keyframes animateGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        }
+
+.grid-details p,
+blockquote,
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+    margin: 0px 0px 12.5px;
+}
+
+blockquote {    
+    font-style: italic;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.top {
+    top: 12.5px;
+}
+
+.right {
+    right: 12.5px;
+}
+
+
+
+
+ul.grid {
+  list-style: none;
+
+  .grid-details ul li {
+    margin-left: 25px;
+    margin-bottom: 6px;
+  }
+
+  .grid-details ul li:last-child {
+      margin-bottom: 12.5px;
+  }
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .grid-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2px;
+        min-height: 200px;
+        max-height: 400px;
+        width: calc(100% / 5);        
+        margin: 12.5px;
+
+
+
+
+
+        
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.active,
+        &.active.liked {
+            height: 100%;
+            max-height: 100%;
+            width: calc(100%/2);
+            transition-duration: 800ms;
+    
+            i:hover {
+                cursor: pointer;
+            }
+        }
+
+        &.liked {
+            width: calc(100% / 3);
+        }
+    
+        &.active:hover {
+            cursor: auto;
+        }
+
+        .grid-title {
+            margin-top: 190px;
+            height: 50px;
+            padding: 0 15px 0 12.5px;
+            background-color: #fff;
+            color: #000;
+
+            p:nth-of-type(1) {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 80%;
+                float: left;
+            }
+            p:nth-of-type(2) {
+                float: right;
+                width: 20%;
+
+                i {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    .grid-details {
+        background-color: #fff;
+        padding: 12.5px;
+    }
+}
+@media (max-width: 800px) {
+    .grid {
+        .grid-item { 
+            width: calc(50% - 25px);
+        }
+        .grid-item.active,
+        .grid-item.active.liked {
+            width: 100%;
+        }
+        .grid-item.liked {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .grid {
+        .grid-item,
+        .grid-item.active,
+        .grid-item.active.liked {
+            width: 100%;
+        }
+        .grid-item.liked {
+            min-height: 300px;
+            width: 100%;
+        }
+    }
+}
+
+@supports (display: grid) {
+    .grid {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: minmax(250px, auto);
+        grid-gap: 15.5px; 
+        
+
+        .grid-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            grid-row: span 1;
+            grid-column: span 1;
+            border-radius: 2px;
+            max-height: unset;
+            min-height: unset;
+            width: unset;            
+            margin: unset;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.active,
+            &.active.liked {
+                grid-row: span 4;
+                grid-column: span 3;
+                width: unset;
+                transition-duration: 800ms;
+    
+                i:hover {
+                    cursor: pointer;
+                }
+            }
+    
+            &.active:hover {
+                cursor: auto;
+            }
+    
+            &.liked {
+                grid-row: span 1;
+                grid-column: span 2;
+                width: unset;
+                min-width: unset;
+            }            
+
+            .grid-title {
+                height: 50px;
+                padding: 0 15px 0 12.5px;
+                background-color: #fff;
+                color: #000;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);  
+
+                p:nth-of-type(1) {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    grid-column: 1/11;
+                    width: unset;
+                    float: unset;
+                }
+                p:nth-of-type(2) {
+                    grid-column: 12/12;
+                    width: unset;
+
+                    i {
+                        float: right;
+                    }
+                }
+            }
+        }
+
+        .grid-details {
+            background-color: #fff;
+            padding: 12.5px;
+        }
+    }
+    @media (max-width: 800px) {
+        .grid {
+            .grid-item.active,
+            .grid-item.active.liked {
+                grid-row: span 3;
+                grid-column: span 1;
+            }
+            .grid-item.liked {
+                grid-row: span 2;
+                grid-column: span 1;
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        .grid .grid-item.liked {
+            min-height: 100%;
+        }
+    }
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Ensure the button and description stack vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.btn-more-info {
+    background-color: pink;
+    color: black;
+    border: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    width: 120px; /* Adjust the width as needed */
+    align: center; /* Add margin to separate the button from the overlay content */
+}
+
+  .grid-item:hover .overlay {
+    opacity: 1;
+  }
+
+
+  .btn-more-info:hover {
+    background-color: white;
+  }
+.btn-hover:focus {
+    outline: none;
+}
+
+
+  .description {
+    display: none;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .overlay:hover .description {
+    display: block;
+  }
+
+            .title {
+margin-top: -70px; 
+                }
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.buttonns:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+
+.buttonns {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttonns:hover {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+    background-color: pink; /* Change to the color you prefer */
+}
+
+
+.buttonns:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.buttonns::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.buttonns::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+        </style>
+      
+    </head>
+
+    <body>
+        <div class="animated-gradient-bg"></div>
+        <div>
+            <a href="searchbar(done).html" class="buttonns explore"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+<div class="title">
+
+   <center style="padding-bottom": 20px;"><font size="50">TILAPIA</font></center></div><br>
+        <br><br><br>
+
+                        <div class="grid">
+                   <li class="grid-item" style="background-image: url('adobong-tilapia.jpg');">
+                                <div class="grid-title" >
+                                    <div class="container">
+                                    <p>Adobong Tilapia</p>
+                                        <div class="overlay">
+      <button class="btn-more-info"><a href="testi1.html"><i class="fa-solid fa-eye"></i></a></button>
+     
+    </div>
+  
+
+
+                                </div>
+            </div>
+           
+
+
+
+
+
+
+
+
+
+
+
+
+         <div class="grid">
+                   <li class="grid-item" style="background-image: url('fried-tilapia.jpg');">
+                                <div class="grid-title" >
+                                    <div class="container">
+                                    <p>Fried Tilapia</p>
+                                        <div class="overlay">
+      <button class="btn-more-info"><a href="testi2.html"><i class="fa-solid fa-eye"></i></a></button>
+   
+    </div>
+  
+
+
+                                </div>
+            </div>
+           
+
+
+
+
+
+         <div class="grid">
+                   <li class="grid-item" style="background-image: url('ginataang-tilapia.jpg');">
+                                <div class="grid-title" >
+                                    <div class="container">
+                                    <p>Ginataang Tilapia</p>
+                                        <div class="overlay">
+      <button class="btn-more-info"><a href="testi3.html"><i class="fa-solid fa-eye"></i></a></button>
+     
+    </div>
+  
+
+
+                                </div>
+            </div>
+
+
+
+
+         <div class="grid">
+                   <li class="grid-item" style="background-image: url('grilled-tilapia.jpg');">
+                                <div class="grid-title" >
+                                    <div class="container">
+                                    <p>Grilled Tilapia</p>
+                                        <div class="overlay">
+      <button class="btn-more-info"><a href="testi4.html"><i class="fa-solid fa-eye"></i></a></button>
+     
+    </div>
+  
+
+
+                                </div>
+            </div>
+
+
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('inaloban-a-isda.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Inaloban a Isda</p>
+        <div class="overlay">
+      <button class="btn-more-info"><a href="testi5.html"><i class="fa-solid fa-eye"></i></a></button>
+      
+    </div>
+    
+
+                                </div>
+            </div>
+           
+
+
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('paksiw-na-tilapia.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Paksiw na Tilapia</p>
+           
+       <div class="overlay">
+      <button class="btn-more-info"><a href="testi6.html"><i class="fa-solid fa-eye"></i></a></button>
+      
+    </div> </div>
+    
+            </div>
+           
+
+
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('sarciadong-tilapia.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Sarciadong Tilapia</p>
+            <div class="overlay">
+      <button class="btn-more-info"><a href="testi7.html"><i class="fa-solid fa-eye"></i></a></button>
+      
+    </div> </div>
+    
+            </div>
+           
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('sinanglay-na-tilapia.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Sinanglay na Tilapia</p>
+        <div class="overlay">
+      <button class="btn-more-info"><a href="testi8.html"><i class="fa-solid fa-eye"></i></a></button>
+     
+    </div> </div>
+    
+            </div>
+           
+
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('sinigang-na-tilapia.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Sinigang na Tilapia</p>
+        
+        <div class="overlay">
+      <button class="btn-more-info"><a href="testi9.html"><i class="fa-solid fa-eye"></i></a></button>
+      
+    </div> </div>
+    
+            </div>
+           
+
+<div class="grid">
+    <li class="grid-item" style="background-image: url('tilapia-escabeche.jpg');">
+        <div class="grid-title">
+            <div class="container">
+            <p>Tilapia Escabeche</p>
+        <div class="overlay">
+      <button class="btn-more-info"><a href="testi10.html"><i class="fa-solid fa-eye"></i></a></button>
+      
+    </div> </div>
+    
+            </div>
+           
+
+
+                <script>
+                    function navigateToPage(pageURL) {
+    window.location.href = pageURL;
+  }
+                </script>  
+                    
+    </body>
+</html>
