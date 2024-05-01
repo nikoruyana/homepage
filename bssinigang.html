@@ -108,9 +108,9 @@
             padding: 20px;
             box-sizing: border-box;
             text-align: center; 
-            margin-top: 415px;
+            margin-top: 558px;
             font-size: 25px;
-            height: 170px;
+            height: 160px;
             width: 613px;
             margin-left: 35px;
             
@@ -336,52 +336,168 @@ body {
     font-size: 25px;
 }
 
+        .button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+
+
+        .buttons {
+    margin: 10%;
+    text-align: center;
+    margin-left: 590px;
+    margin-top: 40px;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-3 {
+  background-image: linear-gradient(to right, #FF1493, #FF69B4, #FFC0CB, #FF69B4);
+  box-shadow: 0 4px 15px 0 rgba(255, 105, 180, 0.75);
+}
+
+.btn-hover.color-3:hover {
+  background-position: 100% 0;
+}
     </style>
 </head>
 <body>
-<a href="testb1.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+<a href="testb10.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
     
 
 <div class="animated-gradient-bg"></div>
 
 <div class="container">
-    <center><h1>Inihaw na Bangus</h1></center>
+    <center><h1>Sinigang na Bangus </h1></center>
     <div class="overlay">
-        <p>Milkfish stuffed with tomato and onions and grilled to perfection. This dish is best when served with a dipping sauce composed of soy sauce and lemon or calamansi. Enjoy it with warm white rice.
+        <p>In this Filipino fish recipe, bangus (milkfish) is stewed in a flavorful, slightly sour tamarind broth with lots of vegetables, an all-time favorite.
 </p>
     </div>
-    <img src="bsinihaw.png" alt="shrimp" class="image">
+    <img src="bssinigang.png" alt="shrimp" class="image">
 </div>
 <div>
    
-    <a href="https://www.youtube.com/watch?v=7sI8uAfsxlY&pp=ygUUYmFuZ3VzIGluaWhhdyByZWNpcGU%3D"> <button class="btn-hover color-1" >Watch here!</button></a>
+    <a href="https://www.youtube.com/watch?v=8BL3uJlutg0&pp=ygUWYmFuZ3VzIHNpbmlnYW5nIHJlY2lwZQ%3D%3D"> <button class="btn-hover color-1" >Watch here!</button></a>
 <div class="des">
     <h2>Ingredients</h2>
     <ul>
-        <li>1 piece milkfish bangus, with scales but guts removed</li>
-  <li>1 piece tomato ripe, diced</li>
-  <li>1 piece red onion diced</li>
-  <li>1 piece lemon or 3 pieces calamansi (optional)</li>
-  <li>1 tablespoon ginger minced</li>
-  <li>2 teaspoons salt</li>
-  <li>1/2 teaspoon ground black pepper</li>
+        <li>2 lbs. bangus milkfish, cleaned and sliced</li>
+ <li>1 40g pack Knorr Sinigang sa Sampaloc Mix (Original)</li>
+ <li>1 bunch fresh kangkong leaves</li>
+ <li>12 pieces sitaw snake beans, cut into 2 inch pieces</li>
+ <li>6 to 8 pieces okra</li>
+ <li>2 pieces long green pepper siling pansigang</li>
+ <li>1 medium tomato wedged</li>
+ <li>1 medium yellow onion wedged</li>
+ <li>2 ½ tablespoons fish sauce</li>
+ <li>¼ teaspoon ground black pepper</li>
+ <li> quarts water</li>
     </ul>
 </div>
 
 <div class="des">
     <h2>Instructions</h2>
     <ol>
-        <li>Wash the milk fish. Pat it dry using a paper towel.</li>
-<li>Open the incision and then rub the salt on the inside of the dish. The fish should have an incision either above or below the belly area.</li>
-<li>Meanwhile, combine tomato, onion, and ginger in a large bowl. Squeeze some lemon juice in and add the ground black pepper. Gently stir.</li>
-<li>Stuff the mixture inside the milkfish.</li>
-<li>Grill the fish in medium heat for about 10 to 12 minutes per side.</li>
-<li>Serve with toyomansi and steamed rice.</li>
-<li>Share and enjoy!
+        <li>Heat a cooking pot. Pour water into it.</li>
+ <li>Add tomato and anion. Let boil.</li>
+ <li>Add bangus. Cover and cook in medium heat between 8 to 12 minutes.</li>
+ <li>Add Knorr Sinigang sa Sampaloc Mix. Stir. Cook for 2 minutes.</li>
+ <li>Put the long green pepper into the pot. Add snake beans and okra. Stir. Cover and cook for 5 to 7 minutes.</li>
+ <li>Add fish sauce and ground black pepper. Stir.</li>
+ <li>Put the kangkong leaves into the pot. Cover the pot and turn the heat off. Let it stay for 5  minutes.</li>
+<li>Transfer to a serving bowl. Serve.</li>
+ <li>Share and enjoy!</li>
 
-</li>
+
     </ol>
 </div>
+   
 <div class="rec">
     <div class="recipe_footer">
 <br>
@@ -398,11 +514,11 @@ body {
 
                     <dt class="subtitle">Cooking Time</dt>
                     
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 minutes</span><br><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;35 minutes</span><br><br>
 
                      <dt class="subtitle">Total Time</dt>
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  30 minutes</span>
+                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45 minutes</span>
                 </dl>
         </div>
     <script>
