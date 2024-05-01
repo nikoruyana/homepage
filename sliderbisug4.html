@@ -1,0 +1,367 @@
+<html>
+    <head>
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: black;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 20px;
+    color: black;
+    width: 350px;
+    
+    
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.button{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover{
+    background: #ababab;
+    color: #fff;
+}
+
+    .neon-button {
+            background-color: transparent;
+            border: 2px solid black; /* color and kapal ng border */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: -2px; /* Adjust top yung sa may button */
+            left: -2px; 
+            width: calc(100% + 4px); 
+            height: calc(100% + 4px); 
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);/* color ng loob ng button */
+            background-size: 400% 400%;
+            border-radius: 10px;
+            z-index: -1;
+            animation: neon-chaser 6s linear infinite;
+        }
+
+        @keyframes neon-chaser { /*animation ng bg color ng button*/
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .neon-button:hover::before {
+            opacity: 0;
+        }
+
+        .neon-button:hover {
+            color: black;
+            border: 2px solid pink;/*gradient color ng border*/
+            border-image-slice: 3;
+        }
+
+            .highlighted-paragraph {
+  background-color: white; /* Choose the color you want */
+                opacity: 0.6;
+}
+
+        </style>
+    </head>
+
+    <body>
+
+<!--Font Awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+   <div class="container">
+    
+    <div class="slide">
+    
+      
+
+          <div class="item" style="background-image: url('kinamatisangbisugo.jpg');">
+<div class="content">
+    <div class="name">KINAMATISANG BISUGO</div>
+    <div class="des"> <p class="highlighted-paragraph"> Looking for a special fish recipe for an occasion? This Special Kinamatisang Bisugo Soup is tasty, warm, comforting, and easy to make.</p></div>
+
+ <a href="KINAMATISANG BISUGO.html">    <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+<div class="item" style="background-image: url('sarciadongbisugo.JPG');">
+    <div class="content">
+        <div class="name">SARCIADONG BISUGO</div>
+        <div class="des"><p class="highlighted-paragraph">Sarciado in Tagalog means “cooked with a thick sauce”, that is why this fish dish is accompanied with a thick chunky tomato sauce. Fish Sarciado was invented by Filipinos in search for better ways to make a dish out of left over fried fish as these leftovers are not really as appetizing as the freshly fried ones, so an ingenious approach by adding tomato sauce and eggs did made the trick by not just rehydrating the fish but as well as removing the fishy odour and adding more flavour to the leftover.</p></div>
+    
+       <a href="SARCIADONG BISUGO.html">  <button class="neon-button">See more</button></a>
+        </div>
+            
+    </div>
+    
+
+<div class="item" style="background-image: url('paksiwnabisugo.JPG');">
+    <div class="content">
+        <div class="name">PAKSIW NA BISUGO</div>
+        <div class="des"> <p class="highlighted-paragraph">Paksiw na Bisugo is a Filipino dish wherein fish such as galunggong is cooked with water, vinegar, and some spices.</p></div>
+    
+        
+    <a href="PAKSIW NA BISUGO.html">    <button class="neon-button">See more</button></a>
+        </div>
+            
+    </div>
+
+
+        <div class="item" style="background-image: url('pinangatnabisugo.JPG');">
+<div class="content">
+    <div class="name">PINANGAT NA BISUGO</div>
+    <div class="des"><p class="highlighted-paragraph">Pinangat na Bisugo. The taste is between sinigang and paksiw. Best paired with a plate of hot or newly cooked rice.</p></div>
+
+   <a href="PINANGAT NA BISUGO.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+         <div class="item" style="background-image: url('sinigangnabisugo.JPG');">
+        <div class="content">
+            <div class="name">SINIGANG NA BISUGO</div>
+            <div class="des"><p class="highlighted-paragraph">Sinigang na bisugo is a great dish. Just make sure that you won’t overcook the fish.
+            </p></div>
+
+        
+           <a href="SINIGANG NA BISUGO.html"> <button class="neon-button">See more</button></a>
+        </div>
+    </div>
+
+        
+
+     <div class="item" style="background-image: url('sweetandsourbisugo.JPG');">
+<div class="content">
+    <div class="name">SWEET AND SOUR BISUGO</div>
+    <div class="des"> <p class="highlighted-paragraph">There are so many ways to enjoy this dish. The sweet, tangy, sticky sauce goes well with almost any protein, from meaty fish.</p></div>
+
+  <a href="SWEET AND SOUR BISUGO.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+     <div class="item" style="background-image: url('friedbisugo.JPEG');">
+<div class="content">
+    <div class="name">FRIED BISUGO</div>
+    <div class="des"><p class="highlighted-paragraph">Fried Bisugo is a delicacy that can easily turn any meal from ordinary to extraordinary.</p></div>
+
+ <a href="FRIED BISUGO.html">   <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+    <div class="item" style="background-image: url('inihawnabisugo.jpg');">
+<div class="content">
+    <div class="name">INIHAW NA BISUGO</div>
+    <div class="des"><p class="highlighted-paragraph">if you haven’t tried grilling or eating bisugo, now is the best time to do it. Just make sure your favorite dipping sauce is by your side for the total enjoyment of the dish.
+     </p></div>
+
+ <a href="INIHAW NA BISUGO.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+    <div class="item" style="background-image: url('sinabawangbisugo.JPG');">
+<div class="content">
+    <div class="name">SINABAWANG BISUGO</div>
+    <div class="des"><p class="highlighted-paragraph"> This is Sinabawang Bisugo. This down home fish soup recipe is as simple as it is delicious. It’s white fish simmered with a mixture of ginger, onions, and tomatoes. Then seasoned only with salt, pepper and fish sauce. </p></div>
+
+  <a href="SINABAWANG BISUGO.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+
+      <div class="item" style="background-image: url('tinolangbisugo.JPG');">
+<div class="content">
+    <div class="name">TINOLANG BISUGO</div>
+    <div class="des"><p class="highlighted-paragraph">Tinolang Isda or Fish in Ginger Broth is a type of Filipino clear soup dish wherein fish such as Bisugo is cooked in a broth composed of ginger, lemongrass and other vegetables. It is a simple dish that can be enjoyed during dinner with the entire family.</p></div>
+
+   <a href="TINOLANG BISUGO.html">  <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+
+
+</div>
+    </div>
+    
+    
+            
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    
+        <script>
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+            
+        </script>
+    </body>
+</html>
