@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GULAY</title>
     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
-    
     <style>
-        /*ALL*/
+    
         *{
             padding: 0;
             margin: 0;
@@ -18,7 +17,6 @@
             background: #f3f3f3;
             font-family: 'Poppins', sans-serif;
         }
-        /*Heading*/   
         .heading{
             background: #0fb467;
             color: #fff;
@@ -40,7 +38,7 @@
             letter-spacing: 5px;
             text-transform: uppercase;
         }
-        /*BACK BUTTON*/
+        
         .button:after,
 .close-btn:after {
   background: #fff;
@@ -50,7 +48,7 @@
 .explore:before,
 .close-btn,
 .close-btn:before {
-  background: rgb(199, 255, 192); 
+  background: rgb(199, 255, 192); /* Light pink */
   background: linear-gradient(
     45deg,
     rgb(199, 255, 192) 0%,
@@ -133,6 +131,13 @@
   font-style: oblique;
   margin-right: 20px;
 }
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media only screen and (min-device-width: 400px) {
+    .card-img {   
+    flex-direction: column;
+    position: sticky;
+  }
+}
 .card{
   width: 420px;
   height: 250px;
@@ -149,7 +154,8 @@
 .card-img{
   width: 100%;
   object-fit: cover; 
-  height: auto;
+  height: 100%;
+
 }
 .card-body{
   width: 100%;
@@ -196,7 +202,7 @@
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
+    
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -206,6 +212,8 @@
     text-align: center;
     margin-left: 590px;
     margin-top: 40px;
+    position: sticky;
+    left: 50px;
 }
 
 .btn-hover:hover {
@@ -224,55 +232,60 @@
     background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
-</style>
+    </style>
 </head>
 <body>
-  <!--BACK BUTTON-->
     <div>
         <a href="gulay-menu.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
     </div>
-  <!--HEADING-->
     <div class="heading">
-        <h1>Gising-Gising</h1>
+        <h1>Chop Suey</h1>
         <h3>&mdash;Recipe&mdash;</h3>
     </div>
-   <!--WATCH BUTTON--> 
-    <a href="https://youtu.be/JV9NzCc1YN4?si=amvL6kLx1bpOJavd"> <button class="btn-hover color-1" >Watch here!</button></a>
-   <!--IMAGE AND HOVER-->
-      <div class="card">
-        <img src="Gising-Gising.webp" alt="Gising Gising" class="card-img">
-        <div class="card-body">
-          <h1 class="card-title">Gising-Gising</h1>
-          <p class="card-sub">description</p>
-          <p class="card-info">It is a ground pork and green bean dish cooked in coconut milk. Shrimp paste (bagoong) is used to enhance the flavor.</p>
-        </div>
-      </div>
-    <!--INGPRO-->
+    
+        <!--WATCH BUTTON--> 
+    <a href="https://youtu.be/M01Q74AuaEg?si=2FoVJ6nE6kU5YDk2"> <button class="btn-hover color-1" >Watch here!</button></a>
+    <!--IMAGE AND HOVER-->
+       <div class="card">
+         <img src="chopsuey.jpg" alt="Chop Suey" class="card-img">
+         <div class="card-body">
+           <h1 class="card-title">Chop suey</h1>
+           <p class="card-sub">description</p>
+           <p class="card-info">Chop Suey is a stir-fried vegetable dish that is cooked with meats such as chicken and pork. Shrimp and seafood can also be added.</p>
+         </div>
+       </div>
+        
     <div class="ingpro">
-    <h2>Ingredients</h2>
-    <ul>
-        <li>500g green beans, sliced into small pieces</li>
-        <li>300g minced pork</li>
-        <li>2 tbsp bagoong or shrimp paste</li>
-        <li>2 cups coconut milk</li>
-        <li>1 cup coconut cream</li>
-        <li>4–5 pcs red chillies, sliced with seeds</li>
-        <li>4 cloves garlic, minced</li>
-        <li>2 small shallots, finely chopped</li>
-        <li>freshly ground black pepper</li>
-        <li>Oil</li>
-    </ul>
-<br>
-    <h2>Procedure</h2>
-    <ol type="1">
-        <li>In a wok, sauté garlic and shallots.</li>
-        <li>Add minced pork and cook while continuously stirring for 5 minutes.</li>
-        <li>Add coconut milk and simmer for 15 minutes in medium high heat, at this stage coconut milk will be reduced and thick.</li>
-        <li>Add shrimp paste and green beans, stir for 2 minutes.</li>
-        <li>Add coconut cream and chillies and cook for 2 more minutes.</li>
-        <li>Season with freshly ground black pepper then serve.</li>
-    </ol>
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 broccoli, cut into florets</li>
+            <li>1 cauliflower, cut into florets</li>
+            <li>1 large carrots sliced thinly</li>    
+            <li>2 stalks celery, sliced</li>    
+            <li>1 yellow capsicum (bell pepper), sliced</li>    
+            <li>2 small chayote, sliced</li>    
+            <li>6 pcs dried shiitake mushrooms, rehydrated and sliced</li>    
+            <li>300g cup pork belly, diced></li>    
+            <li>1 block tofu, deep fried and sliced</li>    
+            <li>6 cloves garlic, minced</li>    
+            <li>1 red onion, chopped</li>    
+            <li>1 tbsp cornstarch (dissolved in 1/4 cup water)</li>    
+            <li>1 cup chicken stock</li>    
+            <li>1 tbsp sugar</li>    
+            <li>fish sauce</li>    
+            <li>freshly ground black pepper</li>    
+            <li>oil</li>    
+        </ul>
+        <br><br><br>
+        <h2>Procedure</h2>
+        <ol type="1">
+            <li>Heat up a wok in a very high heat, add oil and sauté garlic and onion.</li>
+            <li>Add pork then stir fry for 2 minutes.</li>
+            <li>Add broccoli, cauliflower, chayote, celery and shiitake mushroom then continue to stir fry for 2 minutes.</li>
+            <li>Add capsicum and carrots then stir fry for 2 minutes.</li>
+            <li>Add chicken stock, sugar and dissolved cornstarch, bring to a rapid boil.</li>
+            <li>Once it boils fish sauce and freshly ground black pepper.</li>
+        </ol>
     </div>
-
 </body>
 </html>
