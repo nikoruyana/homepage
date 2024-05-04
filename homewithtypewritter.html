@@ -2,7 +2,7 @@
 <html>
 <head>
      <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
-    <title>Top 10 Filipino Cuisine</title>
+    <title>SEARCHBAR</title>
     <style>
        
 
@@ -31,18 +31,21 @@
     ul{
         float: right;
         list-style-type: none;
-        margin-top: -50px;
+        margin-top: -205px;
         min-height: 100px;
-        margin-right: 60px;
+        
         font-size: 27px;
-        margin-right: 1200px;
+        margin-right: 1220px; /* Adjust niyo naman here if medyo maliit or mahaba spacing niys sa right */
 
 }
 
-    ul li{
-        display: inline-block;
+
+       
+ul li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust niyo here if kwwan nasa baba yung contacts  */
 }
-    
+
     ul li a{
         text-decoration: none;
         color: white;
@@ -57,7 +60,7 @@
         
 }
     ul li.active a{
-         background-color: white;
+         background-color: purple;
          color: black;
 
 }
@@ -156,11 +159,12 @@ margin-top: -500px;
 
         .search-box {
             width: 0;
-            background: #fff;
-            margin: -600px auto 0;
+        
+            margin: -750px auto 0;
             border-radius: 5px;
             position: relative; 
-           
+           background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    border: none; 
             
         }
 
@@ -183,7 +187,7 @@ margin-top: -500px;
         
        .fa-solid.fa-magnifying-glass {
   font-size: 30px;
-  background-color: black;
+  
   color: white;
   position: absolute;
   margin-top: 350px; /*margin sa taas */
@@ -317,9 +321,23 @@ p {
          z-index: -1;
 }
 
-    </style>
+  
+         #soundButton {
+     background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    border: none; /* Remove border */
+    color: pink; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 25px; /* Adjust font size */
+   
+             margin-top: -70px;
+       margin-right: -1450px;
+  }
+</style>
 </head>
 <body>
+  <button id="soundButton"><i id="soundIcon" class="fa-solid fa-headphones"></i></button>
+  <audio id="audioElement" src="Diaphanous.mp3"></audio>
     <header>
     <div class="main">  
     <dir class="ror">
@@ -329,14 +347,17 @@ p {
 <video id="webvideo" autoplay loop muted>
   <source src="webvd.mp4" type="video/mp4">
 </video>
+       
+        
         <div>
     <ul>
-        <li class=><a href="#">Home</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="ABOUT-US-BOOK.html">About</a></li> 
-        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="contacts-with-button.html">Contacts</a></li>
     </ul>
     </div>
     </header>
+
 <div class="search-box">
     <div class="row">
         <input type="text" id="input-box" autocomplete="off"><button><a href="searchbar(done).html"><i class="fa-solid fa-magnifying-glass"></i></a></button>
@@ -348,6 +369,8 @@ p {
     </div>
 </div>
 
+
+
 <h1 class="block-effect" style="--td: 1.2s">
   
 
@@ -356,59 +379,36 @@ p {
 </h1>
 
         <div>
-   <a href="dessertssssssssnicynthia.html.html"> <button class="btn-hover color-1" >DESSERTS</button></a>
+   <a href="DESSERTNEW.html"> <button class="btn-hover color-1" >DESSERTS</button></a>
     <a href="drinksmenu.html"> <button class="btn-hover color-2">DRINKS</button></a>
     <a href="slider5.html"> <button class="btn-hover color-3">MAIN COURSE</button></a>
     <a href="streetfood-menu.html"> <button class="btn-hover color-4">STREETFOOD</button></a>
-    <a href="junkfoods2.html"> <button class="btn-hover color-5">JUNKFOODS</button></a>
+    <a href="chichirya-with-button.html"> <button class="btn-hover color-5">JUNKFOODS</button></a>
     
 </div>
 
 <script>
-    /*tapos ito is yung sa java para sa search bar*/
 
+// JavaScript for sound button
+const soundButton = document.getElementById('soundButton');
+const audioElement = document.getElementById('audioElement');
+const soundIcon = document.getElementById('soundIcon');
 
-    let availableKeywords = [
-        'html',
-        'sinigang',
-        'angilla',
-        'steph',
-        'ariana',
-        'kris',
-        'cynthia',
-    ];
+let isPlaying = false;
 
-    const resultsBox = document.querySelector(".result-box ul");
-    const inputBox = document.getElementById("input-box");
-    const deleteBtn = document.querySelector(".delete-btn");
-
-    inputBox.onkeyup = function () {
-        let input = inputBox.value.toLowerCase();
-        let result = availableKeywords.filter((keyword) => {
-            return keyword.toLowerCase().includes(input);
-        });
-        if (!result.length) {
-            resultsBox.innerHTML = '';
-        }
-        display(result);
-    };
-
-    deleteBtn.onclick = function () {
-        inputBox.value = '';
-        resultsBox.innerHTML = '';
-    };
-
-    function display(result) {
-        const content = result.map((list) => {
-            return "<li onclick='selectInput(this)'>" + list + "</li>";
-        });
-        resultsBox.innerHTML = content.join('');
-    }
-
-    function selectInput(list) {
-        inputBox.value = list.innerHTML;
-        resultsBox.innerHTML = '';
-    }
+soundButton.addEventListener('click', () => {
+  if (!isPlaying) {
+    audioElement.play();
+    soundIcon.classList.remove('fa-headphones');
+    soundIcon.classList.add('fa-play');
+  } else {
+    audioElement.pause();
+    audioElement.currentTime = 0;
+    soundIcon.classList.remove('fa-play');
+    soundIcon.classList.add('fa-headphones');
+  }
+  isPlaying = !isPlaying;
+});
 </script>
 
 </body>
