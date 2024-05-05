@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
-    <title>YELLOW FIN</title>
+    <title>GALUNGGONG</title>
     <style>
         * {
             box-sizing: border-box;
@@ -322,62 +322,49 @@
 </head>
 <body>
 
-<div class="animated-gradient-bg"></div><div>
-    <a href="yfgal.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="animated-gradient-bg"></div>
+<div>
+    <a href="testg1. class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
 </div>
-
 <div class="container">
-    <center><h1>Teriyaki Tuna Yellowfin</h1></center>
+    <center><h1>Tambakol Steak</h1></center>
     <div class="overlay">
-        
-<p>
-
-Teriyaki Tuna Yellowfin offers succulent ahi tuna steaks coated in a flavorful teriyaki glaze, paired with a spicy and creamy volcano sauce. Garnished with fresh scallions, this dish delivers a harmonious blend of savory and spicy flavors.
-
+        <p>Tambakol steak is made by frying tuna steaks in oil and then simmering those fried fish in a sauce made by garlic, onion, ginger, soy sauce, calamansi juice, oyster sauce, pepper, sugar, corn starch and topped up with onion rings. 
 </p>
     </div>
-    <img src="Teriyaki-Tuna-7.jpg" alt="Teriyaki Tuna Yellowfin" class="image">
+    <img src="C:\Users\USER\Pictures\TAMBAKOL STEAK.jpg" alt="Tambakol Steak" class="image">
 </div>
-<a href="https://www.youtube.com/watch?v=rDROWJ5K6ho"> <button class="btn-hover color-1" >Watch here!</button></a>
+<a href="https://www.youtube.com/watch?v=MA1_cxWrDGE"> <button class="btn-hover color-1" >Watch here!</button></a>
 <div class="des">
     <h2>Ingredients</h2>
-    <h3>Teriyaki Tuna:</h3>
     <ul>
-        <li>⅜ cup teriyaki sauce</li>
-        <li>3 ahi tuna steaks</li>
-        <li>2 ¼ tablespoons white sesame seeds</li>
-        <li>2 ¼ tablespoons black sesame seeds</li>
-        <li>2 ¼ tablespoons vegetable oil</li>
-    </ul>
-    <h3>Volcano Sauce:</h3>
-    <ul>
-        <li>4/7 cup mayonnaise</li>
-        <li>1 ½ tablespoons chili garlic sauce</li>
-        <li>1 ½ tablespoons sweetened condensed milk</li>
-        <li>¾ teaspoon sugar</li>
-    </ul>
-    <h3>Garnish:</h3>
-    <ul>
-        <li>¾ bunch scallions, sliced diagonally</li>
+        <li>1/2 kilo yellow fin tuna</li>
+        <li>4 cloves of garlic (chopped)</li>
+        <li>1 medium onion (cut into rings)</li>
+        <li>1 small ginger (minced)</li>
+        <li>1/4 cup soy sauce</li>
+        <li>1/4 cup calamansi juice (adjust as needed)</li>
+        <li>1 tablespoon oyster sauce</li>
+        <li>1/2 cup water</li>
+        <li>Black pepper to taste</li>
+        <li>1/2 tablespoon sugar (optional)</li>
+        <li>Slurry (1 teaspoon cornstarch dissolved in 2 tablespoons water)</li>
+        <li>White onions (cut into rings for toppings)</li>
+        <li>Oil (for frying and sauteing)</li>
     </ul>
 </div>
 
 <div class="des">
-    <h2>Instructions</h2>
+    <h2>Directions</h2>
     <ol>
-        <li>For volcano sauce, combine mayonnaise, chili garlic sauce, sweetened condensed milk, and sugar in a small food processor or with an immersion blender. Adjust the heat level by adding chili garlic sauce slowly to reach desired spiciness. Set aside.</li>
-        <li>Combine white and black sesame seeds in a shallow bowl. Dredge both sides of the tuna steaks in sesame seeds. Set aside.</li>
-        <li>Heat vegetable oil in a large cast iron skillet or frying pan over high heat.</li>
-        <li>When the oil is hot, place tuna steaks in the pan and cover. Cook for 2-3 minutes on each side, depending on desired doneness. Remove from pan.</li>
-        <li>Plate the tuna steaks and top with teriyaki sauce.</li>
-        <li>For serving, you can either serve the volcano sauce on the side for dipping or pipe it onto the tuna steaks using an airtight plastic bag with a small hole in one corner.</li>
-        <li>Garnish with sliced scallions before serving.</li>
-        <li>Enjoy your Teriyaki Tuna with Volcano Sauce!</li>
+        <li>Prepare the yellow fin tuna steaks. Lay them on a flat plate and then season with salt and pepper. Rub thoroughly. Flip them and also season the other side.</li>
+        <li>Heat some oil in a pot using medium heat. Fry the fish steaks until golden brown. Flip to cook the other side. Transfer them to a strainer or paper towel to drain excess oil. Set aside.</li>
+        <li>Heat some oil in another pan. Add the red onion rings and garlic. Saute for a few minutes until aromatic. Add the chopped ginger and saute. Next, add the soy sauce, calamansi juice and oyster sauce. Stir to mix well. Season with black pepper. Add water and stir. Allow the sauce to boil for a few minutes until reduced. Add the sugar and the slurry. Mix well until the sauce becomes thick.</li>
+        <li>Add the fried fish steaks and baste them with the sauce. Flip them to soak the other side until well coated with the sauce. Cover the pot and allow them to cook for 3 minutes. Flip to cook evenly.</li>
+        <li>Add some white onion rings on top. Cover the pot again and let simmer for 2 – 3 minutes. Then, turn the heat off.</li>
+        <li>Transfer the yellow fin tuna steak to a serving plate. Enjoy this as it is or serve it with a lot of hot steaming rice. Yum!</li>
     </ol>
 </div>
-
-
-
 
 <div class="rec">
     <div class="recipe_footer">
@@ -391,15 +378,15 @@ Teriyaki Tuna Yellowfin offers succulent ahi tuna steaks coated in a flavorful t
                             <path fill="#0F0F0F"
                                   d="M12 5a1 1 0 0 0-1 1v6.467s0 .26.127.457c.084.166.217.31.39.41l4.62 2.668a1 1 0 0 0 1-1.732L13 11.88V6a1 1 0 0 0-1-1Z"/>
                         </svg>
-                        <span>10 minutes</span></dd><br>
+                        <span>2 minutes</span></dd><br>
 
                     <dt class="subtitle">Cooking Time</dt>
                     
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 minutes</span><br><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 minutes</span><br><br>
 
                      <dt class="subtitle">Total Time</dt>
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20 minutes</span>
+                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 minutes</span>
                 </dl>
         </div>
 </div>

@@ -208,10 +208,175 @@ body{
                 opacity: 0.6;
 }
 
+       
+           #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin-top: 30px;
+    width: 43px;
+       margin-left: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+.buttonns{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.buttonns button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.buttonns button:hover{
+    background: #ababab;
+    color: #fff;
+}
+
+
+  
         </style>
     </head>
 
     <body>
+<a href="shrimpgal.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
 
 <!--Font Awesome CDN-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -228,15 +393,11 @@ body{
     <div class="des"> <p class="highlighted-paragraph">Camaron rebosado is a deep-fried battered shrimp dish in Philippine cuisine. It is usually served with a sweet and sour sauce. It is a common dish in Philippine cuisine.</p></div>
 
     
-    <button class="neon-button">See more</button>
+   <a href="camaronrebosado(2).html"> <button class="neon-button">See more</button></a>
     </div>
         
 </div>
           
-            
-   
-        
-      
         <div class="item" style="background-image: url('Garlic Butter Shrimp Recipe.jpeg');">
 <div class="content">
     <div class="name">Garlic Butter Shrimp</div>
@@ -246,6 +407,18 @@ body{
     </div>
         
 </div>
+            
+    <div class="item" style="background-image: url('egg.png');">
+<div class="content">
+    <div class="name">Sipo egg with Shrimp</div>
+    <div class="des"> <p class="highlighted-paragraph">Sipo Egg with Shrimp is a Filipino dish consisting of hard-boiled eggs stuffed with a mixture of ground shrimp, vegetables like carrots and peas, and a creamy sauce typically made with mayonnaise and cheese. </p></div>
+
+  <a href="EGG.html">   <button class="neon-button">See more</button></a>
+    </div>
+        
+</div>
+        
+      
 
 
          <div class="item" style="background-image: url('Sinigang na Sugpo Recipe.jpeg');">
@@ -265,7 +438,7 @@ body{
     <div class="name">Sweet and Spicy</div>
     <div class="des"> <p class="highlighted-paragraph">This recipe features fresh shrimp combined with sweet and spicy sauce or a wonderful stir-fried seafood dish that is perfect any night of the week. For a special Filipino dish, serve this dish with Sinangag rice.</p></div>
 
-   <button class="neon-button">See more</button>
+   <a href="SWEETANDSPICY.html"> <button class="neon-button">See more</button></a>
     </div>
         
 </div>
@@ -276,7 +449,7 @@ body{
     <div class="name">Halabos na Hipon</div>
     <div class="des"><p class="highlighted-paragraph"> It's a simple yet flavorful dish where fresh shrimp are steamed and typically served with a dipping sauce made of vinegar, soy sauce, and garlic. The shrimp are often cooked in their shells, which helps retain their natural flavors and juiciness. It's a popular and easy-to-prepare seafood dish enjoyed in Filipino cuisine.</p></div>
 
-   <button class="neon-button">See more</button>
+  <a href="HALABOSNAHIPON.html">  <button class="neon-button">See more</button></a>/
     </div>
         
 </div>
@@ -287,7 +460,7 @@ body{
     <div class="name">Bicol Express</div>
     <div class="des"><p class="highlighted-paragraph">Seafood Bicol Express is a dish composed of fresh shrimp, squid, and mussels. These are cooked in coconut milk along with sautéed garlic, ginger, and onion. The addition of lots of chili peppers and shrimp paste made this dish extra spicy, tasty, and special.</p></div>
 
-  <button class="neon-button">See more</button>
+  <a href="BICOLHIPON.html"> <button class="neon-button">See more</button></a>
     </div>
         
 </div>
@@ -297,7 +470,7 @@ body{
     <div class="name">Ginataang Hipon</div>
     <div class="des"><p class="highlighted-paragraph">Ginataang Hipon is a Filipino dish featuring shrimp cooked in a creamy coconut milk sauce flavored with garlic, onions, ginger, and sometimes chili peppers for a hint of spice. </p></div>
 
-   <button class="neon-button">See more</button>
+  <a href="GINATAAN.html">  <button class="neon-button">See more</button></a>
     </div>
         
 </div>
@@ -309,7 +482,7 @@ body{
     <div class="name">Adobong Hipon</div>
     <div class="des"><p class="highlighted-paragraph"> Adobong Hipon is a Filipino dish where shrimp is marinated and cooked in a savory sauce made from vinegar, soy sauce, garlic, and spices, creating a tangy and flavorful dish.</p></div>
 
-    <button class="neon-button">See more</button>
+    <a href="ADOBONGHIPON.html"> <button class="neon-button">See more</button></a>
     </div>
         
 </div>
@@ -320,28 +493,20 @@ body{
     <div class="name">Curry na Hipon</div>
     <div class="des"><p class="highlighted-paragraph">Curry na Hipon is a Filipino dish featuring shrimp cooked in a flavorful curry sauce made with coconut milk, curry powder, onions, garlic, and spices, resulting in a creamy and aromatic dish. </p></div>
 
-    <button class="neon-button">See more</button>
+   <a href="SHRIMPCURRY.html">  <button class="neon-button">See more</button></a>
     </div>
         
 </div>
 
 
-     <div class="item" style="background-image: url('egg.png');">
-<div class="content">
-    <div class="name">Sipo egg with Shrimp</div>
-    <div class="des"> <p class="highlighted-paragraph">Sipo Egg with Shrimp is a Filipino dish consisting of hard-boiled eggs stuffed with a mixture of ground shrimp, vegetables like carrots and peas, and a creamy sauce typically made with mayonnaise and cheese. </p></div>
-
-    <button class="neon-button">See more</button>
-    </div>
-        
-</div>
+    
 
 </div>
     </div>
     
             
 
-        <div class="button">
+        <div class="buttonns">
             <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
             <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
