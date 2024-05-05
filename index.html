@@ -1,482 +1,403 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CHICHIRYA &amp; FILIPINO CUSINE</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+<script src="app.js" defer></script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
 
-</head>
-<body>
-<!-- missu -->
-<body>
-    <section id="intro">
-      <div class="info">
-        <h1>CHICHIRYA</h1>
-        <p>
-          "Tsitsirya" in Filipino refers to small, crispy snacks typically eaten as appetizers or desserts. They are commonly sold in small packets or plastic bags and can be found in street-side stores, eateries, or roadside stalls. Tsitsirya can be sweet, salty, spicy, or sour, and they come in various forms, including chicharon (pork cracklings), peanuts, salted eggs, or any other snacks commonly available in the Philippines.
-        </p>
-        <a href="#content" class="button explore">Explore</a>
-      </div>
-      <div class="split-tsitsirya">
-        <img
-          class="tsitsirya"
-          src="IMG_20240330_162448.png" />
-        <img
-          class="tsitsirya"
-          src="IMG_20240330_162512.png" />
-        <img
-          class="tsitsirya"
-          src="IMG_20240330_162524.png" />
-      </div>
-    </section>
+   
+  html {
+    font-size: 62.5%;
+  }
 
-    <section id="content">
-      <!-- MGA Cards -->
-      <div class="card">
-        <img class="card-img" src="CHIIPPPY CHIPS.jpg" />
-        <div class="title">
-          <h2>chippy</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal1">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .slideshow {
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
 
-      <div class="card">
-        <img class="card-img" src="CHIZZZZCURLS.jpg" />
-        <div class="title">
-          <h2>chiz curls</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal2">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .carousel {
+    width: 60rem;
+    height:60rem;
+    border: 3rem solid #eebe97;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    flex-shrink: 0;
+    transition: transform 1s;
+  }
 
-      <div class="card">
-        <img class="card-img" src="CLOVERRRRR.jpg" />
-        <div class="title">
-          <h2>clover</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal3">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .slide {
+    width: 20rem;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-      <div class="card">
-        <img class="card-img" src="FISHCAKE.jpg" />
-        <div class="title">
-          <h2>fish cake</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal4">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .slide.active img {
+    transform: scale(2.5);
+    transition: transform 0.5s 0.5s;
+  }
 
-      <div class="card">
-        <img class="card-img" src="LALA.jpg" />
-        <div class="title">
-          <h2>lala</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal5">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .slide img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 50%;
+  }
 
-      <div class="card">
-        <img class="card-img" src="LOADEDDD.jpg" />
-        <div class="title">
-          <h2>loaded</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal6">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .controls {
+    position: sticky;
+    bottom: 5rem;
+  }
 
-      <div class="card">
-        <img class="card-img" src="MARTYSSSSSSS.jpg" />
-        <div class="title">
-          <h2>Martys</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal7">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .controls a {
+    padding: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: background-color 1s;
+  }
 
-      <div class="card">
-        <img class="card-img" src="MR CHIPSSSS.jpg" />
-        <div class="title">
-          <h2> Mr Chips</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal8">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .controls a.active {
+    background-color: lightbrown;
+  }
 
-      <div class="card">
-        <img class="card-img" src="PIATTOSSS.jpg" />
-        <div class="title">
-          <h2>Piattos</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal9">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .controls img {
+    width: 10rem;
+    border-radius: 50%;
+  }
 
-      <div class="card">
-        <img class="card-img" src="TORTILLOSS.jpg" />
-        <div class="title">
-          <h2>Tortillos</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal10">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+  .slide.active {
+    z-index: 1;
+  }
+       #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
 
-      <div class="card">
-        <img class="card-img" src="V CUTTT.jpg" />
-        <div class="title">
-          <h2> V Cut</h2>
-        </div>
-        <div class="more">
-          <button class="modal-open" data-modal="modal11">
-            more<ion-icon
-              class="open-icon"
-              name="open-outline"
-              aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-      </div>
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
 
-      <!-- mga Modals man -->
-      <div class="modal" id="modal1">
-        <div class="modal-content">
-          <div class="modal-header">
-            chippy<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="CHIIPPPY CHIPS.jpg" alt="" />
-            <ul>
-              <li>
-                Every Filipino is familiar with the original CHIPPY, recognizable by its distinctive red packaging. These crunchy corn chips were likely barbecue-flavored, evoking nostalgia for many.
-              </li>
-              <li>
-                In recent decades, Jack n Jill (Universal Robina Corporation) has introduced various flavor variants of CHIPPY, including Chili & Cheese in blue packs and Garlic & Vinegar in green packs.
-              </li>
-              <li>
-                The ingredients for the BBQ variant include corn, vegetable oil, and a blend of barbecue flavorings such as yeast, MSG, salt, sugar, spices, maltodextrin, hydrolyzed soy and corn proteins, tricalcium phosphate, rusk powder, natural flavors, mustard seed, silicon dioxide, caramel color, and artificial flavors. Additionally, iodized salt, monosodium glutamate, onion powder, garlic powder, ferrous sulfate, pepper, and antioxidants (butylated hydroxyanisole, butylated hydroxytoluene, propyl gallate) are listed.
-              </li>
-              <li>The allergen statement indicates that CHIPPY contains soy, wheat, and mustard ingredients.
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
 
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
 
-      <div class="modal" id="modal2">
-        <div class="modal-content">
-          <div class="modal-header">
-           Chiz Curls<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="CHIZZZZCURLS.jpg" alt="" />
-            <ul>
-              <li>
-                In 1966, Universal Robina Corporation introduced Chiz Curls, a cheese-flavored puff snack packaged in distinctive blue plastic. Over the years, the packaging design has evolved, but the vibrant blue color and bold font have remained consistent, reflecting the snack's enduring popularity due to its cheesy flavor.
-              </li>
-              <li>
-                The ingredients are Corn, Partially Hydrogenated Vegetable Oil (May Contain One or More of the Following: Palm, Corn or Coconut Oil), Cheese Powder (Whey, Cheddar Cheese (Cultured Pasteurized Milk, Salt and Enzymes], Butter or Soybean Oil, Dry Buttermilk, Natural Flavor (Cheese), Disodium Phosphate and Artificial Colors [Contain FD&C Yellow 5 (Tartrazine) and FD&C Yellow 61}, Iodized Salt, Ferrous Sulfate and Vitamin A Palmitate.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
 
-      <div class="modal" id="modal3">
-        <div class="modal-content">
-          <div class="modal-header">
-           Clover<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="CLOVERRRRR.jpg" alt="" />
-            <ul>
-              <li>
-                In Filipino culture, Clover Chips are not just a cheesy corn snack; they're also utilized similarly to breadcrumbs in dishes like fried chicken. The satisfyingly light crunch of Leslie's Clover Chips Cheesier is irresistible and leaves you wanting more. Whether enjoyed at home or on the go, these corn snacks ensure the crunch never ends.
-              </li>
-              <li>
-                In recent decades they introduced various flavor variants of Clover, including Barbeque (in red pack), Ham&Cheese (in green pack), Chili&Cheese (in red pack), Spicy Beef (in brown pack), Shrimp Barbeque (in light blue pack), they also made a clover bits favored with taco BBQ and taco Chicken.
-              </li>
-              <li>The ingredients for the CHEESE variant include Tapioca Starch, Yellow Corn, Vegetable oil (may contain one or more of the following: Palm Oil, Coconut Oil, Soybean Oil), Natural Cheddar Cheese Powder (Cheddar Cheese [Pasteurized Milk, Cheese Cultures, Salt Enzymes], Whey, Natural and Artificial Flavors, Sodium Caseinate, Disodium Phosphate, Citric Acid, Monosodium Glutamate, Autolyzed Yeast Extract, Artificial Color [FD & C #5-Tartrazine Yellow, FD & C #6-Sunset Yellow], Disodium Inosinate, Disodium Guanylate), Iodized Salt, Vitamin Premix (Vit. A, Vit. B1, Vit. B2, Vit. B5, Vit. B6, Vit. B12, Folic Acid, and Niacin)</li>
-              <li>The allergen statement indicates that CLOVER contains dairy product ingredients.</li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
 
-      <div class="modal" id="modal4">
-        <div class="modal-content">
-          <div class="modal-header">
-           Fish Cake<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="FISHCAKE.jpg" alt="" />
-            <ul>
-              <li>
-                These snacks are often sold in small packets and are popular among Filipinos for their variety of flavors and textures. They're commonly found in local sari-sari stores and street food stalls throughout the Philippines, offering a quick and tasty snack option for people on the go.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
 
-      <div class="modal" id="modal5">
-        <div class="modal-content">
-          <div class="modal-header">
-           LALA<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="LALA.jpg" alt="" />
-            <ul>
-              <li>La La Fish Crackers are thick, salty fish crackers which is made from wheat and rice flour. It is perfect to eat while watching movies and it can be take on go. It is tasty and healthy.</li>
-              <li>
-                The ingredients are Wheat Flour (Gluten), Cassava Starch, Vegetable Oil (Palm & Coconut Oil), Sugar, Rice Flour, Fish Sauce (Water, Anchovy Fish, Salt), Onion Powder, Flavour Enhancer (E621), Salt, Garlic Powder, Cayenne Pepper, Colours (E102, E110).
-              </li>
-              <li>
-                The allergen statement indicates that LA LA contains Wheat Gluten, Fish.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
 
-      <div class="modal" id="modal6">
-        <div class="modal-content">
-          <div class="modal-header">
-          LOADED<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="LOADEDDD.jpg" alt="" />
-            <ul>
-              <li>
-                Loaded White Chocolate & Nutty Choco filled snack is a crunchy snack with a light white chocolate filling. Delicious crisp and creamy taste.
-              </li>
-              <li>
-                 they introduced various flavor variants of loaded, including nutty choco-filled (in brown pack), choco-filled (in yellow pack), Cheese-filled (in caramel pack).
-              </li>
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.3rem .8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+    margin-top: -1000;
+   
+}
             
-              <li>The allergen statement indicates that CLOVER contains milk.</li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    /* CSS styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* CSS styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* CSS styles for large devices */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* CSS styles for extra large devices */
+}
+
+    .kn{
+font-size: 50px;
+        
+        margin-left: 650px;
+        }
+        </style>
+    </head>
+
+    <body>
+<a href="slider5.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+        <h1 class="kn">RICE MENU</h1>
+    <div class="slideshow">
+      <div class="carousel">
+        <div class="slide active">
+          <a href="kn6.html" data-index="1" class="active">
+            <img src="rcegg.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn10.html" data-index="1" class="active">
+            <img src="rcchicken.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn1.html" data-index="1" class="active">
+            <img src="rcsisig.png" />
+          </a>
+        </div>
+       
+        <div class="slide">
+          <a href="kn7.html" data-index="1" class="active">
+            <img src="rccaldo.png" />
+          </a>
+        </div>
+           <div class="slide">
+          <a href="kn2.html" data-index="1" class="active">
+            <img src="rchotdog.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn9.html" data-index="1" class="active">
+            <img src="rcjava.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn4.html" data-index="1" class="active">
+            <img src="rctapa.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn8.html" data-index="1" class="active">
+            <img src="rcshrimp.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn3.html" data-index="1" class="active">
+            <img src="rcgarlic.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn5.html" data-index="1" class="active">
+            <img src="rctocino.png" />
+          </a>
         </div>
       </div>
 
-      <div class="modal" id="modal7">
-        <div class="modal-content">
-          <div class="modal-header">
-           Marty's<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="MARTYSSSSSSS.jpg" alt="" />
-            <ul>
-              <li>
-                Vegetarian Chicharon Old-fashioned Style.
-              </li>
-              <li>
-                they introduced various flavor variants of marty's, including chicken inasal, bacon and salt & vinegar.
-             </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
+      <div class="controls">
+        <a href="#" data-index="1">
+          <img src="rcegg.png" />
+        </a>
+        <a href="#" data-index="2">
+          <img src="rcchicken.png" />
+        </a>
+        <a href="#" data-index="3">
+          <img src="rcsisig.png" />
+        </a>
+        
+        <a href="#" data-index="4">
+          <img src="rccaldo.png" />
+        </a>
+          <a href="#" data-index="5">
+          <img src="rchotdog.png" />
+        </a>
+        <a href="#" data-index="6">
+          <img src="rcjava.png" />
+        </a>
+<a href="#" data-index="7">
+          <img src="rctapa.png" />
+        </a>
+        <a href="#" data-index="8">
+          <img src="rcshrimp.png" />
+        </a>
+        <a href="#" data-index="9">
+          <img src="rcgarlic.png" />
+        </a>
+        <a href="#" data-index="10">
+          <img src="rctocino.png" />
+        </a>
       </div>
+    
+<script>
+    const carousel = document.querySelector(".carousel");
+  const slides = document.querySelectorAll(".slide");
+  const controlLinks = document.querySelectorAll(".controls a");
 
-      <div class="modal" id="modal8">
-        <div class="modal-content">
-          <div class="modal-header">
-           Mr Chips<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="MR CHIPSSSS.jpg" alt="" />
-            <ul>
-              <li>
-                Triangular shaped corn chips loaded with mucho nacho cheese
-that spell a whole lot of fun and a whole lot of goodness. You
-just don't bite your mr. chips chip. You go all out and gobble them
-all up.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+  let i = 0,
+    j = 1,
+    intervalId;
 
-      <div class="modal" id="modal9">
-        <div class="modal-content">
-          <div class="modal-header">
-           Piattos<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="PIATTOSSS.jpg" alt="" />
-            <ul>
-              <li>
-                Get ready to indulge in cheesy goodness with Jack 'n Jill Piattos, the latest addition to our snack lineup! These mouthwatering Cheese Flavored Potato Crisps are sure to delight your taste buds and keep you coming back for more. Made with real cheese, these crispy, crunchy crisps are the perfect way to satisfy your cheesy cravings. The unique shape of Piattos makes them ideal for dipping in your favorite sauce or enjoying straight from the bag. Whether it's movie nights, game days, or a simple afternoon snack, Jack 'n Jill Piattos are crafted with high-quality ingredients for your enjoyment. Embrace the cheesiness with Jack 'n Jill Piattos, Cheese Flavored Potato Crisps! Try them today and let the cheesy goodness sweep you away.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+  const intervalFn = () => {
+    intervalId = setInterval(() => {
+      carousel.style.transform = `rotate(-${++i * 360}deg)`;
 
-      <div class="modal" id="modal10">
-        <div class="modal-content">
-          <div class="modal-header">
-           Tortillos<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="TORTILLOSS.jpg" alt="" />
-            <ul>
-              <li>
-                Granny Goose is my go-to corn chips that is made of real ingredients.
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slides[j % slides.length].classList.add("active");
 
+      controlLinks.forEach((link) => link.classList.remove("active"));
+      controlLinks[j % controlLinks.length].classList.add("active");
 
+      j++;
+    }, 4000);
+  };
 
-                100% Real & authentic snack made from 100% stoneground corn.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+  intervalFn();
 
-      <div class="modal" id="modal11">
-        <div class="modal-content">
-          <div class="modal-header">
-           V cut<button class="modal-close">
-              <ion-icon class="close-icon" name="close-outline">Close</ion-icon>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="V CUTTT.jpg" alt="" />
-            <ul>
-              <li>
-                Introducing Jack 'n Jill Vcut Potato Chips in Spicy Barbecue Flavor, the ultimate snack for spice enthusiasts. Crafted from the finest potatoes and cooked to crispy perfection, these chips offer a satisfying crunch with every bite. The spicy barbecue flavor features a tantalizing blend of spices that will awaken your taste buds. Whether as a standout addition to party platters or a tasty snack during sports games, these chips are sure to impress. Try Jack 'n Jill Vcut Potato Chips in Spicy Barbecue today and savor the fiery and tangy flavors.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button class="button close-btn modal-close">Close</button>
-          </div>
-        </div>
-      </div>
+  controlLinks.forEach((control, index) => {
+    control.addEventListener("click", (e) => {
+      e.preventDefault();
+      clearInterval(intervalId);
 
+      const targetIndex = parseInt(control.getAttribute("data-index"));
+      const rotation = -((j - 1 + targetIndex) % slides.length) * 90;
+      carousel.style.transform = `rotate(${rotation}deg)`;
 
-    </section>
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slides[targetIndex - 1].classList.add("active");
 
-    <footer>
-      <p>
-        Get ready for a taste bud adventure with tsitsirya! These Filipino snacks are a must-try for anyone looking for a crunchy and flavorful treat. Don't wait any longer – swing by your local sari-sari store and grab a pack now! Your snack cravings will be satisfied in no time!  
-      </p>
-    </footer>
-</body>
-<!-- javababy -->
-  <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
-<script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script><script  src="script.js"></script>
+      controlLinks.forEach((link) => link.classList.remove("active"));
+      control.classList.add("active");
 
+      j = targetIndex;
+    });
+  });
+
+  carousel.addEventListener("mouseenter", () => {
+    clearInterval(intervalId);
+    console.log("Pause");
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    intervalFn();
+    console.log("Play");
+  });
+</script>
 </body>
 </html>

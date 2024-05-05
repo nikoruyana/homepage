@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Set background color */
+  animation: gradientAnimation 10s ease infinite alternate;
+    z-index: -1;/* Background animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #ff8a00; /* Start color */
+  }
+  100% {
+    background-color: #ffcd00; /* End color */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.5s ease; /* Smooth transition for transform changes */
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+    .content h1{
+margin-top: -10px;
+
+        
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.description p,
+.ingredients ul,
+.procedures ol {
+  margin-bottom: 20px;
+}
+
+ul,
+ol {
+  padding-left: 40px;
+    font-size: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.description,
+.ingredients,
+.procedures {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+   #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    /* CSS styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* CSS styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* CSS styles for large devices */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* CSS styles for extra large devices */
+}
+</style>
+</head>
+<body>
+  <a href="index (5).html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <div class="image" id="movingImage">
+      <img src="rctocino.png" alt="Shrimp Dish">
+    </div>
+    <div class="content">
+      <h1>Tocino Fried rice</h1>
+        <br>
+      <div class="description">
+        <h2>Description:</h2>
+        <h3>Easy fried rice with tocino, eggs, and vegetables</h3>
+      </div>
+      <div class="ingredients">
+        <h2>Ingredients:</h2>
+        <ul>
+          <li>225 g CDO Funtastyk Young Pork Tocino</li>
+          <li>5 cups leftover rice</li>
+          <li>2 teaspoons soy sauce</li>
+          <li>¾ cup green peas</li>
+          <li>¾ cup carrot diced</li>
+          <li>3 eggs</li>
+          <li>3 tablespoons butter</li>
+          <li>5 tablespoons cooking oil</li>
+          <li>Salt and ground black pepper to taste</li>
+          <li>Seasoning</li>
+        </ul>
+      </div>
+      
+      <div class="procedures">
+        <h2>Procedures:</h2>
+        <ol>
+          <li>Heat 3 tablespoons of cooking oil in a pan. Adjust your stove between low to medium heat setting. Fry both sides of our CDO Funtastyk Young Pork Tocino until it browns (note: no need to boil).
+              
+              Remove the tocino from the pan. Slice it into serving pieces. Set aside.
+              
+Crack the eggs and beat. Heat the same pan and add the remaining 2 tablespoons of cooking oil.
+              
+              Fry the beaten egg until done. Put it on a clean plate and cut into small pieces. Set aside.
+
+              Melt butter on the same pan. Add the tocino. Cook for 30 seconds.
+              
+Add the leftover rice. Toss and continue cooking for 3 minutes.
+Season with soy sauce, salt, and ground black pepper.
+              
+              Toss until all ingredients are well blended.
+Add carrots and green peas. Continue cooking for 2 minutes.
+              
+Put the eggs back into the pan. Toss and cook for 30 seconds.
+              
+Transfer the tocino fried rice on a serving plate. Serve. Share and enjoy!
+              
+        </ol>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const movingImage = document.getElementById('movingImage');
+    let isMoving = false;
+
+    movingImage.addEventListener('mousedown', startMoving);
+    document.addEventListener('mousemove', moveImage);
+    document.addEventListener('mouseup', stopMoving);
+
+    function startMoving(event) {
+      isMoving = true;
+    }
+
+    function moveImage(event) {
+      if (isMoving) {
+        const offsetX = event.clientX - movingImage.offsetWidth / 2;
+        const offsetY = event.clientY - movingImage.offsetHeight / 2;
+        movingImage.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    }
+
+    function stopMoving(event) {
+      isMoving = false;
+    }
+  </script>
+</body>
+</html>

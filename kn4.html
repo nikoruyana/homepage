@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+    
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Set background color */
+  animation: gradientAnimation 10s ease infinite alternate;
+    z-index: -1;/* Background animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #ff8a00; /* Start color */
+  }
+  100% {
+    background-color: #ffcd00; /* End color */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.5s ease; /* Smooth transition for transform changes */
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+    .content h1{
+margin-top: -10px;
+
+        
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.description p,
+.ingredients ul,
+.procedures ol {
+  margin-bottom: 20px;
+}
+
+ul,
+ol {
+  padding-left: 40px;
+    font-size: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.description,
+.ingredients,
+.procedures {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+   #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    /* CSS styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* CSS styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* CSS styles for large devices */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* CSS styles for extra large devices */
+}
+</style>
+</head>
+<body>
+  <a href="index (5).html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <div class="image" id="movingImage">
+      <img src="rctapa.png" alt="Shrimp Dish">
+    </div>
+    <div class="content">
+      <h1>Tapa And Egg Fried Rice
+</h1>
+        <br>
+      <div class="description">
+        <h2>Description:</h2>
+        <h3>Tapa made from horse meat and easy egg fried rice with pickled papaya on the side. This dish is perfect for breakfast or lunch.
+</h3>
+      </div>
+      <div class="ingredients">
+        <h2>Ingredients:</h2>
+        <ul>
+          <li>Tapa Ingredients:</li>
+          <li>1 lb. horse meat sliced into thin pieces.</li>
+          <li>1 head garlic crushed</li>
+          <li>½ cup soy sauce</li>
+          <li>¼ teaspoon ground black pepper</li>
+          <li>1 teaspoon salt</li>
+          <li>2 teaspoons sugar</li>
+          <li>¾ cups water</li>
+          <li>1 ½ cups lemon lime soda</li>
+          <li>4 tablespoons cooking oil</li>
+          <li>Egg Fried Rice Ingredients:</li>
+          <li>4 cups leftover rice</li>
+          <li>3 eggs beaten</li>
+          <li>1 onion minced</li>
+          <li>¼ cup green onion chopped</li>
+          <li>1 red bell pepper minced</li>
+          <li>3 tablespoons soy sauce</li>
+          <li>2 teaspoons sesame oil</li>
+          <li>1 teaspoon salt optional</li>
+        </ul>
+      </div>
+      
+      <div class="procedures">
+        <h2>Procedures:</h2>
+        <ol>
+          <li>Start making the tapa by combining garlic, soy sauce, salt, and ground black pepper in a bowl. Stir. Add the meat and mix well. Cover the bowl and refrigerate for at least 3 hours.
+              
+Slice the meat into thinner and smaller pieces as needed. Arrange it in a pan and pour-in water and cooking oil. Let boil.
+              
+Add the lemon lime soda. Continue cooking uncovered until the liquid completely evaporates.
+              
+Fry the tapa in remaining oil for 2 minutes. Remove from the pan and set aside.
+              
+Make the egg fried rice by frying the eggs in the remaining oil.
+Once completely cooked, cut the eggs into smaller pieces using your spatula.
+              
+Add onion, half of the green onions, and bell pepper. Cook for 2 minutes while continuously stirring.
+              
+Put the leftover rice into the pan and then toss until all the ingredients are well distributed.
+              
+Add soy sauce and sesame oil. Continue to stir fry for 3 to 5 minutes. Note: You may add salt if needed.
+              
+Top with remaining green onions. Transfer to a serving plate and serve with the fried tapa. Share and enjoy!
+        </ol>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const movingImage = document.getElementById('movingImage');
+    let isMoving = false;
+
+    movingImage.addEventListener('mousedown', startMoving);
+    document.addEventListener('mousemove', moveImage);
+    document.addEventListener('mouseup', stopMoving);
+
+    function startMoving(event) {
+      isMoving = true;
+    }
+
+    function moveImage(event) {
+      if (isMoving) {
+        const offsetX = event.clientX - movingImage.offsetWidth / 2;
+        const offsetY = event.clientY - movingImage.offsetHeight / 2;
+        movingImage.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    }
+
+    function stopMoving(event) {
+      isMoving = false;
+    }
+  </script>
+</body>
+</html>

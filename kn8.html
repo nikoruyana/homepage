@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Set background color */
+  animation: gradientAnimation 10s ease infinite alternate; /* Background animation */
+  z-index: -1;/* Background animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #ff8a00; /* Start color */
+  }
+  100% {
+    background-color: #ffcd00; /* End color */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.5s ease; /* Smooth transition for transform changes */
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p,
+.ingredients ul,
+.procedures ol {
+  margin-bottom: 20px;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.description,
+.ingredients,
+.procedures {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+  <a href="index (5).html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <div class="image" id="movingImage">
+      <img src="rcshrimp.png" alt="Shrimp Fried Rice">
+    </div>
+    <div class="content">
+      <h1>Shrimp Fried Rice</h1>
+      <div class="description">
+        <h2>Description:</h2>
+        <p> Shrimp Fried Rice, is also something that I often make for breakfast or lunch when I have tiny shrimp available.</p>
+        
+            <div class="ingredients">
+    <h2>Ingredients:</h2>
+    <ul>
+        <li>4 cups cooked white rice</li>
+        <li>¾ cup frozen green peas</li>
+        <li>¾ cup frozen small shrimp with no shell</li>
+        <li>½ cup carrot, diced</li>
+        <li>1/2 teaspoon garlic powder</li>
+        <li>¼ teaspoon salt</li>
+        <li>¼ teaspoon onion powder</li>
+        <li>3 tablespoons butter</li>
+    </ul>
+</div>
+<div class="procedures">
+    <h2>Procedures:</h2>
+    <ol>
+        <li>Combine the rice, salt, garlic powder, and onion powder. Gently mix to blend all the ingredients.</li>
+        <li>Melt the butter in a pan. Once the butter starts to get hot (make sure not to get the butter very hot), put-in green peas and carrots. Cook for 1 to 2 minutes.</li>
+        <li>Put the shrimp in the wok and cook for 1 minute.</li>
+        <li>Add the rice mixture. Cook for 10 minutes over medium heat while tossing once in a while. Make sure to toss the ingredients while cooking to blend them properly.</li>
+        <li>Transfer to a serving bowl. Serve for breakfast or lunch with your favorite dish. Share and enjoy!</li>
+    </ol>
+</div>
+
+
+    </div>
+  </div>
+  
+  <script>
+    const movingImage = document.getElementById('movingImage');
+    let isMoving = false;
+
+    movingImage.addEventListener('mousedown', startMoving);
+    document.addEventListener('mousemove', moveImage);
+    document.addEventListener('mouseup', stopMoving);
+
+    function startMoving(event) {
+      isMoving = true;
+    }
+
+    function moveImage(event) {
+      if (isMoving) {
+        const offsetX = event.clientX - movingImage.offsetWidth / 2;
+        const offsetY = event.clientY - movingImage.offsetHeight / 2;
+        movingImage.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    }
+
+    function stopMoving(event) {
+      isMoving = false;
+    }
+  </script>
+</body>
+</html>

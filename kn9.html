@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Set background color */
+  animation: gradientAnimation 10s ease infinite alternate; /* Background animation */
+  z-index: -1;/* Background animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #ff8a00; /* Start color */
+  }
+  100% {
+    background-color: #ffcd00; /* End color */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.5s ease; /* Smooth transition for transform changes */
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p,
+.ingredients ul,
+.procedures ol {
+  margin-bottom: 20px;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.description,
+.ingredients,
+.procedures {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+  <a href="index (5).html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <div class="image" id="movingImage">
+      <img src="rcjava.png" alt="Java Rice with Pork Chop">
+    </div>
+    <div class="content">
+      <h1>Java Rice with Pork Chop</h1>
+      <div class="description">
+        <h2>Description:</h2>
+        <p> Java rice with pork chop is a delicious Filipino dish consisting of garlic fried rice flavored with annatto seeds, giving it a vibrant orange color. It's typically served with tender and juicy pork chops seasoned with a blend of spices and herbs, creating a flavorful combination of savory goodness.</p>
+        
+        <div class="ingredients">
+    <h2>Java Rice Ingredients:</h2>
+    <ul>
+        <li>1 1/2 cups rice, uncooked (washed)</li>
+        <li>1 piece Knorr Pork Cube</li>
+        <li>1/4 teaspoon turmeric powder</li>
+        <li>2 tablespoons onion, minced</li>
+        <li>1 clove garlic, minced</li>
+        <li>1/2 teaspoon sugar</li>
+        <li>3 tablespoons annatto oil</li>
+        <li>2 cups water</li>
+        <li>2 tablespoons margarine</li>
+        <li>Salt to taste</li>
+    </ul>
+    
+    <h2>Fried Pork Chop Ingredients:</h2>
+    <ul>
+        <li>4 pieces pork chops</li>
+        <li>2 pieces egg, beaten</li>
+        <li>1 cup all-purpose flour</li>
+        <li>1/8 teaspoon baking powder</li>
+        <li>1/2 teaspoon onion powder</li>
+        <li>1/2 teaspoon garlic powder</li>
+        <li>½ cup cooking oil</li>
+    </ul>
+    
+    <h2>Pork Chop Brine Ingredients:</h2>
+    <ul>
+        <li>4 cups cold water</li>
+        <li>1/4 cup salt</li>
+        <li>4 pieces dried bay leaves</li>
+    </ul>
+</div>
+<div class="procedures">
+    <h2>Procedures:</h2>
+    <ol>
+        <li>Prepare the pork chop by combining all brine ingredients in a large bowl. Mix well. Add pork chop in the brine solution and brine for 7 hours. Note: Cover the bowl and place it inside the refrigerator to avoid contamination.</li>
+        <li>Make the Java rice by combining washed rice and water in a cooking pot. Let the mixture boil. Add Knorr Pork Cube. Stir until well blended. Cover the pot and adjust heat between low to medium. Continue cooking until rice is done. Remove the cover from the pot and let the rice cool down.</li>
+        <li>Once the rice cools down completely, heat annatto oil on a pan and then add margarine. Sauté garlic and onion until the latter softens.</li>
+        <li>Add cooked rice. Stir-fry for 2 minutes.</li>
+        <li>Add turmeric powder and season with sugar and salt as needed. Set aside.</li>
+        <li>Start cooking the pork chop by heating oil on a clean pan.</li>
+        <li>Combine flour, garlic powder, onion powder, and baking soda in a resealable bag. Seal and shake.</li>
+        <li>Place a piece of brined pork chop in the bag and shake. Dip it in beaten egg and then put it back into the bag and shake until well coated.</li>
+        <li>Fry one side in medium heat until it turns golden brown. Turn the pork over and do the same to the other side. Note: perform this step on all pork chops.</li>
+        <li>Arrange a cup of Java rice with a piece of pork chop on a plate. Serve with papaya atchara. Share and enjoy!</li>
+    </ol>
+</div>
+    </div>
+  </div>
+  
+  <script>
+    const movingImage = document.getElementById('movingImage');
+    let isMoving = false;
+
+    movingImage.addEventListener('mousedown', startMoving);
+    document.addEventListener('mousemove', moveImage);
+    document.addEventListener('mouseup', stopMoving);
+
+    function startMoving(event) {
+      isMoving = true;
+    }
+
+    function moveImage(event) {
+      if (isMoving) {
+        const offsetX = event.clientX - movingImage.offsetWidth / 2;
+        const offsetY = event.clientY - movingImage.offsetHeight / 2;
+        movingImage.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    }
+
+    function stopMoving(event) {
+      isMoving = false;
+    }
+  </script>
+</body>
+</html>

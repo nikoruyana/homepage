@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Set background color */
+  animation: gradientAnimation 10s ease infinite alternate; /* Background animation */
+  z-index: -1;/* Background animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #ff8a00; /* Start color */
+  }
+  100% {
+    background-color: #ffcd00; /* End color */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  flex: 1;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.5s ease; /* Smooth transition for transform changes */
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p,
+.ingredients ul,
+.procedures ol {
+  margin-bottom: 20px;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.description,
+.ingredients,
+.procedures {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+  <a href="index (5).html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <div class="image" id="movingImage">
+      <img src="rccaldo.png" alt="Arroz Caldo">
+    </div>
+    <div class="content">
+      <h1>Arroz Caldo</h1>
+      <div class="description">
+        <h2>Description:</h2>
+        <p> Arroz Caldo literally means warm rice. This congee that closely resembles risotto has been a favorite Filipino snack.</p>
+      </div><div class="ingredients">
+    <h2>Ingredients:</h2>
+    <ul>
+        <li>1 ½ lbs chicken, cut into serving pieces</li>
+        <li>1 ½ cups uncooked rice</li>
+        <li>34 ounces water (about 1 liter)</li>
+        <li>2 tablespoons fish sauce</li>
+        <li>1 teaspoon minced garlic</li>
+        <li>1/4 teaspoon ground black pepper</li>
+        <li>1 cup minced onion</li>
+        <li>4 hard-boiled eggs</li>
+        <li>1 cup minced scallions (green onions)</li>
+        <li>2 knobs ginger, julienned</li>
+        <li>3 tablespoons safflower (kasubha)</li>
+        <li>1 chicken bouillon cube</li>
+        <li>1 lemon or 4 pieces calamansi</li>
+        <li>2 tablespoons cooking oil</li>
+    </ul>
+</div>
+<div class="procedures">
+    <h2>Procedures:</h2>
+    <ol>
+        <li>In a pot, heat the cooking oil then sauté the garlic, onion, and ginger.</li>
+        <li>Dash in some ground black pepper.</li>
+        <li>Add the chicken cube and cook until the cube melts.</li>
+        <li>Put in the chicken and cook until the outer layer color turns golden brown.</li>
+        <li>Add the fish sauce and uncooked rice then mix and cook for a few minutes.</li>
+        <li>Pour in the water and bring to a boil.</li>
+        <li>Stir occasionally and simmer until the rice is fully cooked (about 30 to 40 minutes).</li>
+        <li>Put in the hard-boiled eggs.</li>
+        <li>Add the safflower for additional color and aroma.</li>
+        <li>Serve hot with garlic, minced scallions, and lemon. Share and Enjoy!</li>
+    </ol>
+</div>
+    </div>
+  </div>
+  
+  <script>
+    const movingImage = document.getElementById('movingImage');
+    let isMoving = false;
+
+    movingImage.addEventListener('mousedown', startMoving);
+    document.addEventListener('mousemove', moveImage);
+    document.addEventListener('mouseup', stopMoving);
+
+    function startMoving(event) {
+      isMoving = true;
+    }
+
+    function moveImage(event) {
+      if (isMoving) {
+        const offsetX = event.clientX - movingImage.offsetWidth / 2;
+        const offsetY = event.clientY - movingImage.offsetHeight / 2;
+        movingImage.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    }
+
+    function stopMoving(event) {
+      isMoving = false;
+    }
+  </script>
+</body>
+</html>
