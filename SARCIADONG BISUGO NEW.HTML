@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
-    <title>GALUNGGONG</title>
+    <title>SARCIADONG BISUGO</title>
     <style>
         * {
             box-sizing: border-box;
@@ -48,15 +48,15 @@
   
             
         }
-
-        .image {
+.image {
             float: left;
             width: 40%;
-            height: 300px; 
+            height: auto; 
             border-radius: 10px; /* para sa pag ka round ng image */
             border: 10px solid #555; /* yung kapal ng border and color */
             animation: neon-border 2s linear infinite alternate; /* pra sa neon na border*/
-            margin-top: 200px;
+            margin-top: 100px;
+            margin-left: 15px;
         }
 
         .animated-gradient-bg {
@@ -68,7 +68,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; 
+    z-index: -10; 
 }
 
 @keyframes animateGradient {
@@ -108,27 +108,32 @@
             padding: 20px;
             box-sizing: border-box;
             text-align: center; 
-            margin-top: 440px;
-            font-size: 25px;
-            height: 185px;
-            width: 552px;
+            margin-top: 518px;
+            font-size: 20px;
+            height: 220px;
+            width: 613px;
+            margin-left: 35px;
+            
         }
 
         .des {
-            margin-top: 20px; /* space ng image and description */
+            margin-top: -30px; /* space ng image and description */
             padding: 10px;
-          margin-left: 700px; 
+          margin-left: 750px; 
     margin-bottom: 30px;
             font-size: 20px;
         }
         h1 {
     font-size: 50px; /* dito niyo guyss i adjustt yung size ng text*/
 }
+        .rec {
+            margin-top: 120px;
+            }
 
 .buttons {
-    margin: 10%;
+     margin: 10%;
     text-align: center;
-    margin-left: 590px;
+    margin-left: 630px;
     margin-top: 40px;
 }
 
@@ -140,7 +145,7 @@
     cursor: pointer;
     margin: 20px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
@@ -166,30 +171,39 @@
 .btn-hover.color-1 {
     background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    
 }
-.rec {
-            margin-top: 120px;
-            }
 .recipe_footer {
   position: relative;
   display: fixed;
   flex-direction: row;
   height: 40%;
   padding-bottom: 10dvh;
-    margin-top: -780px;
+    margin-top: -580px;
     margin-left: 240px;
 
 }
-.recipe_controls {
-  transition: $animation_time ease-in;
-  width: 38dvh;
-}
+
+
 .subtitle {
   color: $c_dark_grey;
   font-weight: 700;
   font-size: 18px;
 }
-#intro {
+
+.recipe_controls {
+  transition: $animation_time ease-in;
+  width: 38dvh;
+}
+
+    @import "compass/css3";
+
+body {
+  padding: 10px;
+  background-color: #ececec;
+}
+
+            #intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
@@ -244,7 +258,7 @@
 .explore:before,
 .close-btn,
 .close-btn:before {
-  background: rgba(255, 192, 203, 1); /* Light pink */
+   background: rgba(255, 192, 203, 1); /* Light pink */
   background: linear-gradient(
     45deg,
     rgba(255, 192, 203, 1) 0%,
@@ -262,13 +276,12 @@
   );
 }
 
-
 .button {
   display: inline-block;
   position: relative;
   border-radius: 10px;
   text-decoration: none;
-  padding: 0.8rem 2rem;
+  padding: 0.2rem .5rem;
   font-size: 1rem;
   font-weight: bold;
   border: none;
@@ -281,10 +294,8 @@
 }
 
 .button:hover {
-    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
-    background-color: pink; /* Change to the color you prefer */
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
 }
-
 
 .button:hover::after {
   left: 100%;
@@ -318,64 +329,115 @@
   border-radius: 8px;
   transition: all 0.5s;
 }
-            
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+
+
+        .buttons {
+    margin: 10%;
+    text-align: center;
+    margin-left: 590px;
+    margin-top: 40px;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-3 {
+  background-image: linear-gradient(to right, #FF1493, #FF69B4, #FFC0CB, #FF69B4);
+  box-shadow: 0 4px 15px 0 rgba(255, 105, 180, 0.75);
+}
+
+.btn-hover.color-3:hover {
+  background-position: 100% 0;
+}
+
     </style>
 </head>
 <body>
+<a href="sliderbisug4.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+    
 
 <div class="animated-gradient-bg"></div>
-<div>
-    <a href="testg8.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
-</div>
-<div class="container">
-    <center><h1>Sarciadong Galunggong</h1></center>
-    <div class="overlay">
-        <p>Classic Filipino lutong Bahay dish of fried galunggong fish simmered in fresh tomato and onion sauce.</p>
-    </div>
-    <img src="sarciadong-galunggong.jpg" alt="Sarciadong Galunggong" class="image">
-</div>
-<div>
-   <a href="https://youtu.be/N5-4eNnDkXw?si=48oOBRChaWZLInOp"> <button class="btn-hover color-1" >Watch here!</button></a>
-<div class="des">
-    <h2>Ingredients</h2>
-    <ul>
-        <li>½ kilo Galunggong (cleaned)</li>
 
-        <li>½ tablespoon salt</li>
-            
-        <li>Oil for frying</li>
-            
-        <li>1 piece onion (chopped)</li>
-            
-        <li>3 cloves garlic (minced)</li>
-            
-        <li>6 pieces tomatoes (chopped)</li>
-            
-        <li>1 cup water (adjust as needed)</li>
-            
-        <li>1 piece egg</li>
-            
-        <li>Salt and pepper to taste</li>          
+<div class="container">
+    <center><h1>
+        SARCIADONG BISUGO
+        </h1></center>
+    <div class="overlay">
+        <p>Sarciado in Tagalog means “cooked with a thick sauce”, that is why this fish dish is accompanied with a thick chunky tomato sauce. Fish Sarciado was invented by Filipinos in search for better ways to make a dish out of left over fried fish as these leftovers are not really as appetizing as the freshly fried ones, so an ingenious approach by adding tomato sauce and eggs did made the trick by not just rehydrating the fish but as well as removing the fishy odour and adding more flavour to the leftover.
+</p>
+    </div>
+    <img src="sarciadongbisugo.JPG" alt="shrimp" class="image">
+</div>
+<div>
+   
+    <a href="https://youtu.be/U3Ri2v7Xrp4?si=LYyXmgF_OUjrcG9g"> <button class="btn-hover color-1" >Watch here!</button></a>
+<div class="des">
+ <h2>Ingredients</h2>
+    <ul>
+      <li>4 serving portions Fried Bisugo</li>
+        <li>6 medium tomatoes, diced</li>
+          <li>2 eggs, beaten</li>
+            <li>3 cloves garlic, minced</li>
+              <li>1 small onion, minced</li>
+                <li>1 cup water</li>
+                  <li>freshly ground black pepper</li>
+                    <li>spring onions, chopped</li>
+                    <li>fish sauce or sea salt</li>
+                    <li>oil</li>
     </ul>
 </div>
-
+<br>
 <div class="des">
     <h2>Instructions</h2>
     <ol>
-        <li>Season the fish with salt. Rub it well. Marinate at least 15 minutes.</li>    
-        <li>Heat oil in a frying pan and fry the fish until golden brown.</li>
-        <li>After the fish is fried, set aside.</li>
-        <br>
-        Sarciado Sauce:
-        <li>Heat a small amount of oil in a frying pan then sauté onions, garlic and tomatoes until crushed. Press to crush the tomatoes. Add water and let it to boil.</li>
-        <li>Add salt and pepper to taste. Add the beaten egg to the crushed tomato sauce. Start stirring the mixture until the egg curdles or coagulates.</li>
-        <li>Add fried fish and simmer for about a minute.</li>
-        <li>Serve it while it is still hot. Enjoy!</li>
+        <li>In a wok, add oil and sauté onion and garlic in high heat</li>
+        <li>Add tomatoes and continue to stir fry until tomatoes are soft.</li>
+          <li>Add water and fish sauce/sea salt (according to your taste). Bring to a rapid boil.</li>
+            <li>Once boiling add bisugo simmer for 5-8 minutes (depending on the thickness of the fish) then remove the bisugo and place on plate.</li>
+              <li>Back to the wok; add the beaten eggs mix it together with the sauce. Turn the heat off and pour sauce over plated bisugo.</li>
+                <li>Season with freshly ground black pepper and garnish with spring onions.</li>
+
     </ol>
 </div>
 <div class="rec">
     <div class="recipe_footer">
-
+<br>
                 <dl class="recipe_controls">
                     <dt class="subtitle"><i class="fa-solid fa-spoon"></i>Prep Time</dt>
                     <dd>
@@ -385,17 +447,26 @@
                             <path fill="#0F0F0F"
                                   d="M12 5a1 1 0 0 0-1 1v6.467s0 .26.127.457c.084.166.217.31.39.41l4.62 2.668a1 1 0 0 0 1-1.732L13 11.88V6a1 1 0 0 0-1-1Z"/>
                         </svg>
-                        <span>10 minutes</span></dd><br>
+                        <span>8 minutes</span></dd><br>
 
                     <dt class="subtitle">Cooking Time</dt>
                     
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 minutes</span><br><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-fire-burner"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 minutes</span><br><br>
 
                      <dt class="subtitle">Total Time</dt>
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20 minutes</span>
+                        <i class="fa-solid fa-circle-check"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 minutes</span>
                 </dl>
         </div>
-</div>
+    <script>
+        $(".label").mousedown(function(e){
+  $(this).addClass("active");
+}).mouseclick(funtion(e){
+  $(this).removeClass("active")
+  }).mouseout(function(){
+    $(this).removeClass("active");
+  });
+          
+    </script>
 </body>
 </html>
