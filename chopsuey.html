@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,6 +38,7 @@
             letter-spacing: 5px;
             text-transform: uppercase;
         }
+        
         .button:after,
 .close-btn:after {
   background: #fff;
@@ -71,7 +72,7 @@
   position: relative;
   border-radius: 10px;
   text-decoration: none;
-  padding: 0.8rem 2rem;
+  padding: 0.2rem .8rem;
   font-size: 1rem;
   font-weight: bold;
   border: none;
@@ -130,6 +131,13 @@
   font-style: oblique;
   margin-right: 20px;
 }
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media only screen and (min-device-width: 400px) {
+    .card-img {   
+    flex-direction: column;
+    position: sticky;
+  }
+}
 .card{
   width: 420px;
   height: 250px;
@@ -146,7 +154,8 @@
 .card-img{
   width: 100%;
   object-fit: cover; 
-  height: auto;
+  height: 100%;
+
 }
 .card-body{
   width: 100%;
@@ -193,7 +202,7 @@
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
+    
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -203,6 +212,8 @@
     text-align: center;
     margin-left: 590px;
     margin-top: 40px;
+    position: sticky;
+    left: 50px;
 }
 
 .btn-hover:hover {
@@ -225,7 +236,7 @@
 </head>
 <body>
     <div>
-        <a href="gulay-menu.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="gulay-menu.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
     </div>
     <div class="heading">
         <h1>Chop Suey</h1>
