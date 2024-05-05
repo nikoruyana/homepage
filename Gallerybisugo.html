@@ -22,7 +22,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: -1; 
+            z-index: -10; 
         }
 
         @keyframes animateGradient {
@@ -352,168 +352,305 @@ ul.grid {
             .title {
 margin-top: -70px; 
                 }
-        </style>
-      
-    </head>
 
-    <body>
+
+        
+                                  #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+      margin-top: -85px;
+    margin-left: -80px;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+    </style>
+</head>
+<body>
+<a href="Fishgal.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+   
         <div class="animated-gradient-bg"></div>
 <div class="title">
 
-    <center><style="padding-bottom": 20px;></style><font size="50">BISUGO</font></center></div><br>
-    <br><br><br>
+   <center style="padding-bottom": 20px;"><font size="50">BISUGO</font></center></div><br>
+        <br><br><br>
 
+        <div class="grid">
+            <li class="grid-item" style="background-image: url('paksiwnabisugo.JPG');">
+                         <div class="grid-title" >
+                             <div class="container">
+                             <p>PAKSIW NA BISUGO</p>
+                                 <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug1.html"><i class="fa-solid fa-eye"></i></a></button>
 
-                        <div class="grid">
-                   <li class="grid-item" style="background-image: url('paksiwnabisugo.JPG');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>PAKSIW NA BISUGO</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug1.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-                                </div>
-            </div>
-           
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('kinamatisangbisugo.jpg');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>KINAMATISANG BISUGO</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug2.html"><i class="fa-solid fa-eye"></i></a></button>
-   
-    </div>
-  
-
-
-                                </div>
-            </div>
-           
-
-
-
-
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('pinangatnabisugo.JPG');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>PINANGAT NA BISUGO</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug3.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-  
-
-
-                                </div>
-            </div>
-
-
-
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('sarciadongbisugo.JPG');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>SARCIADONG BISUGO</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug4.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-  
-
-
-                                </div>
-            </div>
-
-
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('sinigangnabisugo.JPG');">
-        <div class="grid-title">
-            <div class="container">
-            <p>SINIGANG NA BISUGO</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug5.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div>
+</div>
+                         </div>
+     </div>
     
 
-                                </div>
-            </div>
-           
+  <div class="grid">
+            <li class="grid-item" style="background-image: url('kinamatisangbisugo.jpg');">
+                         <div class="grid-title" >
+                             <div class="container">
+                             <p>KINAMATISANG BISUGO</p>
+                                 <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug2.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
 
 
 
-<div class="grid">
-    <li class="grid-item" style="background-image: url('sweetandsourbisugo.JPG');">
-        <div class="grid-title">
-            <div class="container">
-            <p>SWEET AND SOUR BISUGO</p>
-           
-       <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug6.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
+                         </div>
+     </div>
     
-            </div>
-           
+
+
+
+
+
+  <div class="grid">
+            <li class="grid-item" style="background-image: url('pinangatnabisugo.JPG');">
+                         <div class="grid-title" >
+                             <div class="container">
+                             <p>PINANGAT NA BISUGO</p>
+                                 <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug3.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                         </div>
+     </div>
+
+
+
+
+  <div class="grid">
+            <li class="grid-item" style="background-image: url('sarciadongbisugo.JPG');">
+                         <div class="grid-title" >
+                             <div class="container">
+                             <p>SARCIADONG BISUGO</p>
+                                 <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug4.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                         </div>
+     </div>
 
 
 
 <div class="grid">
-    <li class="grid-item" style="background-image: url('friedbisugo.JPEG');">
-        <div class="grid-title">
-            <div class="container">
-            <p>FRIED BISUGO</p>
-            <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug7.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
+<li class="grid-item" style="background-image: url('sinigangnabisugo.JPG');">
+ <div class="grid-title">
+     <div class="container">
+     <p>SINIGANG NA BISUGO</p>
+ <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug5.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+                         </div>
+     </div>
     
-            </div>
-           
+
+
 
 <div class="grid">
-    <li class="grid-item" style="background-image: url('inihawnabisugo.jpg');">
-        <div class="grid-title">
-            <div class="container">
-            <p>INIHAW NA BISUGO</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug8.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div> </div>
+<li class="grid-item" style="background-image: url('sweetandsourbisugo.JPG');">
+ <div class="grid-title">
+     <div class="container">
+     <p>SWEET AND SOUR BISUGO</p>
     
-            </div>
-           
+<div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug6.html"><i class="fa-solid fa-eye"></i></a></button>
 
+</div> </div>
 
-<div class="grid">
-    <li class="grid-item" style="background-image: url('sinabawangbisugo.JPG');">
-        <div class="grid-title">
-            <div class="container">
-            <p>SINABAWANG BISUGO</p>
-        
-        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug9.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
+     </div>
     
-            </div>
-           
+
+
 
 <div class="grid">
-    <li class="grid-item" style="background-image: url('tinolangbisugo.JPG');">
-        <div class="grid-title">
-            <div class="container">
-            <p>TINOLANG BISUGO</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="sliderbisug10.html"><i class="fa-solid fa-eye"></i></a></button>
-      
+<li class="grid-item" style="background-image: url('friedbisugo.JPEG');">
+ <div class="grid-title">
+     <div class="container">
+     <p>FRIED BISUGO</p>
+     <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug7.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+     </div>
+    
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('inihawnabisugo.jpg');">
+ <div class="grid-title">
+     <div class="container">
+     <p>INIHAW NA BISUGO</p>
+ <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug8.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+     </div>
+    
+
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('sinabawangbisugo.JPG');">
+ <div class="grid-title">
+     <div class="container">
+     <p>SINABAWANG BISUGO</p>
+ 
+ <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug9.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+     </div>
+    
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('tinolangbisugo.JPG');">
+ <div class="grid-title">
+     <div class="container">
+     <p>TINOLANG BISUGO</p>
+ <div class="overlay">
+<button class="btn-more-info"><a href="sliderbisug10.html"><i class="fa-solid fa-eye"></i></a></button>
     </div> </div>
     
             </div>
