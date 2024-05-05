@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+<script src="app.js" defer></script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+
+   
+  html {
+    font-size: 62.5%;
+  }
+
+  .slideshow {
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .carousel {
+    width: 60rem;
+    height:60rem;
+    border: 3rem solid #eebe97;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    flex-shrink: 0;
+    transition: transform 1s;
+  }
+
+  .slide {
+    width: 20rem;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slide.active img {
+    transform: scale(2.5);
+    transition: transform 0.5s 0.5s;
+  }
+
+  .slide img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 50%;
+  }
+
+  .controls {
+    position: sticky;
+    bottom: 5rem;
+  }
+
+  .controls a {
+    padding: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: background-color 1s;
+  }
+
+  .controls a.active {
+    background-color: lightbrown;
+  }
+
+  .controls img {
+    width: 10rem;
+    border-radius: 50%;
+  }
+
+  .slide.active {
+    z-index: 1;
+  }
+       #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.3rem .8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+    margin-top: -1000;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    /* CSS styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* CSS styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* CSS styles for large devices */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* CSS styles for extra large devices */
+}
+
+    .kn{
+font-size: 50px;
+        
+        margin-left: 650px;
+        }
+        </style>
+    </head>
+
+    <body>
+<a href="slider5.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+        <h1 class="kn">RICE MENU</h1>
+    <div class="slideshow">
+      <div class="carousel">
+        <div class="slide active">
+          <a href="kn6.html" data-index="1" class="active">
+            <img src="rcegg.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn10.html" data-index="1" class="active">
+            <img src="rcchicken.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn1.html" data-index="1" class="active">
+            <img src="rcsisig.png" />
+          </a>
+        </div>
+       
+        <div class="slide">
+          <a href="kn7.html" data-index="1" class="active">
+            <img src="rccaldo.png" />
+          </a>
+        </div>
+           <div class="slide">
+          <a href="kn2.html" data-index="1" class="active">
+            <img src="rchotdog.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn9.html" data-index="1" class="active">
+            <img src="rcjava.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn4.html" data-index="1" class="active">
+            <img src="rctapa.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn8.html" data-index="1" class="active">
+            <img src="rcshrimp.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn3.html" data-index="1" class="active">
+            <img src="rcgarlic.png" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="kn5.html" data-index="1" class="active">
+            <img src="rctocino.png" />
+          </a>
+        </div>
+      </div>
+
+      <div class="controls">
+        <a href="#" data-index="1">
+          <img src="rcegg.png" />
+        </a>
+        <a href="#" data-index="2">
+          <img src="rcchicken.png" />
+        </a>
+        <a href="#" data-index="3">
+          <img src="rcsisig.png" />
+        </a>
+        
+        <a href="#" data-index="4">
+          <img src="rccaldo.png" />
+        </a>
+          <a href="#" data-index="5">
+          <img src="rchotdog.png" />
+        </a>
+        <a href="#" data-index="6">
+          <img src="rcjava.png" />
+        </a>
+<a href="#" data-index="7">
+          <img src="rctapa.png" />
+        </a>
+        <a href="#" data-index="8">
+          <img src="rcshrimp.png" />
+        </a>
+        <a href="#" data-index="9">
+          <img src="rcgarlic.png" />
+        </a>
+        <a href="#" data-index="10">
+          <img src="rctocino.png" />
+        </a>
+      </div>
+    
+<script>
+    const carousel = document.querySelector(".carousel");
+  const slides = document.querySelectorAll(".slide");
+  const controlLinks = document.querySelectorAll(".controls a");
+
+  let i = 0,
+    j = 1,
+    intervalId;
+
+  const intervalFn = () => {
+    intervalId = setInterval(() => {
+      carousel.style.transform = `rotate(-${++i * 360}deg)`;
+
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slides[j % slides.length].classList.add("active");
+
+      controlLinks.forEach((link) => link.classList.remove("active"));
+      controlLinks[j % controlLinks.length].classList.add("active");
+
+      j++;
+    }, 4000);
+  };
+
+  intervalFn();
+
+  controlLinks.forEach((control, index) => {
+    control.addEventListener("click", (e) => {
+      e.preventDefault();
+      clearInterval(intervalId);
+
+      const targetIndex = parseInt(control.getAttribute("data-index"));
+      const rotation = -((j - 1 + targetIndex) % slides.length) * 90;
+      carousel.style.transform = `rotate(${rotation}deg)`;
+
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slides[targetIndex - 1].classList.add("active");
+
+      controlLinks.forEach((link) => link.classList.remove("active"));
+      control.classList.add("active");
+
+      j = targetIndex;
+    });
+  });
+
+  carousel.addEventListener("mouseenter", () => {
+    clearInterval(intervalId);
+    console.log("Pause");
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    intervalFn();
+    console.log("Play");
+  });
+</script>
+</body>
+</html>
