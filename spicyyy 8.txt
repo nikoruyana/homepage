@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
-    <title>YELLOW FIN</title>
+    <title>GALUNGGONG</title>
     <style>
         * {
             box-sizing: border-box;
@@ -324,7 +324,7 @@
 
 <div class="animated-gradient-bg"></div>
 <div>
-    <a href="yfgal.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="testg1. class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
 </div>
 <div class="container">
     <center><h1>Spicy Yellowfin Tuna with Cajun Beer Butter Sauce</h1></center>
@@ -335,7 +335,7 @@ Spicy Yellowfin Tuna with Cajun Beer Butter Sauce is a tantalizing dish that com
 
 </p>
     </div>
-    <img src="Spicy Yellowfin Tuna with Cajun Beer Butter Sauce.jpeg" alt="Spicy Yellowfin Tuna with Cajun Beer Butter Sauce" class="image">
+    <img src="C:\Users\USER\Pictures\Spicy Yellowfin Tuna with Cajun Beer Butter Sauce.jpeg" alt="Spicy Yellowfin Tuna with Cajun Beer Butter Sauce" class="image">
 </div>
 <a href="https://www.youtube.com/watch?v=81PoPX2YxPE"> <button class="btn-hover color-1" >Watch here!</button></a>
 <div class="des">
