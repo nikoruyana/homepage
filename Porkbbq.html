@@ -1,11 +1,11 @@
 <BODY>
+  
+    <a href="gallery ssa baboy.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
     <head>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<article class="recipe">
+        <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
 		<style>
-			
+
+
 *, *:before, *:after {
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box;
     position:relative;
@@ -250,10 +250,148 @@
             }
         }
     }
-		</style>
-		
-    </head>
 
+
+    #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgb(85, 7, 20); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgb(100, 3, 19) 0%,
+    rgb(97, 0, 0) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(87, 0, 14) 0%,
+    rgb(150, 1, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(153, 6, 31) 0%,
+    rgb(143, 50, 50) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 8;
+  margin-left: 20;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(77, 0, 0, 0.8);
+    background-color: rgb(87, 0, 14); /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+
+	   </style>
+    </head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<article class="recipe">
 
 <h1>
 Pork BBQ
@@ -287,39 +425,39 @@ Pork BBQ
 	<div class="inner-text">
 		<h3></h3>
 		<ul class="need">
-			<li data-image="porkbelly.jpg">
+			<li data-image="porkshoulder.jpg">
 				<i class="fa fa-square-o"></i>
 				<strong>4 lbs.</strong>
 				 pork shoulder </li>
-			<li data-image="porkbelly.jpg">
+			<li data-image="soy sauce.jpg">
 				<i class="fa fa-square-o"></i>
 				<strong>¾ cup </strong>
 				soy sauce </li>
-				<li data-image="porkbelly.jpg">
+				<li data-image="lemonjuice.jpg">
 					<i class="fa fa-square-o"></i>
 					<strong>½ cup </strong>
 					juice extracted from calamansi or lemon </li>
-					<li data-image="porkbelly.jpg">
+					<li data-image="bananaketchup.jpg">
 						<i class="fa fa-square-o"></i>
 						<strong>¾ cup  </strong>
 						banana ketchup </li>
-						<li data-image="porkbelly.jpg">
+						<li data-image="brownsugar.jpg">
 							<i class="fa fa-square-o"></i>
 							<strong>4 tablespoons  </strong>
-							dark brown sugar </li>
-							<li data-image="porkbelly.jpg">
+							brown sugar </li>
+							<li data-image="garlicpowder.png">
 								<i class="fa fa-square-o"></i>
 								<strong>2 tablespoons </strong>
 								garlic powder</li>
-								<li data-image="porkbelly.jpg">
+								<li data-image="ground-pepper-.jpg">
 									<i class="fa fa-square-o"></i>
 									<strong>1 teaspoon</strong>
 									ground black pepper</li>
-									<li data-image="porkbelly.jpg">
+									<li data-image="salt.webp">
 										<i class="fa fa-square-o"></i>
 										<strong>2 teaspoons </strong>
 										salt</li>
-										<li data-image="porkbelly.jpg">
+										<li data-image="lemonlimesoda.webp">
 											<i class="fa fa-square-o"></i>
 											<strong>1 ½ cups </strong>
 											lemon or lime soda</li>
@@ -358,5 +496,67 @@ Pork BBQ
 </div>
 
 </article>
-<script src="pork.js"> </script>
+<script>
+	$(document).ready(function(){
+
+$('li').on('mouseover',function(){
+	$('.ingredient-image').append("<img src='" + $(this).attr('data-image') + "'>");
+});
+
+$('li').on('mouseout',function(){
+	$('.ingredient-image').empty();
+});
+
+var count = $("ul").children().length;
+	if(count == 0) {
+		$('.recipe-text h3').text("You are ready to start cooking!");
+	} else {
+		$('.recipe-text h3').text("You have " + count + " items left to get!");    
+	}
+
+$('.recipe-text .slidetoggle').on('click', function(){
+	$(this).toggleClass("fa-arrow-up fa-arrow-down");
+	$(this).parent().siblings('.inner-text').slideToggle();
+});
+
+$('.recipe-directions .slidetoggle').on('click',function(){
+	$(this).toggleClass("fa-arrow-up fa-arrow-down");
+	$(this).parent().siblings('.inner-directions').slideToggle();
+});
+
+$('.comments .slidetoggle').on('click',function(){
+	$(this).toggleClass("fa-arrow-up fa-arrow-down");
+	$(this).parent().siblings('.inner-comments').slideToggle();
+});
+
+$('.recipe-text ul.need').on('click','li i',function(){
+	$(this).parent().appendTo(".ingredients-have .got");
+	$(this).removeClass("fa-square-o");
+	$(this).addClass("fa-check-square-o");
+	var count = $(".recipe-text .need").children().length;
+	if(count == 0) {
+		$('.recipe-text h3').text("You are ready to start cooking!");
+	} else {
+		$('.recipe-text h3').text("You have " + count + " items left to get!");  
+	}
+});
+
+$('.ingredients-have ul.got').on('click','li i',function(){
+	$(this).parent().appendTo(".recipe-text .need");
+	$(this).removeClass("fa-check-square-o");
+	$(this).addClass("fa-square-o");
+	var count = $(".recipe-text .need").children().length;
+	if(count == 0) {
+		$('.recipe-text h3').text("You are ready to start cooking!");
+	} else {
+		$('.recipe-text h3').text("You have " + count + " items left to get!");  
+	}
+});
+
+$('.inner-directions').on('click', 'ol li', function(){
+	$(this).toggleClass('linethrough');
+});
+
+});
+ </script>
 </BODY>
