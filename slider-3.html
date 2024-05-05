@@ -128,16 +128,150 @@ body{
     }
 }
 
+       #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin: 10px;
+   
+}
+            
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
 
 
-.button{
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+.buttonns{
     width: 100%;
     text-align: center;
     position: absolute;
     bottom: 20px;
 }
 
-.button button{
+.buttonns button{
     width: 40px;
     height: 35px;
     border-radius: 8px;
@@ -148,7 +282,7 @@ body{
     transition: 0.3s;
 }
 
-.button button:hover{
+.buttonns button:hover{
     background: #ababab;
     color: #fff;
 }
@@ -211,18 +345,21 @@ body{
         </style>
     </head>
 
+
     <body>
 
-<!--Font Awesome CDN-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     
-   <div class="container">
-    
-    <div class="slide">
+        <a href="gallerymaya-maya.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+
+        <!--Font Awesome CDN-->
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+             
+           <div class="container">
+            
+            <div class="slide">
     
       
 
-          <div class="item" style="background-image: url('sinigang-na-mayamaya.png")>
+          <div class="item" style="background-image: url('sinigang-na-mayamaya.png')";>
 <div class="content">
     <div class="name">Sinigang na Maya-maya</div>
     <div class="des"> <p class="highlighted-paragraph">This recipe is red snapper or maya-maya cooked in sour broth made from tomatoes, onions, green mango strips, radish and kangkong. Unlike the usual sinigang, which uses tamarind fruits or kamias (ginger lily) to give that sourness taste on the sour broth, this sinigang use unripe green mango. Try this unique fish sinigang dish and I’m sure you will like it.</p></div>
@@ -234,7 +371,7 @@ body{
 </div>
 
 
-<div class="item" style="background-image: url('sweet-and-sour-maya-maya.jpg');">
+<div class="item" style="background-image: url('sweet-and-sour-maya-maya.jpg')";>
     <div class="content">
         <div class="name">Sweet and sour maya-maya</div>
         <div class="des"><p class="highlighted-paragraph">Sweet and sour maya-maya is a Filipino fish delicacy, where fried maya-maya fish is sautéed in a sauce made by onion, ginger, pepper, carrot, sugar, banana ketchup, vinegar, oyster sauce, pepper, corn starch. This sweet and sour fish will give you new level of enjoyment as the tender flesh of the maya maya with its crispy skin paired with the umami sweet and sour sauce and is well suited with steamed rice. With its very colourful and appealing features, you can try to have this as your star dish during a celebration! Yum!</p></div>
@@ -348,26 +485,27 @@ body{
     
             
 
-        <div class="button">
-            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-
+      
+    <div class="buttonns">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
     
-        <script>
-let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
-
-next.addEventListener('click', function(){
+    
+    <script>
+    let next = document.querySelector('.next')
+    let prev = document.querySelector('.prev')
+    
+    next.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').appendChild(items[0])
-})
-
-prev.addEventListener('click', function(){
+    })
+    
+    prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
-})
-            
-        </script>
+    })
+        
+    </script>
     </body>
-</html>
+    </html>
