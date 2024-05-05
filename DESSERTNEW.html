@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESSERT</title>
+
+    <!-- Bootstrap CSS CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<!-- ditokanaglagay-->
+    <style>
+             * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            transition: all .2s cubic-bezier(.34, 1.12, .68, 1.31);
+        }
+
+        .gallery {
+            min-height: 100vh;
+          background-color: #fc9ad0;
+            padding-bottom: 100px;
+            z-index: -1;
+        }
+
+        .gallery .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            list-style: none;
+        }
+
+        .gallery .controls .buttons {
+            height: 40px;
+            width: 140px;
+            background: #d8a9cc;
+            color: #302b2f;
+            font-size: 20px;
+            line-height: 40px;
+            cursor: pointer;
+            margin: 20px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+            text-align: center;
+        }
+
+        .gallery .controls .buttons.active {
+            background: rgb(255, 0, 149);
+            color: #000000;
+        }
+
+        .gallery .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery .image-container .image {
+            height: 250px;
+            width: 210px; /* Adjust niyo here if hindi 5 yung images sa baba and taas*/
+            overflow: hidden;
+            border: 10px solid #f198e0;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+            margin: 20px;
+        }
+
+        .gallery .image-container .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .gallery .image-container .image:hover img {
+            transform: scale(1.4);
+        }
+
+        /*  i adjust here yung modal content width para sa maliit na screens*/
+        @media (max-width: 768px) {
+            .modal-dialog-centered {
+                max-width: 90% !important;
+            }
+        }
+      
+
+        .modal-body-scroll {
+    max-height: 400px; /* Adjust this value as needed */
+    overflow-y: auto;
+}
+ .ingredients {
+margin-left: -500px;
+            }
+        .ingredientsg {
+margin-left: -500px;
+            }
+         .ingredientsw {
+margin-left: -500px;
+            }
+
+        .ingredientsc {
+margin-left: -500px;
+            margin-top: 140px;
+            }
+        .ingredientsg h3{
+margin-left: 420px;
+            }
+        .ingredients h3{
+margin-left: 420px;
+            }
+.ingredientsm {
+margin-left: -500px;
+            margin-top: 100px;
+            }
+        
+
+       .procedures h3{
+margin-left: 420px;
+           }
+
+         .procedures {
+margin-left: -500px;
+           }
+
+        .des {
+margin-left: -150px;
+            margin-top: -50px;
+            width: 100%;
+            }
+
+        .ingd {
+margin-left: 20px;
+            margin-top: -60px;
+            }
+   
+                                      #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid rgb(255, 0, 128);
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #ff9de7;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgb(248, 213, 219); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+   top: 40px;
+    margin-right: 1500px;
+    z-index: 1;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+    </style>
+
+</head>
+<body>
+    <a href="homewithtypewritter.html" class="button explore">back</a>
+<div class="gallery">
+
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="Bread">Bread</li>
+        <li class="buttons" data-filter="Sweets">Sweets</li>
+        <li class="buttons" data-filter="Cakes">Cakes</li>
+
+
+    </ul>
+
+
+<!--bread here-->
+
+    <div class="image-container">
+        <!-- Image 1 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal1">
+            <img src="buko-pie.jpg" alt="">
+        </div>
+        <!-- Image 2 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal2">
+            <img src="choco-crinkles.jpg" alt="">
+        </div>
+        <!-- Image 3 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal3">
+            <img src="ensaymada.jpg" alt="">
+        </div>
+        <!-- Image 4 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal4">
+            <img src="filipino-cheese-bread.jpg" alt="">
+        </div>
+        <!-- Image 5 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal5">
+            <img src="kababayan.jpg" alt="">
+        </div>
+        <!-- Image 6 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal6">
+            <img src="pande-regla.jpg" alt="">
+        </div>
+        <!-- Image 7 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal7">
+            <img src="pandecoco.jpg" alt="">
+        </div>
+        <!-- Image 8 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal8">
+            <img src="pandesal.jpg" alt="">
+        </div>
+        <!-- Image 9 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal9">
+            <img src="shakoy.jpg" alt="">
+        </div>
+        <!-- Image 10 -->
+        <div class="image Bread" data-bs-toggle="modal" data-bs-target="#BreadModal10">
+            <img src="spanish-bread.jpg" alt="">
+        </div>
+    </div>
+
+<!--sweets here-->
+
+<div class="image-container">
+    <!-- Image 1 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal1">
+        <img src="turon.jpeg" alt="">
+    </div>
+    <!-- Image 2 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal2">
+        <img src="buko-salad.jpg" alt="">
+    </div>
+    <!-- Image 3 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal3">
+        <img src="carioca.jpg" alt="">
+    </div>
+    <!-- Image 4 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal4">
+        <img src="halo-halo.jpg" alt="">
+    </div>
+    <!-- Image 5 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal5">
+        <img src="leche-flan.jpg" alt="">
+    </div>
+    <!-- Image 6 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal6">
+        <img src="taho.jpeg" alt="">
+    </div>
+    <!-- Image 7 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal7">
+        <img src="maisconyelopek.jpg" alt="">
+    </div>
+    <!-- Image 8 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal8">
+        <img src="sorbetes.jpg" alt="">
+    </div>
+    <!-- Image 9 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal9">
+        <img src="minatamis-na-saging.jpg" alt="">
+    </div>
+    <!-- Image 10 -->
+    <div class="image Sweets" data-bs-toggle="modal" data-bs-target="#SweetsModal10">
+        <img src="scramble.jpg" alt="">
+    </div>
+</div>
+
+<!--cake here-->
+
+<div class="image-container">
+    <!-- Image 1 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal1">
+        <img src="banana-cake.jpg" alt="">
+    </div>
+    <!-- Image 2 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal2">
+        <img src="banana-cupcakes.jpg" alt="">
+    </div>
+    <!-- Image 3 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal3">
+        <img src="carrot-cake.jpg" alt="">
+    </div>
+    <!-- Image 4 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal4">
+        <img src="chocolate-cupcakes.jpg" alt="">
+    </div>
+    <!-- Image 5 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal5">
+        <img src="dark-chocolate-cake.jpg" alt="">
+    </div>
+    <!-- Image 6 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal6">
+        <img src="lemon-cheese-cake.jpg" alt="">
+    </div>
+    <!-- Image 7 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal7">
+        <img src="lemon-cupcakes.jpg" alt="">
+    </div>
+    <!-- Image 8 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal8">
+        <img src="mango-cake.jpg" alt="">
+    </div>
+    <!-- Image 9 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal9">
+        <img src="red-velvet-cupcakes.jpg" alt="">
+    </div>
+    <!-- Image 10 -->
+    <div class="image Cakes" data-bs-toggle="modal" data-bs-target="#CakesModal10">
+        <img src="vanilla-cupcake.jpg" alt="">
+    </div>
+</div>
+
+</div>
+
+<!--description-->
+<!--Bread here-->
+    
+<div class="modal fade" id="BreadModal1" tabindex="-1" aria-labelledby="buko-pieModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buko-pieModal1Label"> BUKO PIE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- here niyo ilagay mga contents niya -->
+                <p>Buko pie is a Filipino type of pie made out of semi flaky pastry filled with custard made out of young coconut meat and condensed milk. A popular dish in Laguna province located South of Manila, Philippines where it can be seen everywhere from street side stalls to walking vendors.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 sheets ready-made flaky pastry</li>
+                        <li>4 young coconuts</li>
+                        <li>3/4 cup white sugar</li>
+                        <li>1/2 cup cornstarch</li>
+                        <li>1/2 cup young coconut water</li>
+                        <li>2/3 cup evaporated milk</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+                  <H2>FILLING </H2>
+        <li>Open coconuts then reserve the liquid, scrape of meat from young coconuts then set aside</li>
+        <li>In a sauce pan pour milk and sugar, turn heat to low and mix continuously until sugar is dissolved.</li>
+        <li>Add the young coconut meat let it cook for 2 minutes.</li>
+        <li>Dissolve cornstarch in the coconut water then pour into the sauce pan. Cook until sauce thickens then turn heat off.</li>
+        <li>Set it aside and let it cool.</li>
+    <H2>PIE</H2>
+        <li>Lay down one sheet of ready-made flaky pastry in a 9 in pie pan</li>
+        <li>Place the filling then cover it with the remaining ready-made flaky pastry, seal the ends by pinching them. </li>
+        <li>Using a fork pierce top dough with holes then bake in a 190C preheated oven for 50 minutes or until top turns light golden brown in colour.</li>
+        <li>Serve while hot.</li>
+    </ol>
+                </p>
+                <img src="buko-pie.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="modal fade" id="BreadModal2" tabindex="-1" aria-labelledby="choco-crinklesModal2label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="choco-crinklesModal2label">Choco crinkles</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 2 -->
+                <p>Choco Crinkles or Chocolate Crinkles are a variation of the chocolate cookies where its texture and appearance are its main characteristics, its soft fudge-like chocolate cake in texture and have that distinctive powdered sugar coating.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups flour</li>
+                        <li>1 cup good quality cocoa powder</li>
+                        <li>2 cups sugar</li>
+                        <li>2 tsp baking powder</li>
+                        <li>4 eggs, lightly beaten</li>
+                        <li>1/2 cup oil</li>
+                        <li>2 tsp vanilla extract</li>
+                        <li>1/2 tsp salt</li>
+                        <li>powdered sugar</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>In a bowl combine together cocoa powder, sugar, oil, eggs and vanilla.</li>
+        <li>Sift together flour, baking powder and salt.</li>
+        <li>Add the young coconut meat let it cook for 2 minutes.</li>
+        <li>Mix flour mixture into the cocoa mixture, place in a covered container and refrigerate overnight.</li>
+        <li>Place powdered sugar in a deep dish.</li>
+        <li>Remove dough from the fridge and place it on the freezer 30 minutes before shaping.</li>
+        <li>Pinch a piece of dough roughly the size of a large tablespoon. Using your hands shape them into balls you can also flatten them, roll it in powdered sugar then place them in a baking pan.</li>
+        <li>Bake in a 170C preheated oven for 12-15 minutes.</li>
+        <h1>NOTE</h1>
+        <li>Make sure you are doing this in a cool environment, as much as possible chill every utensil you will use as this is the key to a perfect round crinkle. To keep it cool when on the baking pan I used a cold damp towel that was soaked in chilled water and place it under the baking pan.</li>
+    </ol>
+                </p>
+                <img src="choco-crinkles.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="BreadModal3" tabindex="-1" aria-labelledby="ensaymadaModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ensaymadaModal3Label">Ensaymada</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content imissu 3 -->
+                <p>Super Soft Ensaymada is a type of Filipino Bread baked brioche style prepared with bread flour, eggs and butter proofed overnight to achieve a nice stretchy soft consistency.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>DRY INGREDIENTS</h4>
+                        <li>4 1/2 cups high grade flour, plus more for kneading</li>
+                        <li>3/4 cup sugar</li>
+                        <li>1 1/2 teaspoon salt</li>
+
+                        <H4>WET INGREDIENTS</H4>
+                        <li>1/4 cup full cream milk</li>
+                        <li>4 egg yolks</li>
+                        <li>2 whole eggs</li>
+                        <li>1 cup cold butter, cut into small cubes</li>
+
+                        <H4>YEAST MIXTURE</H4>
+                        <li>1/2 cup lukewarm water</li>
+                        <li>1 tsp sugar</li>
+                        <li>1 tsp yeast</li>
+
+                        <h4>TOPPING</h4>
+                        <li>margarine</li>
+                        <li>white sugar</li>
+                        <li>pgrated edam or cheddar cheese</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>In a small bowl combine together all yeast mixture ingredients, set it aside and let the yeast bloom</li>
+        <li>In a mixing bowl sift together dry ingredients, set it aside</li>
+        <li>Add the young coconut meat let it cook for 2 minutes.</li>
+        <li>In a bowl whisk together wet ingredients apart from the butter, set it aside</li>
+        <li>Place mixing bowl in a stand mixer using the kneading hook, knead in low speed while adding the bloomed yeast mixture slowly. </li>
+        <li>Once yeast mixture are added fully, slowly add the whisked wet ingredients next until finished continue in low speed until a dough is formed.</li>
+        <li>Increase the speed into the next speed setting, add cold butter one cube at a time. </li>
+        <li>Once everything has been added increase the speed further to the next speed setting.</li>
+        <li>Knead for 20 to 25 minutes or until dough is elastic and smooth.</li>
+        <li>At the first 15 minutes it will be sticky, the dough will stick to the walls of the mixing bowl but once you’re in the last minutes, it will all come together and there will be no more sticking dough on the walls of your mixing bowl, this is the stage when you know your dough is ready. </li>
+        <li> If it is still sticky add 5 minutes of kneading time, this all depends on the room temperature you are making your ensaymada as well as the humidity.</li>
+        <li>Remove mixing bowl from the stand mixer, cover with cling wrap then place it in a warm location.</li>
+        <li>Let it rise to double its size, at this stage you can continue to bake it and proceed to step 9, especially if you are in a hurry but I suggest to at least proof it overnight to a maximum of two nights for best results.</li>
+        <li>Proof the dough, place in the refrigerator still covered tightly with a cling warp then cover with a plate on top. Leave it in the refrigerator for at least 12 hours.</li>
+        <li>Remove dough from the refrigerator.</li>
+        <li>Remove dough from the mixing bowl, deflate and cut into 24 equal parts.</li>
+        <li>Roll each dough by hand into a lightly floured kneading surface until it resembles a thick rope around 8 inches in length. </li>
+        <li>Coil up each rope then place it in a baking paper lined baking tray, giving ample space for each ensaymada to rise.</li>
+        <li>If you don’t want to roll and coil you can just shape each ensaymada into a bread roll that should be fine too. </li>
+        <li>Once all dough pieces are shaped, set it aside in a warm place loosely covered with cling warp then let it rise and double its size.</li>
+        <li>Place baking tray with ensaymada in a 180C preheated oven then bake for 12 to 15 minute or until top turns light brown.</li>
+            <li>Remove from the oven then let it cool.</li>
+        <li>Once cooked down, mix margarine and sugar, spread on top of ensaymada, sprinkle more sugar on top then grated cheese. Serve.</li>
+    </ol>
+                </p>
+                <img src="ensaymada.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+              
+            <div class="modal fade" id="BreadModal4" tabindex="-1" aria-labelledby="filipino-cheese-breadModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="filipino-cheese-breadModal4Label">Filipino Cheese Bread</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 4 -->
+                <p>Filipino Cheese Bread is a Filipino type of bread prepared with flour, milk, butter and eggs coated with a creamy, sweet and savoury Cheese soft streusel.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>DOUGH</h4>
+                        <li>3 1/2 cups high grade flour</li>
+                        <li>1/2 cup potato flakes</li>
+                        <li>1 tbsp active dry yeast</li>
+                        <li>1/4 cup warm water</li>
+                        <li>1/2 cup butter, melted</li>
+                        <li>1 cup milk                        </li>
+                        <li>3/4 cup sugar + 1 tbsp sugar</li>
+                        <li>1/2 tsp salt</li>
+                        <li>1 egg</li>
+
+                        <h4>CHEESE COATING</h4>
+                        <LI>2 cups grated cheddar cheese</LI>
+                        <LI>1 cup powdered milk</LI>
+                        <LI>1/2 cup all-purpose flour</LI>
+                        <LI>1 1/4 cups powdered sugar</LI>
+                        <LI>1/4 cup butter, cut into small cubes, room temperature</LI>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>In a bowl combine together active dry yeast, warm water and sugar. Place in a warm location then set it aside for 10 minutes.</li>
+        <li>In a mixing bowl add the butter, milk, egg, 3/4 cup sugar and salt then whisk until well combined.</li>
+        <li>Pour in the yeast mixture.</li>
+        <li>Gradually add the flour and potato flakes, if you are using a tabletop mixer change to the kneading hook and knead for 10 minutes. Otherwise, once the mixture can be formed to a ball, place it in a floured surface then knead it by hand for 10 minutes.</li>
+        <li>Place dough in a non-stick or greased bowl, cover with damp cloth then let it rise for an hour or until it doubled in size.</li>
+        <li>Prepare your cheese coating, in a large bowl combine all cheese coating ingredients, mix with a spatula until it resembles rough crumbles. Set it aside.</li>
+        <li>Get your dough then cut it into 3 equal portions. Roll each portion into a long log then cut them into 7-10 pieces (7 if you want larger cheese bread and 10 for smaller size), roll each piece to form a small bowl then roll it in the cheese coating mixture, pressing gently the mixture so it sticks with the dough. It should be generously coated with the cheese coating.</li>
+        <li>Place prepared piece in a baking paper lined baking tray then repeat the procedure with the remaining dough.</li>
+
+        <li>Leave the baking trays with the bread in a warm location then let it rise again for 30 minutes or until it is 1 1/2 of the original size, do not let it rise too much.</li>
+        <LI>Bake in a 150C preheated oven for 15 minutes or until slightly golden in colour</LI>
+    </ol>
+                </p>
+                <img src="filipino-cheese-bread.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <div class="modal fade" id="BreadModal5" tabindex="-1" aria-labelledby="kababayanModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kababayanModal5Label">Kababayan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 5 -->
+                <p>Kababayan is a type of sweet bread popular in the Philippines, muffin like in preparation and texture this perhaps is its most simplest version as its only made with just eggs, sugar, milk and flour
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 1/2 cups flour</li>
+                        <li>3/4 cup brown sugar</li>
+                        <li>2 tsp baking powder</li>
+                        <li>1/2 tsp baking soda</li>
+                        <li>1 tsp salt</li>
+                        <li>2 eggs                       </li>
+                        <li>3/4 cup milk</li>
+                        <li>11/2 cup vegetable oil</li>
+                        <li>2 tbsp vanilla</li>
+                        <LI>22 tbsp melted butter</LI>
+                        <LI>sugar for sprinkling</LI>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>In a bowl sift together flour, brown sugar, baking powder, baking soda and salt</li>
+        <li>In another bowl whisk together eggs, milk, vegetable oil and vanilla.</li>
+        <li>Combine dry and wet ingredients together by gently whisking it together.</li>
+        <li>Prepare a non-stick muffin pans, and fill each section until half full.</li>
+        <li>Bake in a 180C preheated oven for 15 minutes or until top is golden brown.</li>
+        <li>Remove from oven, brush top with melted butter, remove them from muffin pans and let it cool in wire racks.</li>
+    </ol>
+                </p>
+                <img src="kababayan.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="BreadModal6" tabindex="-1" aria-labelledby="pande-reglaModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pande-reglaModal6Label"> Pande Regla</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 6-->
+                <p>Pan de Regla if directly translated means “menstrual bread”, and you know why it is called like such. If you can’t imagine that then think of it as a used feminine pad, now your grossed out. It is also called many other names but one of the most popular ones is kalihim, meaning secret, and it is nowhere related anywhere near that female period, instead it is named like such becuase the bakers want to make the filling a secret as they are made from previous day’s unsold bread. Yes, it is a bread filled with a bread, and you won’t even notice that, it’s just simply delicious.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>DOUGH</h4>
+                        <li>2 1/2 cups high grade flour</li>
+                        <li>2 1/4 tsp yeast</li>
+                        <li>1/4 cup lukewarm water</li>
+                        <li>1/2 cup lukewarm milk</li>
+                        <li>2 tbsp melted butter</li>
+                        <li>3 tbsp sugar </li>
+                        <li>1/2 tsp salt</li>
+                        
+
+                        <h4>PUDDING</h4>
+                        <LI>10–12 slices medium thickness sliced bread (white, wholegrain, multi grain or mix), roughly torn</LI>
+                        <LI>2 1/4 cups full cream milk</LI>
+                        <LI>2 eggs, beaten</LI>
+                        <LI>3/4 cups sugar</LI>
+                        <LI>1 tbsp red food colouring (adjust to achieve a very bright red colour)</LI>
+                        <li>3 tbsp butter</li>
+                        <li>1 tsp vanilla extract                        </li>
+
+                        <h4>EGG WASH</h4>
+                        <li>1 egg, beaten</li>
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Prepare your dough, combine lukewarm water, yeast and 1/2 tbsp of sugar in a bowl.</li>
+        <li>Mix then place it in a warm location until frothy
+            In a large mixing bowl combine all remaining dough ingredients and yeast mixture. </li>
+        <li>Place in a standing mixer then using a kneading hook, knead for 5 minutes in the lowest speed until it forms into a dough. </li>
+        <li>Bring speed to medium then continue to knead for 20 minutes or until dough is smooth and elastic. </li>
+        <li> Remove mixing bowl from mixing stand then cover it with clean damp kitchen towel then place it in a warm location until it doubles in size.</li>
+        <li>Meanwhile prepare your pudding, in a food processor combine bread slices and milk pulse to make a loose paste. Pour this mixture in a large non-stick pan then add the rest of the pudding ingredients.</li>
+        <li> Place pan in stove over medium heat then cook while continuously mixing until thick and dense like a pudding. </li>
+        <li> Remove from heat then set it aside, let it completely cool down.
+            Back to your dough, remove it from the mixing bowl, deflate then flatten.</li>
+        <li>Divide evenly into 2 portions</li>
+        <LI>Flatten each portion using a rolling pin into a shape of a rectangle, put filling in the middle of the top section as well as the middle of the bottom section.</LI>
+        <li>Slice the dough in half </li>
+        <li> Pull together the edges of each half then seal, place them seam side down. </li>
+        <li>Cut each section into 9 even pieces, this will leave you with 18 pieces. </li>
+        <li>Place them in a baking paper lined baking tray.
+            Poke fork holes on top of each bread then set it aside.
+            Repeat steps 6 to 9 for the remaining portion. In total you will have 36 pieces. </li>
+        <li> Loosely cover both prepared and shaped bread with a kitchen towel or baking paper, let it rise for one more hour or until puffy.
+            Brush the tops of the dough with the egg wash.</li>
+        <li>Bake in a 180C preheated oven for 15 to 18 minutes, or until top turns golden brown. </li>
+    </ol>
+                </p>
+                <img src="pande-regla.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="BreadModal7" tabindex="-1" aria-labelledby="pandecocoModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pandecocoModal7Label">Pan de coco</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--7 -->
+                <p>Pan de coco which means “coconut bread” in Spanish is a popular bread in the Philippines and Honduras. Though two versions are named similarly they are made differently to each other, the Philippine variant is a sweet bread with a sweetened grated coconut filling served as a dessert or a snack item while the Honduran version coconut meat and milk is integrated with the dough and served with stews.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>DOUGH</h4>
+                        <li>3/4 cups water, warm</li>
+                        <li>2 1/4 tsp yeast</li>
+                        <li>3/4 tsp salt</li>
+                        <li>2 eggs, lightly beaten</li>
+                        <li>1/4 cup soft brown sugar</li>
+                        <li>1/4 cup margarine, in room temperature </li>
+                        <li>13 1/2 cups flour</li>
+                        <li>1 egg, for egg wash</li>
+                        
+
+                        <h4>FILLING</h4>
+                        <LI>1 1/2 cups desiccated coconut</LI>
+                        <LI>1/2 cup coconut milk</LI>
+                        <LI>1/4 cup water</LI>
+                        <LI>3/4 cup dark cane sugar</LI>
+                        <LI>1 tsp vanilla</LI>
+                        <li>2 tsp cornstarch</li>
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Mix together yeast and water in a large bowl.</li>
+        <li>Add eggs, sugar and margarine.</li>
+        <li>Add flour and salt and mix using hands but do not knead.</li>
+        <li>Cover the bowl with cling wrap and let it rise for an hour or until it doubles in size.</li>
+        <li> While waiting, prepare your filling by placing all ingredients in a sauce pan except for the  desiccated coconut, make sure to mix in the cornstarch thoroughly. </li>
+        <li>Once free for lumps add the  desiccated coconut then place in stove top then simmer gently until liquid is reduced to a thick consistency similar to a jam. Once ready set is aside and let it cool.</li>
+        <li> Gently deflate the dough then lightly dust it with flour as it would be sticky to handle.  </li>
+        <li> Pinch a lime sized dough and flatten it by hand in a lightly dusted board, place a tablespoon of the sweetened coconut then bring all the edges of the dough together. </li>
+        <li> Place it on a greased baking pan with seals on the bottom side then do it with the remaining dough.
+            Place baking pan in a warm place let filled dough rise for an hour.
+            Brush top with egg wash.</li>
+        <LI>Bake in a 180C preheated oven for 15 minutes or until top becomes golden brown.</LI>
+
+    </ol>
+                </p>
+                <img src="pandecoco.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="BreadModal8" tabindex="-1" aria-labelledby="pandesalModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pandesalModal8Label">Pandesal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 8 -->
+
+                <p>Pan de Sal or pandesal means salt bread in Spanish, the most popular bread in the Philippines which is made out of basic bread ingredients such as eggs, flour, sugar and salt.  This bread was introduced during the 16th century by Spanish bakers in the Philippines. 
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>4 cupshigh grade flour + some for dusting</li>
+                        <li>75g butter, softened</li>
+                        <li>1 cup full cream milk</li>
+                        <li>1/4 cup warm water</li>
+                        <li>1/2 cup white sugar</li>
+                        <li>1 tsp of salt</li>
+                        <li>1 egg, room temperature</li>
+                        <li>3 tsp yeast</li>
+                        <li>breadcrumbs</li>
+
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Dissolve the yeast in warm water, set aside until bubbly.</li>
+        <li>Mix in milk, egg, sugar and melted butter.</li>
+        <li>In a clean and flat surface place flour and salt then make a well in a middle, pour the liquid in the center and start combining the wet and dry ingredients.</li>
+        <li>Knead the dough for 15 minutes until it resembles a soft clay. </li>
+        <li>Place flour on the surface if needed to avoid sticking.</li>
+        <li>Once finished kneading, shape the dough into a ball then place in a large bowl, cover with damp cloth then let it rise for an hour on a warm location.</li>
+        <li>Lightly deflate the dough, divide into rolls of 1-inch diameters, cut into 1.5-inch pieces then form into small buns, place on a baking pan lined with parchment paper.</li>
+        <li>Set aside in a warm location and let it rise for 1 hour.</li>
+        <li>Sprinkle bread crumbs on top then bake on a 200C pre heated oven for 12-15 minutes or until golden brown.</li>
+    </ol>
+                </p>
+                <img src="pandesal.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="BreadModal9" tabindex="-1" aria-labelledby="shakoyModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shakoyModal9Label"> Shakoy </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 9 -->
+
+                <p>Experience the crispy indulgence of Shakoy, a beloved Filipino fried doughnut treat. Perfectly twisted and coated in sweetness, it’s a snack-time delight!
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>3 cups high grade flour</li>
+                        <li>2 1/4 tsp active dry yeast</li>
+                        <li>3 tbsp white sugar</li>
+                        <li>1/2 tsp salt</li>
+                        <li>2 tbsp butter</li>
+                        <li>1 cup milk</li>
+                        <li>11 large egg</li>
+                        <li>neutral flavoured oil, for frying</li>
+                        <li>granulated white sugar, for coating</li>
+
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Prepare the Dough, in a saucepan over medium heat, melt the butter, then add the milk. Remove from heat. Do not boil, just enough heat to melt the butter.</li>
+        <li>Add the egg, sugar, and salt to the mixture, and stir until well combined.</li>
+        <li>Sprinkle the yeast over the mixture and let it sit for 5 minutes until foamy.</li>
+        <li>In a large bowl, place the flour and make a well in the centre. Pour the milk mixture into the well and stir until a dough forms.</li>
+        <li>Knead the dough on a floured surface until smooth and elastic. Place the dough in a greased bowl, cover with a towel, and let it rise in a warm place for 1 hour or until doubled in size.</li>
+        <li>Shape the Shakoy. punch down the risen dough and divide it into 16 equal portions.</li>
+        <li>Roll each portion into a rope, about 8 inches long, and twist into a braid-like shape.</li>
+        <li>Place the twisted doughnuts on a baking sheet lined with parchment paper, cover with a towel, and let them rise for an additional 30 minutes.</li>
+        <li>Fry the Shakoy, heat oil in a deep skillet or pot to 180°C.
+            Carefully place a few twisted doughnuts into the hot oil and fry until golden brown on both sides, about 2-3 minutes per side.</li>
+            <li>Remove the fried Shakoy from the oil using a slotted spoon and drain on paper towels to remove excess oil.</li>
+            <li>While still hot, roll the Shakoy in granulated sugar until coated evenly.
+                Serve and Enjoy</li>
+    </ol>
+                </p>
+
+                <img src="shakoy.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+                        
+            <div class="modal fade" id="BreadModal10" tabindex="-1" aria-labelledby="spanish-breadModal10Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="spanish-breadModal10Label">Spanish Bread</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 10-->
+
+                <p>Spanish Bread is a Filipino type of bread filled with breading doused with sugar and margarine. A popular Filipino bread eaten usually during tea time.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>BREAD</h4>
+                        <li>3 cups high grade flour or bread flour</li>
+                        <li>2 tsp bread yeast</li>
+                        <li>1/4 cup sugar</li>
+                        <li>1 tsp salt</li>
+                        <li>3/4 cup warm milk</li>
+                        <li>1/4 cup melted butter </li>
+                        <li>1 egg</li>
+                        <li>1/2 cup bread crumbs</li>
+                        <li>water, for brushing</li>
+                        
+
+                        <h4>FILLING</h4>
+                        <LI>1/2 cup melted butter or margarine</LI>
+                        <LI>1 tbsp flour</LI>
+                        <LI>1 cup bread crumbs</LI>
+                        <LI>1/4 cup milk</LI>
+                        <LI>1 cup brown sugar</LI>
+                        <li>1/4 teaspoon salt</li>
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Mix yeast and warm water together. Set aside for 30 minutes, if the mixture turns frothy then continue otherwise its not active anymore, you will need to get a new yeast and repeat the process.</li>
+        <li>Sift all dry bread ingredients in a large bowl
+            Whisk together melted butter and sugar then combine it with the yeast mixture.</li>
+        <li>Combine liquid mixture with dry mixture then mix together, once it forms a dough knead in a flat surface for 10 minutes by hand.</li>
+        <li>If you are using a stand mixer with a bread hook or a bread maker, follow the instructions of your equipment.
+        </li>
+        <li> Place dough in a large bowl, cover it with damp kitchen towel and put in a warm place. Let the dough rise for an hour, it should be double in size. If it does not double in size in an hour let it rise further.</li>
+        <li>Once dough is ready, remove it from the bowl, place in a flat surface then flatten with a rolling pin, should be around 8 mm thick.</li>
+        <li> Mix filling ingredients together.
+            Spread filling ingredients into the dough while avoiding the edge, cut dough into 16 isosceles trapezoid (Like triangle with top cut off) shapes. Starting from the longer edge roll the dough all the way tightly and make sure the end seals.  </li>
+        <li> Place each piece in a baking paper lined pan, brush top with water, sprinkle bread crumbs all around then let it rest for 30 minutes to an hour.</li>
+        <li>Cover baking pan with a cling wrap then set aside and let it rise again for an hour.</li>
+        <LI>Bake in a 180 C preheated oven for 12 minutes.
+            Remove from baking pan immediately then let it cool in a wire rack.</LI>
+
+    </ol>
+                </p>
+                <img src="spanish-bread.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- if want niyo pa mag add ng picture copy niyo sa may "START....."-->
+
+<!--Cakes here-->
+
+<div class="modal fade" id="CakesModal1" tabindex="-1" aria-labelledby="banana-cakeModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="banana-cakeModal1Label"> Banana Cake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- here niyo ilagay mga contents niya -->
+                <p>This banana cake recipe uses fresh mashed bananas and buttermilk for super moist results. Put your excess bananas to good use with this homemade banana cake recipe, topped with a decadent cream cheese frosting. 
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>CAKE</h4>
+                        <li>1 ½ cups mashed bananas</li>
+                        <li>2 teaspoons lemon juice</li>
+                        <li>3 cups all-purpose flour</li>
+                        <li>1 ½ teaspoons baking soda</li>
+                        <li>¼ teaspoon salt</li>
+                        <li>2 ⅛ cups white sugar</li>
+                        <li>¾ cup butter</li>
+                        <li>3 eggs</li>
+                        <li>2 teaspoons vanilla extract</li>
+                        <li>1 ½ cups buttermilk</li>
+
+                        <h4>FROSTING</h4>
+                        <li>½ cup butter, softened</li>
+                        <li>1 (8 ounce) package cream cheese, softened</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>3 ½ cups confectioners' sugar</li>
+                        
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+                  <H2> MAKE CAKE </H2>
+        <li>Mix mashed bananas with lemon juice in a small bowl. Mix flour, baking soda, and salt in a medium bowl.</li>
+        <li>Cream sugar and butter in a large bowl until light and fluffy, 3 to 4 minutes.</li>
+        <li>Beat in eggs one at a time, then stir in vanilla. Beat in flour mixture alternately with buttermilk. Stir in banana mixture. Pour batter into the prepared pan.</li>
+        <li>Bake in the preheated oven until a toothpick inserted into the center of the cake comes out clean, about 1 hour.</li>
+        <li>Remove cake from the oven and place it directly into the freezer for 45 minutes. This will make the cake very moist.</li>
+        <li>Meanwhile, make frosting: Cream butter and cream cheese until smooth.</li>
+        <li>Beat in vanilla. Add confectioners sugar and beat on low speed until combined, then on high until frosting is smooth.
+            </li>
+        <li>Spread frosting on cooled cake.</li>
+
+    </ol>
+                </p>
+                <img src="banana-cake.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="modal fade" id="CakesModal2" tabindex="-1" aria-labelledby="banana-cupcakesModal2label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="banana-cupcakesModal2label">Banana Cupcakes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 2 -->
+                <p>These banana cupcakes are fluffy, moist, and good to eat at any time of day. This recipe is very easy to do, so cheer up and bake! They are easy, delicious, and fun to make!
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>3 bananas, mashed</li>
+                        <li>1 cup white sugar</li>
+                        <li>2 eggs, lightly beaten</li>
+                        <li>¾ cup vegetable oil</li>
+                        <li>2 cups all-purpose flour</li>
+                        <li>2 teaspoons baking soda</li>
+                        <li>3 tablespoons buttermilk</li>
+                        <li>1 cup chopped pecans (Optional)</li>
+                        <li>1 cup confectioners' sugar, or as needed</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat oven to 300 degrees F (150 degrees C). Grease 14 muffin cups.</li>
+        <li>Lightly beat bananas and white sugar together in a bowl until smooth; add eggs, one at a time, until incorporated. </li>
+        <li>Beat in vegetable oil until well blended, 1 to 2 minutes. 
+            Stir in flour, baking soda, and buttermilk; mix well. Fold in pecans. Pour batter into the prepared muffin cups.</li>
+        <li>Bake in the preheated oven until a toothpick inserted in the center of a cupcake comes out clean, 20 to 30 minutes.
+ Sprinkle cupcakes with confectioners' sugar.</li>
+       </ol>
+                </p>
+                <img src="banana-cupcakes.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="CakesModal3" tabindex="-1" aria-labelledby="carrot-cakeModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carrot-cakeModal3Label">Carrot Cake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content imissu 3 -->
+                <p>This carrot cake recipe with a homemade cream cheese frosting is my favorite, and It's moist, easy to make with grated carrots so delicious!
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>CAKE</h4>
+                        <li>2 cups white sugar</li>
+                        <li>1 ¼ cups vegetable oil</li>
+                        <li>4 large eggs</li>
+                        <li> 2 teaspoons vanilla extract</li>
+                        <li>2 cups all-purpose flour</li>
+                        <li>2 teaspoons baking soda</li>
+                        <li>2 teaspoons baking powder</li>
+                        <li>2 teaspoons ground cinnamon</li>
+                        <li>½ teaspoon salt</li>
+                        <li>3 cups grated carrots</li>
+                        <li>1 cup chopped pecans</li>
+                        
+
+                        <H4>FROSTING</H4>
+                        <li>½ cup butter, softened</li>
+                        <li>8 ounces cream cheese, softened</li>
+                        <li>4 cups confectioners' sugar</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>1 cup chopped pecans</li>
+
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9x13-inch pan.</li>
+        <li>Beat sugar, oil, eggs, and 2 teaspoons vanilla together in a large bowl with an electric mixer until well combined.</li>
+        <li>Mix in flour, baking soda, baking powder, cinnamon, and salt. Stir in carrots. Fold in pecans. Pour into the prepared pan.</li>
+        <li>Bake in the preheated oven until a toothpick inserted into the center of the cake comes out clean, about 40 minutes. Let cool in the pan for 10 minutes, then turn out onto a wire rack and cool completely.</li>
+        <li>To make the frosting: Beat butter, cream cheese, confectioners' sugar, and 1 teaspoon vanilla together in a large bowl with an electric mixer until smooth and creamy. Stir in chopped pecans. Frost the cooled cake. </li>
+    </ol>
+                </p>
+                <img src="carrot-cake.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+              
+            <div class="modal fade" id="CakesModal4" tabindex="-1" aria-labelledby="chocolate-cupcakesModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chocolate-cupcakesModal4Label">Chocolate Cupcake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 4 -->
+                <p>Chocolate cupcakes are the ultimate party food. These are super moist and bursting with rich, chocolaty flavor — and they're so easy to make. Frost these delicious chocolate cupcakes with buttercream or cream cheese frosting, or try royal icing or even whipped cream.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        
+                        <li>1 ⅓ cups all-purpose flour</li>
+                        <li>¾ cup unsweetened cocoa powder</li>
+                        <li>2 teaspoons baking powder</li>
+                        <li>¼ teaspoon baking soda</li>
+                        <li>⅛ teaspoon salt</li>
+                        <li>1 ½ cups white sugar </li>
+                        <li>3 tablespoons butter, softened</li>
+                        <li>2 large eggs</li>
+                        <li>¾ teaspoon vanilla extract</li>
+                        <li>1 cup milk</li>
+
+                       
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat the oven to 350 degrees F (175 degrees C). Line a muffin pan with paper or foil liners.</li>
+        <li>Sift together flour, cocoa, baking powder, baking soda, and salt.
+            Cream together sugar and butter in a large bowl until light and fluffy.</li>
+        <li>Add eggs, one at a time, beating well after each addition. Stir in the vanilla. Add flour mixture in two batches, alternating with milk; beat well.</li>
+        <li>Spoon batter into the prepared muffin cups, filling each 3/4 full.</li>
+        <li>Bake in the preheated oven until a toothpick inserted into the centers comes out clean, 15 to 17 minutes. Remove from the oven and let cool before serving or frosting.</li>
+    
+    </ol>
+                </p>
+                <img src="chocolate-cupcakes.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <div class="modal fade" id="CakesModal5" tabindex="-1" aria-labelledby="Dark-chocolate-cakeModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Dark-chocolate-cakeModal5Label">Dark Chocolate Cake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 5 -->
+                <p>The absolute best, richest, and easiest one-bowl dark chocolate cake recipe ever! It's great topped with chocolate cream cheese frosting!
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups all-purpose flour</li>
+                        <li>2 cups white sugar</li>
+                        <li>¾ cup unsweetened cocoa</li>
+                        <li>2 teaspoons baking soda</li>
+                        <li>1 teaspoon baking powder</li>
+                        <li>½ teaspoon salt</li>
+                        <li>2 eggs</li>
+                        <li>1 cup cold brewed coffee</li>
+                        <li>1 cup milk</li>
+                        <LI>½ cup vegetable oil</LI>
+                        <LI>2 teaspoons vinegar</LI>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat oven to 350 degrees F (175 degrees C). Grease and flour a 9x13-inch pan.</li>
+        <li>In a large bowl, combine the flour, sugar, cocoa, baking soda, baking powder and salt.</li>
+        <li> Make a well in the center and pour in the eggs, coffee, milk, oil and vinegar. </li>
+        <li>Mix until smooth; the batter will be thin. </li>
+        <li>Pour the batter into the prepared pan.</li>
+        <li>Bake in the preheated oven for 35 to 40 minutes, or until a toothpick inserted into the center of the cake comes out clean. Allow to cool</li>
+    </ol>
+                </p>
+                <img src="dark-chocolate-cake.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="CakesModal6" tabindex="-1" aria-labelledby="lemon-cheese-cakeModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lemon-cheese-cakeModal6Label"> Lemon Cheese Cake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 6-->
+                <p>This lemon cheesecake recipe is easy to throw together for a smooth and creamy summer dessert. You can't even tell it is made with low-fat ingredients.
+                    <h2>Ingredients</h2>
+                    <ul>
+                       
+                        <li>1 (9 inch) reduced fat graham cracker pie crust</li>
+                        <li>2 (8 ounce) packages cream cheese</li>
+                        <li>½ cup white sugar</li>
+                        <li>1 ½ tablespoons all-purpose flour</li>
+                        <li>½ cup egg substitute</li>
+                        <li>2 ½ tablespoons lemon juice</li>
+                        <li>1 (8 ounce) container nonfat lemon yogurt</li>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat the oven to 350 degrees F (175 degrees C)</li>
+        <li>Place pie crust on a a baking sheet.</li>
+        <li>Beat cream cheese and sugar in a large bowl with an electric mixer until smooth; beat in flour, then egg substitute and lemon juice.</li>
+        <li>Stir in lemon yogurt until combined; pour mixture into crust.</li>
+        <li>Bake in the preheated oven until filling is set, about 50 to 60 minutes. </li>
+        <li>Allow pie to cool, then refrigerate at least 4 hours before serving.</li>
+    </ol>
+                </p>
+                <img src="lemon-cheese-cake.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="CakesModal7" tabindex="-1" aria-labelledby="lemon-cupcakesModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lemon-cupcakesModal7Label">Lemon Cupcakes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--7 -->
+                <p>Here is a lemon cupcake recipe I use for beautifully delicious treats. Ideally, you'd use buttercream frosting to top the cupcakes, but try these with lemon cream icing for a less buttery option, These cupcakes are truly lighter than air and will melt in your mouth.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>CUPCAKE</h4>
+                        <li>3 cups self-rising flour</li>
+                        <li>½ teaspoon salt</li>
+                        <li>1 cup unsalted butter, at room temperature</li>
+                        <li>2 cups white sugar</li>
+                        <li>4 large eggs, at room temperature</li>
+                        <li>2 tablespoons lemon zest</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>1 cup whole milk, divided</li>
+                        <li>2 ½ tablespoons fresh lemon juice, divided</li>
+                        
+
+                        <h4>LEMON CREAM ICING</h4>
+                        <LI>2 cups chilled heavy cream</LI>
+                        <LI>¾ cup confectioners' sugar</LI>
+                        <LI>1 ½ tablespoons fresh lemon juice</LI>
+                    
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Preheat the oven to 375 degrees F (190 degrees C). Line 30 cupcake pan cups with paper liners.</li>
+        <li>Prepare the cupcakes: Sift flour and salt together in a bowl. Beat butter and sugar together in another bowl with an electric mixer until light and fluffy. Add in eggs one at a time, beating after each addition to incorporate. Mix in lemon zest and vanilla.</li>
+        <li>Gently beat flour mixture into butter mixture, 1/3 at a time, alternating with 1/2 of the milk and 1/2 of the lemon juice after each of the first two additions of flour. Beat until just combined; do not overmix.</li>
+        <li>Fill the prepared cupcake liners with batter, 3/4 full, and bake in the preheated oven until a toothpick inserted in the center comes out clean, about 17 minutes. Let the cupcakes cool in the pans before removing them to finish cooling on a rack, about 10 minutes.</li>
+        <li>Meanwhile, make the icing: Beat cream in a chilled bowl with an electric mixer set on low until cream begins to thicken. Add confectioners' sugar and lemon juice, a little at a time, beating after each addition, until fully incorporated. Increase the mixer speed to high and beat until the icing forms soft peaks, about 5 minutes. </li>
+        <li>Spread icing on cooled cupcakes. Refrigerate leftovers.</li>
+
+    </ol>
+                </p>
+                <img src="lemon-cupcakes.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="CakesModal8" tabindex="-1" aria-labelledby="mango-cakeModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mango-cakeModal8Label">Mango Cake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 8 -->
+
+                <p>This mango cake is made with box cake mix and includes fresh mango, topped with a homemade glaze. Serve with whipped cream for an easy, summery dessert!
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>Cake</h4>
+                        <li>1 ripe mango</li>
+                        <li>1 (15.25 ounce) box yellow cake mix</li>
+                        <li>3 large eggs</li>
+                        <li>½ cup water</li>
+                        <li>¼ cup vegetable oil</li>
+                        <li>2 tablespoons lime zest</li>
+
+                        <h4>Glaze</h4>
+                        <li>1 tablespoon butter, melted</li>
+                        <li>½ lime, juiced</li>
+                        <li>1 tablespoon golden rum (Optional)</li>
+                        <li>2 cups confectioners' sugar</li>
+
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+
+        <li>Preheat the oven to 350 degrees F (175 degrees C). Grease a fluted tube pan (such as Bundt). </li>
+        <li>Peel mango with a vegetable peeler or paring knife. Cut flesh into small pieces and squeeze pit for juice.</li>
+        <li>Collect all juice from chopping and squeezing pit and reserve for glaze. </li>
+        <li>Smash mango in a bowl using a potato masher or fork.</li>
+        <li>Measure 1 cup smashed mango, reserving the rest for the glaze.</li>
+        <li>Beat 1 cup smashed mango, cake mix, eggs, water, vegetable oil, and lime zest together in a bowl using an electric mixer for 2 minutes; pour into the prepared pan.</li>
+        <li>Bake in the preheated oven until a toothpick inserted in the center comes out clean, 40 to 50 minutes. </li>
+        <li>Cool cake in pan for 5 minutes. Invert cake onto a wire rack to cool completely.</li>
+        <li>For the glaze: Combine melted butter, lime juice, rum, and about 1 tablespoon reserved juice from mango in a bowl. </li>
+        <li>Stir confectioners' sugar into butter mixture until desired consistency is reached; fold smashed mango into glaze. Spoon glaze over cooled cake.</li>
+    </ol>
+                </p>
+                <img src="mango-cake.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="CakesModal9" tabindex="-1" aria-labelledby="red-velvet-cupcakesModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="red-velvet-cupcakesModal9Label"> Red Velvet Cupcake </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 9 -->
+
+                <p>These red velvet cupcakes are perfectly sweet and wonderfully moist with a pleasant hint of tanginess. This easy dessert will quickly become a staple in your recipe box!
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>CAKE</h4>
+                        <li>2 ½ cups flour</li>
+                        <li>½ cup unsweetened cocoa powder</li>
+                        <li>1 teaspoon baking soda</li>
+                        <li>½ teaspoon salt</li>
+                        <li>2 cups sugar</li>
+                        <li>1 cup butter, softened</li>
+                        <li>4 large eggs</li>
+                        <li>1 cup sour cream</li>
+                        <li>½ cup milk</li>
+                        <li>1 (1 ounce) bottle McCormick Red Food Color</li>
+                        <li>2 teaspoons McCormick Pure Vanilla Extract</li>
+
+                        <h4>Vanilla Cream Cheese Frosting</h4>
+                        <li>1 (8 ounce) package cream cheese, softened</li>
+                        <li>¼ cup butter, softened</li>
+                        <li>2 tablespoons sour cream</li>
+                        <li>2 teaspoons McCormick Pure Vanilla Extract</li>
+                        <li>1 (16 ounce) box confectioners' sugar</li>
+        
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Gather all ingredients and preheat the oven to 350 degrees F (175 degrees C). Line 30 muffin cups with paper liners.</li>
+        <li><strong>Make cake:</strong> Mix together flour, cocoa powder, baking soda, and salt in a medium bowl; set aside.</li>
+        <li>Beat sugar and butter in a large bowl with an electric mixer on medium speed until light and fluffy, about 5 minutes. Beat in eggs, one at a time.</li>
+        <li>Mix in sour cream, milk, food color, and vanilla.
+            Gradually beat in flour mixture on low speed until just blended; do not over-beat. </li>
+        <li>Spoon batter into the prepared muffin cups, filling each 2/3 full.</li>
+        <li>Bake in the preheated oven until a toothpick inserted into a cupcake comes out clean, about 20 minutes. </li>
+        <li>Cool in the pans on a wire rack for 5 minutes. Remove cupcakes from the pans; cool completely.</li>
+        <li>While cupcakes are cooling, make frosting: Beat cream cheese, butter, sour cream, and vanilla extract in a large bowl until light and fluffy. Gradually beat in confectioners' sugar until smooth.</li>
+        <li>Spread or pipe frosting onto cooled cupcakes.</li>
+          
+    </ol>
+                </p>
+
+                <img src="red-velvet-cupcakes.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+                        
+            <div class="modal fade" id="CakesModal10" tabindex="-1" aria-labelledby="vanilla-cupcakeModal10Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="vanilla-cupcakeModal10Label"> Vanilla Cupcake</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 10-->
+
+                <p>This easy vanilla cupcake recipe is made with simple ingredients. They are very tasty!
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        
+                        <li>¾ cup superfine sugar</li>
+                        <li>⅔ cup butter, softened</li>
+                        <li>3 large eggs</li>
+                        <li>1 ½ cups self-rising flour</li>
+                        <li>1 teaspoon vanilla extract</li>
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Gather all ingredients. Preheat the oven to 350 degrees F (175 degrees C). Grease a 12-cup muffin tin or line cups with paper liners.</li>
+        <li>Beat sugar and butter together in a large bowl with an electric mixer until light and fluffy. </li>
+        <li>Add eggs one at a time, beating well after each addition.</li>
+        <li>Beat in vanilla extract. Stir in flour just until mixed; spoon batter into the prepared muffin cups, filling each 3/4 full.
+        </li>
+        <li> Bake in the preheated oven until the tops spring back when lightly pressed, 18 to 20 minutes.</li>
+        <li> Cool in the tin briefly before transferring to a wire rack to cool completely.</li>
+       
+    </ol>
+                </p>
+                <img src="vanilla-cupcake.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--sweets here-->
+
+<div class="modal fade" id="SweetsModal1" tabindex="-1" aria-labelledby="turonModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="turonModal1Label"> Turon </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- here niyo ilagay mga contents niya -->
+                <p>This sweet snack can usually be seen on the streets being peddled along with bananacue or even vegetable lumpia. It is easy to make and the ingredients are inexpensive.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        
+                        <li>6 pieces bananas saba or plantains, cut in half (lengthwise)</li>
+                        <li>1 cup jackfruit ripe, sliced</li>
+                        <li>1 1/2 cup sugar</li>
+                        <li>12 pieces lumpia wrapper</li>
+                        <li>2 cups cooking oil</li>
+
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+                 
+        <li>Roll the banana on the sugar plate and ensure that the banana is coated with enough sugar</li>
+        <li>Place the banana with sugar coating in the spring roll wrapper and add some ripe jackfruit</li>
+        <li>Fold and lock the spring roll wrapper, use water to seal the edge</li>
+        <li>In a pan, heat the oil and put-in some sugar.Wait until the brown sugar floats</li>
+        <li>Put-in the wrapped banana and fry until the wrapper turns golden brown and the extra sugar sticks on wrapper</li>
+        <li>Meanwhile, make frosting: Cream butter and cream cheese until smooth.</li>
+        <li>Beat in vanilla. Add confectioners sugar and beat on low speed until combined, then on high until frosting is smooth.
+            </li>
+        <li>Serve hot as a dessert or snack. Share and Enjoy!</li>
+
+    </ol>
+                </p>
+                <img src="turon.jpeg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="modal fade" id="SweetsModal2" tabindex="-1" aria-labelledby="buko-saladModal2label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buko-saladModal2label">Buko Salad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 2 -->
+                <p>Buko Salad is the Filipino variation of the fruit salad, it is usually made out of mixed fruits, nata de coco, kaong (sugar palm), coconut, thickened cream and condensed milk.
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>young coconut meat from 5 coconuts, sliced into strips</li>
+                        <li>1 container sugar palm (kaong), drained</li>
+                        <li>1 cup nata de coco, drained</li>
+                        <li>1 can fruit cocktail, drained</li>
+                        <li>1 can pineapple chunks, drained</li>
+                        <li>1 cup condensed milk (adjust to the sweetness you like)</li>
+                        <li>1 cup thickened cream or whipped cream</li>
+                       
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>In a mixing bowl, combine together young coconut, sugar palm, nata de coco, fruit cocktail and pineapple chunks, and fruit cocktail. Make sure all ingredients are properly drained.</li>
+        <li>Place thickened cream in a container then gently fold the condensed milk.</li>
+        <li>Pour the cream mixture on the fruit mixture then mix well to combine.</li>
+        <li>Refrigerate for at least 6 hours before serving.</li>
+       </ol>
+                </p>
+                <img src="buko-salad.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="SweetsModal3" tabindex="-1" aria-labelledby="cariocaModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cariocaModal3Label">Carioca or Karioka</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content imissu 3 -->
+                <p>Karioka or Carioca is a type of street food in the Philippines made out of glutinous rice flour and coconut meat which is deep fried then dipped in coconut milk and sugar syrup. 
+                    <h2>Ingredients</h2>
+                    <ul>
+                      <h4>CARIOCA</h4>
+                        <li>2 cups glutinous rice flour</li>
+                        <li>2 cups sweetened flaked coconut</li>
+                        <li>1 1/2 cups coconut milk</li>
+                        <li>1 tsp baking powder</li>
+                        <li>oil for deep frying</li>
+                        <li>2 teaspoons baking soda</li>
+                        <li>2 teaspoons baking powder</li>
+                        <li>2 teaspoons ground cinnamon</li>
+                        <li>½ teaspoon salt</li>
+                        <li>3 cups grated carrots</li>
+                        <li>1 cup chopped pecans</li>
+                        
+
+                        <H4>GLAZE</H4>
+                        <li>1 cup brown sugar</li>
+                        <li>1/3 cup coconut milk</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Combine karioka ingredients in a large bowl and mix well.</li>
+        <li>Once it forms a dough shape it into small balls roughly the same size of fish ball then set them aside.</li>
+        <li>Heat enough oil in a wok for deep frying then once oil is hot drop shaped dough into the wok one by one, deep fry until golden brown in colour.</li>
+        <li>Remove the balls, set aside and let it drain in a wire rack.</li>
+        <li>Place all glaze ingredients in a sauce pan then mix well, cook in medium heat until sauce thickens.</li>
+        <li>Drop Karioka balls in the glaze to coat them. Once all coated place them in skewers then serve while hot.</li>
+    </ol>
+                </p>
+                <img src="carioca.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--dito-->
+              
+            <div class="modal fade" id="SweetsModal4" tabindex="-1" aria-labelledby="halo-haloModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="halo-haloModal4Label">Halo-Halo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- content img 4 -->
+                <p>Halo Halo is a popular shaved ice dessert in the Philippines prepared with shaved ice, evaporated milk and various ingredients like sweetened beans, sweetened fruits, boba pearls, nata de coco, palm fruit then topped with leche flan and ube jam.
+                    <h2>Ingredients</h2>
+                    <ul>
+                        
+                        <li>Minatamis na Saging (just use the bananas)</li>
+                        <li>Ripe Jackfruit, Sliced</li>
+                        <li>Sweetened Chick Peas</li>
+                        <li>Sweetened Red Beans</li>
+                        <li>Sweetened White Beans</li>
+                        <li>Shredded Sweet Young Coconut</li>
+                        <li>Corn Kernels</li>
+                        <li>Nata de Coco</li>
+                        <li>Sugar Palm / Kaong</li>
+                        <li>Pinipig or Rice Crispies</li>
+                        <li>Leche Flan</li>
+                        <li>Cooked Sweet Purple Yam</li>
+                        <li>Frozen Milk, shredded</li>
+                        <li>Sugar</li>
+                       
+
+                       
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Add your first 10 ingredients on the bottom of a tall glass; this should not exceed 1/3 of the volume of the glass.</li>
+        <li>Add enough shaved frozen milk to nearly fill the glass, add a tablespoon of sugar if you want it sweet (totally optional as the most of the ingredients are sweet already).</li>
+        <li><strong>Note:</strong> You can use 2 methods of making shaved frozen milk, first is to lightly pound the frozen milk carton inside a towel using a kitchen mallet this is an easy way of having a shaved milk but does not give an even ice texture.</li>
+        <li>Another method is to open the milk carton to get the whole frozen milk block then use a knife to carve the ice this is a better way of doing it as it gives an even texture but it takes much longer
+            Top with a slice of Leche Flan and purple yam.</li>
+      
+    </ol>
+                </p>
+                <img src="halo-halo.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <div class="modal fade" id="SweetsModal5" tabindex="-1" aria-labelledby="leche-flanModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="leche-flanModal5Label">Leche Flan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 5 -->
+                <p>Leche Flan, caramel custard or crème caramel is one of the all-time favourite dessert in the Philippines, it is made of baked or steamed mixture eggs yolks, milk and sugar
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 large can evaporated milk</li>
+                        <li>1 large can condensed milk</li>
+                        <li>10 egg yolks</li>
+                        <li>1 tsp vanilla extract</li>
+                        <li>1 cup sugar</li>
+                        <li>3/4 cup water</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Using aluminium moulds, add sugar and water, bring it to a boil and cook until it caramelizes. Set the moulds aside and let the caramel cool.</li>
+        <li>In a mixing bowl add evaporated milk, condensed milk, egg yolks and vanilla then mix well.</li>
+        <li> Pour mixture over moulds until its 1 1/2 inch thick. </li>
+        <li>Cover the moulds with an aluminium foil then steam for 30-35 minutes.</li>
+        <li>Let it cool then refrigerate. Remove from moulds then serve cold.</li>
+        
+    </ol>
+                </p>
+                <img src="leche-flan.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="SweetsModal6" tabindex="-1" aria-labelledby="tahoModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tahoModal6Label"> Taho</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 6-->
+                <p>Taho is one of the most popular Philippine street foods, it is made out of fresh silken tofu, thick sugar syrup and sago pearls. Enjoyed as a tea time snack or a breakfast food item, this sweet tofu has a texture of very fine custard that everybody would easily love.
+                    <h2>Ingredients</h2>
+                    <ul>
+                       
+                        <li>Top grade tofu jelly</li>
+                        <li>brown sugar</li>
+                        <li>sago pearls</li>
+                        <li>water</li>
+                    
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Cook tapioca pearls according to packet instructions but add sugar on it, the amount of sugar will be similar to the amount of sago pearls (1 part sugar to 1 part sago pearls)
+            Once cooked set it aside and let it cool.</li>
+        <li>In a saucepan add water and brown sugar this time the ratio should be 1 part water to 3 parts brown sugar. Place in low heat until sugar dissolves then bring heat to medium and let it boil, simmer for 5 minutes.</li>
+        <li>Place tofu in heat proof mugs the place it on a steamer, cover mug with cling wrap or small saucer to prevent water from coming in then steam for 15 minutes, you can also use microwave for 90 seconds each full mug but steaming yields better result.</li>
+        <li>Remove mugs from steamer then top it with sugar syrup and sago pearls. Serve it while hot.</li>
+       
+    </ol>
+                </p>
+                <img src="taho.jpeg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="modal fade" id="SweetsModal7" tabindex="-1" aria-labelledby="maisconyelopekModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="maisconyelopekModal7Label">Mais Con Yelo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--7 -->
+                <p>Filipino mais con yelo is a delicious and refreshing summer treat! This layered dessert consists of sweet corn, sweetened shaved ice, and corn flake cereal topped with homemade corn ice cream
+                    <h2>Ingredients</h2>
+                    <ul>
+                       
+                        <li>Sweet Corn (canned or Frozen)</li>
+                        <li>Shaved Ice</li>
+                        <li>Sweetened Condensed Milk</li>
+                        <li>Evaporated Milk</li>
+                        <li>White Sugar</li>
+                        <li>Keso (Optional)</li>
+                        <li>Saging na Saba (Optional)</li>
+                        <li>Corn Flakes (Optional)</li>
+                       
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Layer the Sweet Corn and the Shaved Ice in a Glass</li>
+        <li>Add Milk and Sugar, Condensed Milk, Evaporated Milk (adjust according to taste) and stir with a spoon.</li>
+        <li>Add other ingredients like Keso, Saging na Saba or CornFlakes.
+            Serve immediately.</li>
+
+    </ol>
+                </p>
+                <img src="maisconyelopek.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="SweetsModal8" tabindex="-1" aria-labelledby="sorbetesModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sorbetesModal8Label">Sorbetes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 8 -->
+
+                <p>This Filipino-style Sorbetes recipe is a creamy and delicious ice cream made with a combination of heavy cream, evaporated milk, condensed milk, and vanilla extract. It's a simple and satisfying treat that can be customized with flavors like mango or ube. Enjoy this homemade delight in a cone or wafer cup!
+                    <h2>Ingredients</h2>
+                    <ul>
+                        
+                        <li>Pinch of salt</li>
+                        <li>1/2 cup sugar</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>1 cup evaporated milk</li>
+                        <li>1 cup condensed milk</li>
+                        <li>2 cups heavy cream</li>
+                        <li>Ice cream cones or wafer cups (optional, for serving)</li>
+                    
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+
+        <li>In a mixing bowl, combine the heavy cream, evaporated milk, condensed milk, sugar, vanilla extract, and salt. Mix well until the sugar is dissolved. </li>
+        <li>Pour the mixture into an ice cream maker and churn according to the manufacturer's instructions. It usually takes about 20-30 minutes.</li>
+        <li>Once the sorbetes has reached a soft-serve consistency, transfer it to a lidded container and freeze for at least 4 hours or until firm.</li>
+        <li>If you don't have an ice cream maker, you can pour the mixture into a shallow container and place it in the freezer. Every 30 minutes, remove it from the freezer and vigorously whisk or stir to break up any ice crystals until it reaches the desired consistency.        </li>
+        <li>Once the sorbetes is completely frozen and firm, scoop it into ice cream cones or wafer cups if desired.</li>
+        <li>Serve immediately or store in an airtight container in the freezer for up to 2 weeks.</li>
+    </ol>
+                </p>
+                <img src="sorbetes.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="modal fade" id="SweetsModal9" tabindex="-1" aria-labelledby="minatamis-na-sagingModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="minatamis-na-sagingModal9Label"> Minatamis na Saging </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 9 -->
+
+                <p>Minatamis na saging if directly translated means sweetened banana, it is a very sweet dessert which is made out of Cardaba banana or locally known as “Saba” that is cooked in brown sugar syrup.
+                    <h2>Ingredients</h2>
+                    <ul>
+                     
+                        <li>6 medium ripe cardaba/saba banana’s, sliced</li>
+                        <li>2 cups brown sugar</li>
+                        <li>3 cups water</li>
+                        <li>1/2 tsp salt</li>
+                        <li>1 tsp vanilla extract</li>
+                        <li>1 cup cooked black sago pearls (optional)</li>
+                        <li>evaporated milk (optional)</li>
+                    </ul>
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Cook sago pearls according to packet instructions.</li>
+        <li>Pour a tablespoon of sugar in a saucepan, turn on heat and cook until sugar melts and partly burns (the slightly burnt taste gives an extra flavour but do not burn it too much, it will taste bad).</li>
+        <li>Pour the water then let it boil. Once boiling add the remaining sugar and salt, let the sugar dissolve in medium heat then simmer for 10 minutes.</li>
+        <li>Add the bananas then cook for 10 to 15 minutes or until saba is tender but still firm. </li>
+        <li>Remove from heat, add the sago pearls then place in dessert plate, serve by topping it off with evaporated milk.</li>
+          
+    </ol>
+                </p>
+
+                <img src="minatamis-na-saging.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+                        
+            <div class="modal fade" id="SweetsModal10" tabindex="-1" aria-labelledby="scrambleModal10Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrambleModal10Label">Scramble</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 10-->
+
+                <p>Iskrambol or Ice Scramble is the Filipino version of Slushy made out of banana flavoured frozen condensed milk usually sold by street hawkers. 
+
+
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <h4>ISKRAMBOL</h4>
+                        <li>1 can condensed milk</li>
+                        <li>4 cups water (adjust to desired sweetness)</li>
+                        <li>1 tsp banana essence</li>
+                        <li>few drops pink food colour</li>
+                        <h4>TOPPINGS</h4>
+                        <li>Milk powder</li>
+                        <LI>Chocolate syrup</LI>
+                        <li>Marshmallows</li>
+            
+                    </ul>
+
+
+                    <h2>Instructions</h2>
+                  <ol>
+        <li>Using a big pitcher or bowl combine iskrambol ingredients together.</li>
+        <li>Place them in a container then freeze.</li>
+        <li>Once frozen using an ice shaver, shave ice and place in individual glasses.</li>
+        <li>Top with milk powder, chocolate syrup and marshmallows. </li>
+       
+    </ol>
+                </p>
+                <img src="scramble.jpg" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS CDN links -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>

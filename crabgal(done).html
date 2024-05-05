@@ -3,7 +3,7 @@
         <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>crab</title>
+      <title>pork</title>
         <style>
                body {
   margin: 98px;
@@ -22,7 +22,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: -1; 
+            z-index: -10; 
         }
 
         @keyframes animateGradient {
@@ -352,185 +352,320 @@ ul.grid {
             .title {
 margin-top: -70px; 
                 }
-        </style>
-      
-    </head>
-
-    <body>
-        <div class="animated-gradient-bg"></div>
-<div class="title">
-
-   <center style="padding-bottom": 20px;"><font size="50">CRABS</font></center></div><br>
-        <br><br><br>
-
-                        <div class="grid">
-                   <li class="grid-item" style="background-image: url('cheesy.png');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>Chessy Crab and Corn Nachos</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="testc9.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-  
 
 
-                                </div>
-            </div>
-           
-
-
-
-
-
-
-
-
-
-
-
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('ginataangcrab.png');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>Ginataang Alimasag</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="testc10.html"><i class="fa-solid fa-eye"></i></a></button>
-   
-    </div>
-  
-
-
-                                </div>
-            </div>
-           
-
-
-
-
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('halabosnacrab.png');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>Halabos na Alimasag</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="testc1.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-  
-
-
-                                </div>
-            </div>
-
-
-
-
-         <div class="grid">
-                   <li class="grid-item" style="background-image: url('sweetandchili.png');">
-                                <div class="grid-title" >
-                                    <div class="container">
-                                    <p>Sweet Chili Crab</p>
-                                        <div class="overlay">
-      <button class="btn-more-info"><a href="testc2.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div>
-  
-
-
-                                </div>
-            </div>
-
-
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('tortangcrab.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Tortang Alimasag</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="testc3.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div>
-    
-
-                                </div>
-            </div>
-           
-
-
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('garlicbutteredcrab.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Garlic Buttered Crab</p>
-           
-       <div class="overlay">
-      <button class="btn-more-info"><a href="testc4.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
-    
-            </div>
-           
-
-
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('relenongcrab.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Relenong Alimasag</p>
-            <div class="overlay">
-      <button class="btn-more-info"><a href="testc5.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
-    
-            </div>
-           
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('currycrab2.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Crab Curry</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="testc6.html"><i class="fa-solid fa-eye"></i></a></button>
-     
-    </div> </div>
-    
-            </div>
-           
-
-
-<div class="grid">
-    <li class="grid-item" style="background-image: url('misua.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Crab with misua and patola</p>
         
-        <div class="overlay">
-      <button class="btn-more-info"><a href="testc7.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
-    
-            </div>
-           
+                                  #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+      margin-top: -85px;
+    margin-left: -80px;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+    </style>
+</head>
+<body>
+<a href="ariana.html" class="button explore"><i class="fa-solid fa-left-long"></i></a>
+   
+<center style="padding-bottom": 20px;"><font size="50">CRABS</font></center></div><br>
+<br><br><br>
+
+                <div class="grid">
+           <li class="grid-item" style="background-image: url('cheesy.png');">
+                        <div class="grid-title" >
+                            <div class="container">
+                            <p>Chessy Crab and Corn Nachos</p>
+                                <div class="overlay">
+<button class="btn-more-info"><a href="testc9.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                        </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="grid">
+           <li class="grid-item" style="background-image: url('ginataangcrab.png');">
+                        <div class="grid-title" >
+                            <div class="container">
+                            <p>Ginataang Alimasag</p>
+                                <div class="overlay">
+<button class="btn-more-info"><a href="testc2.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                        </div>
+    </div>
+   
+
+
+
+
+
+ <div class="grid">
+           <li class="grid-item" style="background-image: url('halabosnacrab.png');">
+                        <div class="grid-title" >
+                            <div class="container">
+                            <p>Halabos na Alimasag</p>
+                                <div class="overlay">
+<button class="btn-more-info"><a href="testc1.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                        </div>
+    </div>
+
+
+
+
+ <div class="grid">
+           <li class="grid-item" style="background-image: url('sweetandchili.png');">
+                        <div class="grid-title" >
+                            <div class="container">
+                            <p>Sweet Chili Crab</p>
+                                <div class="overlay">
+<button class="btn-more-info"><a href="testc10.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+
+                        </div>
+    </div>
+
+
 
 <div class="grid">
-    <li class="grid-item" style="background-image: url('snakebeans.png');">
-        <div class="grid-title">
-            <div class="container">
-            <p>Chili Crab with snake beans</p>
-        <div class="overlay">
-      <button class="btn-more-info"><a href="testc8.html"><i class="fa-solid fa-eye"></i></a></button>
-      
-    </div> </div>
-    
-            </div>
-           
+<li class="grid-item" style="background-image: url('tortangcrab.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Tortang Alimasag</p>
+<div class="overlay">
+<button class="btn-more-info"><a href="testc3.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div>
+
+
+                        </div>
+    </div>
+   
+
+
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('garlicbutteredcrab.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Garlic Buttered Crab</p>
+   
+<div class="overlay">
+<button class="btn-more-info"><a href="testc4.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+    </div>
+   
+
+
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('relenongcrab.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Relenong Alimasag</p>
+    <div class="overlay">
+<button class="btn-more-info"><a href="testc5.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+    </div>
+   
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('currycrab2.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Crab Curry</p>
+<div class="overlay">
+<button class="btn-more-info"><a href="testc6.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+    </div>
+   
+
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('misua.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Crab with misua and patola</p>
+
+<div class="overlay">
+<button class="btn-more-info"><a href="testc7.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+    </div>
+   
+
+<div class="grid">
+<li class="grid-item" style="background-image: url('snakebeans.png');">
+<div class="grid-title">
+    <div class="container">
+    <p>Chili Crab with snake beans</p>
+<div class="overlay">
+<button class="btn-more-info"><a href="testc8.html"><i class="fa-solid fa-eye"></i></a></button>
+
+</div> </div>
+
+    </div>
 
 
                 <script>

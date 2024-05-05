@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Contacts-Filipino Cuisine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+<style>
+
+a {
+  text-decoration:none;
+}
+.clear {
+    clear: both;
+}
+.item-holder {
+    position: relative;
+    width: 463px;
+    border: 1px solid rgb(214, 214, 214);
+    background: #ededed;
+    margin: 0 auto; /* Center horntally */
+    text-align: center; /* Center the content inside */
+    margin-bottom: 30px;
+}
+.team-list {
+  list-style:none;
+}
+.team-list li .item-holder {
+    border-bottom: none;
+}
+.team-list li:last-child .item-holder {
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+.member-img {
+    width: 160px;
+    height: 191px;
+    float: left;
+    object-fit:cover;
+}
+.member-info {
+    float: left;
+    width: 300px;
+
+}
+.member-info h2 {
+    font-family: 'Dosis',sans-serif;
+    padding: 15px 0 10px 20px;
+    color: #414141;
+}
+.member-info p, .member-info-plus p {
+    font-family: Helvetica,sans-serif;
+    font-size: 14px;
+    padding-left: 21px;
+    line-height: 18px;
+    color: #6B6B6B;
+}
+.social-list {
+  list-style:none;
+  margin-top:12px;
+  margin-left: 21px;
+}
+.social-list li {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 1px;
+    position: relative;
+    top: -122px;
+    opacity: 0;
+    transition: all .5s;
+    -webkit-transition: all .5s; 
+}
+.social-list li a {
+  color:#fff;
+  text-align:center;
+}
+
+.social-list li a i {
+  margin-top:6px;
+}
+
+.social-list li.youtube {
+    background: rgb(255, 0, 0) url("http://migkapa.com/site/lab/css3hover/images/yahoo-icon.png") no-repeat center;
+}
+.social-list li.tiktok {
+    background: #000000 url("http://migkapa.com/site/lab/css3hover/images/twitter-icon.png") no-repeat center;
+}
+
+.social-list li.fb {
+    background: #3B5998 url("http://migkapa.com/site/lab/css3hover/images/facebook-icon.png") no-repeat center;
+}
+.social-list li.instagram  {
+    background: #EA4C89 url("http://migkapa.com/site/lab/css3hover/images/instagram-icon.png") no-repeat center;
+}
+.social-list li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+.more-btn {
+    display: block;
+    width: 30px;
+    height: 25px;
+    background: #555352;
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    font-size: 21px;
+    text-align: center;
+    padding-top: 3px;
+    color: #FFF;
+    font-weight: bold;
+}
+.more-btn.opened span {
+  display:block;
+      -ms-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg);
+}
+
+.item-holder:hover .social-list li {
+    top: 0;
+    transition: all .2s;
+    -webkit-transition: all .2s; 
+    opacity: 1;
+}
+
+.item-holder:hover .social-list li.twitter {
+    transition-delay: .1s;
+    -webkit-transition-delay:.1s;
+}
+.item-holder:hover .social-list li.fb {
+    transition-delay: .2s;
+    -webkit-transition-delay:.2s;
+}
+.item-holder:hover .social-list li.dribble {
+    transition-delay: .3s;
+    -webkit-transition-delay:.3s;
+}
+
+.item-holder:hover .more-btn {
+    background: #ff009d;
+}
+.member-info-plus {
+    display: none;
+    border-top: 1px solid rgb(255, 178, 238);
+    background: #f85bd6;
+}
+.member-info-plus p {
+    padding: 15px 30px 30px 15px;
+}
+.rotate span {
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    display: block;
+}
+h3.title {
+		    color: #1a0900;
+		    font-size: 50px;
+		    text-align: center;
+		    margin-bottom: 1em;
+		    font-weight: 600;
+		    font-style: italic;
+		} 
+        
+        
+        #intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid orange;
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #fff;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+  background: rgba(255, 192, 203, 1); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -725;
+  margin-left: 150;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+    background-color: pink; /* Change to the color you prefer */
+}
+
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+</style>
+
+
+</head>
+<body style="background-color: rgb(255, 192, 250);">
+    <a href="homewithtypewritter.html" class="button explore"><i class="fa-solid fa-arrow-left"></i></a>
+   <center> <h3 class="title">Developers of T10 Filipino Cuisine</h3></center>
+  
+
+<ul class="team-list">
+
+    <li>
+
+        <div class="item-holder">
+            <img src="kris-for-contacts.jpg" alt="team member" class="member-img"/>
+
+            <div class="member-info">
+
+                <h2>Kris Rialyn Tangalin</h2>
+                <p>
+                    "By failing to prepare, you are preparing to fail" -benjamin franklin
+                </p>
+
+                <ul class="social-list">
+
+                    <li class="youtube"><a href="https://www.youtube.com/playlist?list=PLKQsTImOATNPBNJf7SAuVy2YE_e0fJS8k&jct=yJ6M7psjGbSIvN0p-5e6dpl0eGUWhA"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li class="tiktok"><a href="https://www.tiktok.com/@makidacusin/video/7363214772612943110?_t=8m20QXlaQlE&_r=1"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li class="fb"><a href="https://www.facebook.com/krisrialyn.tangalin?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/krislyn344?igsh=MTJwOXRkdGh6Z2xqag=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a href="#" class="more-btn"  ><span>+</span></a>
+            </div>
+            
+            <!-- member-info-of-filipino-cuisine -->
+
+<div class="clear"></div>
+
+            <div class="member-info-plus">
+
+                <p>
+                 The creator of homepage,searchbar,Gallery of drinks and 30 drinks,rice (5 dishes) ,Gallery of seafoods (10 dishes of Crabs,10 dishes of shrimps and 10 dishes of squids) Fish (10 dishes of bangus).
+                </p>
+
+
+            </div><!--  member-info-plus -->
+        </div><!-- item-holder -->
+
+
+    </li>
+
+    <li>
+
+        <div class="item-holder">
+            <img src="ariana-for-contacts.jpg" alt="team member" class="member-img" />
+
+            <div class="member-info">
+
+                <h2>Ariana Nicolle Gramaje</h2>
+                <p>
+                    "Love the life you live. Live the life you love."
+                    —Bob Marley
+                </p>
+
+                <ul class="social-list">
+
+                    <li class="youtube"><a href="https://youtu.be/yKNxeF4KMsY?si=JHnr_r-ur6D2Z_5p"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li class="tiktok"><a href="https://www.tiktok.com/@makidacusin/video/7362384421468572933?_t=8m20YRNLEBz&_r=1"><i class="fa-brands fa-tiktok"></i> </a></li>
+                    <li class="fb"><a href="https://www.facebook.com/nicolle.gramaje?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/garianamaje?igsh=MWQzZnd0d3o5d21hNg=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a href="#" class="more-btn"  ><span>+</span></a>
+            </div><!-- member-info -->
+
+            <div class="clear"></div>
+
+            <div class="member-info-plus">
+
+                <p>
+                    The creator of main course slider, Gallery of vegetables and 10 dishes of vegetables,Gallery of 10 streetfoods and fishes (10 dishes of Galunggong, 10 dishes of Tilapia and 10 dishes of Tulingan)
+
+                </p>
+
+
+            </div><!--  member-info-plus -->
+        </div><!-- item-holder -->
+
+
+    </li>
+
+    <li>
+
+        <div class="item-holder">
+            <img src="cynthia-for-contacts.jpg" alt="team member" class="member-img" />
+
+            <div class="member-info">
+
+                <h2>Cynthia Adelaine Ulit</h2>
+                <p>
+                   "Winners Never Quit & Quitters Never Win"
+<br>
+                     -Joey 
+                </p>
+
+                <ul class="social-list">
+
+                    <li class="youtube"><a href="https://youtu.be/oxNLRqMJMZk?si=BABLdJ1nqe6ZjeaA"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li class="tiktok"><a href="https://www.tiktok.com/@makidacusin/video/7362992730881985797?_t=8m20Sio6UL9&_r=1
+                        "><i class="fa-brands fa-tiktok"></i>                   </a></li>
+                    <li class="fb"><a href="https://www.facebook.com/cynthiaadelaine.ulit?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/cynthiaadelaine?igsh=YmEzaHE0eXlwMjk2"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a href="#" class="more-btn"  ><span>+</span></a>
+            </div><!-- member-info -->
+
+            <div class="clear"></div>
+
+            <div class="member-info-plus">
+
+                <p>
+                    The creator of Gallery of chicken and 10 dishes of chicken,  pastry (10 Bread and 10 Cakes), fishes (10 dishes of bisugo (with gallery) and 10 dishes of lapu-lapu (with gallery)) 
+
+                </p>
+
+
+            </div><!--  member-info-plus -->
+        </div><!-- item-holder -->
+
+
+    </li>
+
+    <li>
+
+        <div class="item-holder">
+            <img src="stephany-for-contacts.jpg" alt="team member" class="member-img" />
+
+            <div class="member-info">
+
+                <h2>Maria Stephany Abuan</h2>
+                <p>
+                  Fall 7 Rise 8 (七転び八起き)
+                  <br>
+                  Where there is no struggle, there is no strength
+                  -Christian
+                </p>
+
+                <ul class="social-list">
+
+                    <li class="youtube"><a href="https://youtu.be/OqBuXQLR4Y8?si=oibLMj6yFAjqAFut"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li class="tiktok"><a href="https://www.tiktok.com/@makidacusin/video/7362799419563003141?_t=8m20V9NhjRI&_r=1"><i class="fa-brands fa-tiktok"></i>                 </a></li>
+                    <li class="fb"><a href="https://www.facebook.com/stephanysimpforyu?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/maria._.gure/#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a href="#" class="more-btn"  ><span>+</span></a>
+            </div><!-- member-info -->
+
+            <div class="clear"></div>
+
+            <div class="member-info-plus">
+
+                <p>
+                  
+                    The creator of Gallery of 10 dishes of pork, Gallery of 10 pastry (sweets),contacts,About, and fishes(Gallery of 10 dishes hasa-hasa and Gallery of 10 dishes of maya-maya)
+                </p>
+
+
+            </div><!--  member-info-plus -->
+        </div><!-- item-holder -->
+
+
+    </li>
+  
+  
+  
+  <li>
+
+        <div class="item-holder">
+            <img src="angilla-for-contacts.jpg" alt="team member" class="member-img" />
+            <div class="member-info">
+
+                <h2>Angilla Ringor</h2>
+                <p>
+                    "Challenges are what make life interesting and overcoming them is what makes life meaningful." – Joshua J. Marine
+                </p>
+
+                <ul class="social-list">
+
+                    <li class="youtube"><a href="https://youtu.be/Zx31bB2vMns?si=oNNkF5NjwRYhS8i-"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li class="tiktok"><a href="https://www.tiktok.com/@makidacusin/video/7257075814229970182?_t=8m20EMwkjMQ&_r=1"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li class="fb"><a href="https://www.facebook.com/Angillaaa?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/gillaxkd?igsh=OWhkNmsxbXIzMnJo"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <a href="#" class="more-btn"  ><span>+</span></a>
+            </div><!-- member-info -->
+
+            <div class="clear"></div>
+
+            <div class="member-info-plus">
+
+                <p>
+                    The creator of five dishes of rice, and fishes (10 dishes of yellow fin and 10 dishes of Salmon ),Gallery of yellow fin and Salmon.
+
+                </p>
+
+
+            </div><!--  member-info-plus -->
+        </div><!-- item-holder -->
+
+
+    </li>
+
+</ul>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
+  <script>
+  jQuery(document).ready(function() {
+  
+    $('.more-btn').on('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('opened')
+      $(this).parent().parent().find('.member-info-plus').slideToggle();
+    });
+    
+  }); </script>
+
+</body>
+</html>
