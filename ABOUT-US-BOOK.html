@@ -1,10 +1,9 @@
 <div id="wrapper">
     <div id="container">
         <head>
-            <style>
-
-
-                @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
+            <script src="https://kit.fontawesome.com/c5ec871c0d.js" crossorigin="anonymous"></script>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
 
 *,
 :before,
@@ -32,6 +31,8 @@ body {
 }
 
 
+
+/*** OPEN BOOK ***/
 .open-book {
     background: #fff;
     box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
@@ -43,7 +44,7 @@ body {
     position: relative;
 }
 
-
+/* Highlight */
 .open-book *::-moz-selection {
     background: rgba(222,255,0,0.75);
 }
@@ -52,7 +53,7 @@ body {
     background: rgba(222,255,0,0.75);
 }
 
-
+/* Header/Footer */
 .open-book header {
     padding-bottom: 1em;
 }
@@ -84,7 +85,7 @@ body {
     text-align: right;
 }
 
-
+/* Chapter Title */
 .open-book .chapter-title {
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjQgNjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Zz4NCiAgICAJPHBhdGggZD0iTTAsMzJMMzIsMGwzMiwzMkwzMiw2NEwwLDMyeiBNOCwzMmwyNCwyNGwyNC0yNEwzMiw4TDgsMzJ6IE0xNiwzMmwxNi0xNmwxNiwxNkwzMiw0OEwxNiwzMnogTTI0LDMybDgsOGw4LThsLTgtOEwyNCwzMnoiIC8+DQogICAgPC9nPg0KPC9zdmc+) bottom center no-repeat;
     background-size: 0.5em 0.5em;
@@ -116,7 +117,7 @@ body {
     right: 0;
 }
 
-
+/* Body Copy */
 .open-book article {
     line-height: 1.5;
 }
@@ -213,7 +214,7 @@ body {
 
 
 
-
+/*** MEDIA QUERIES ***/
 @media only screen and ( min-width: 50em ) {
 
     .open-book {
@@ -252,6 +253,7 @@ body {
         z-index: 1;
     }
 
+    /* Header/Footer */
     .open-book header:before,
     .open-book header:after,
     .open-book footer:before,
@@ -344,7 +346,7 @@ body {
         height: 0.125em;
     }
 
-    
+    /* Body Copy */
     .open-book article p {
         text-indent: 3em;
     }
@@ -355,15 +357,159 @@ body {
     }
 
 }
-            </style>
-        <link rel="stylesheet" href="style.css">
+
+
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 40px;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.split-tsitsirya {
+  display: flex;
+  flex-direction: row;
+}
+
+.tsitsirya {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 2px solid rgb(255, 0, 128);
+}
+
+.tsitsirya:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+.button:after,
+.close-btn:after {
+  background: #ff9de7;
+}
+
+.explore,
+.explore:before,
+.close-btn,
+.close-btn:before {
+   background: rgb(248, 213, 219); /* Light pink */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 192, 203, 1) 0%,
+    rgba(255, 105, 180, 1) 100%
+  );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.2rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+   top: 3px;
+    margin-right: 1500px;
+    z-index: 1;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.8);
+}
+
+.button:hover::after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.5s;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  bottom: 2.5px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+
+.fa-solid.fa-left-long {
+    z-index: 1;
+    font-size: 25px;
+}
+
+
+        </style>
     </head>
+   
         <section class="open-book">
+          
             <header>
+                <a href="homewithtypewritter.html" class="button explore">BACK</a>
+                
                 <h1>Filipino Cuisine</h1>
+               
                 <h6>About</h6>
             </header>
             <article>
+             
                 <h2 class="chapter-title">The Filipino Cuisine</h2>
                 <p>
                     Filipino cuisine has been shaped by various cultures throughout its history, with a significant Spanish influence setting it apart from other Southeast Asian cuisines. 
@@ -381,7 +527,7 @@ body {
 
                 </p>
                 <p>
-                    For a budget-friendly taste of Filipino cuisine, carinderias (eateries)  options offer mains for less than ₱50. 
+                    For a budget-friendly taste of Filipino cuisine, carinderias (eateries) options offer mains for less than ₱50. 
                 </p>
                 <p>
                     Contrary to the misconception of blandness, Filipino food is flavorful due to meticulous preparation and long cooking times rather than an abundance of spices.
@@ -409,11 +555,11 @@ body {
                     <li>
                         To make Filipino food more accesible, we've categorized it into <mark>five main groups</mark>
                         <ul>
-                            <a href="dessertssssssssnicynthia.html.html"><li><mark class="blue">Desserts</mark></li></a>
-                             <a href="drinksmenu.html"><li><mark class="Pink">Drinks</mark></li></a>
-                            <a href="slider5.html"><li><mark class="green">Main course</mark></li></a>
-                            <a href="streetfood-menu.html"><li><mark class="orange">Street foods</mark></li></a>
-                            <a href="junkfoods2.html"><li><mark class="red">Junkfoods</mark></li></a>
+                            <li><mark class="blue">Street foods</mark></li>
+                             <li><mark class="Pink">Kakanin</mark></li>
+                            <li><mark class="green">Snacks</mark></li>
+                            <li><mark class="orange">Ulam (dishes) </mark></li>
+                            <li><mark class="red">Drinks</mark></li>
                            
                        
                 <p>
@@ -429,14 +575,16 @@ body {
                 <p>
                     Moreover, meals present an avenue to celebrate Filipino culture and culinary heritage. Whether it's relishing timeless recipes handed down through generations or experimenting with contemporary ingredients, meals offer a delightful exploration of Filipino customs and history. Thus, mealtime stands as a vital aspect of Filipino culture and daily existence, fostering connection and appreciation for tradition.
                 </p>
+                
             </article>
             <footer>
+                
                 <ol id="page-numbers">
                     <li>1</li>
                     <li>2</li>
+                    
                 </ol>
             </footer>
-                            
         </section>
 
     </div>
